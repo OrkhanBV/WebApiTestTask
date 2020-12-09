@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "/home/orhan/Desktop/Task_fin/WebApiOrkhan/WebApiOrkhan/WebApiOrkhan.csproj",
+    "projectUniqueName": "/home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/WebApiOrkhan.csproj",
     "projectName": "WebApiOrkhan",
-    "projectPath": "/home/orhan/Desktop/Task_fin/WebApiOrkhan/WebApiOrkhan/WebApiOrkhan.csproj",
-    "outputPath": "/home/orhan/Desktop/Task_fin/WebApiOrkhan/WebApiOrkhan/obj/",
+    "projectPath": "/home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/WebApiOrkhan.csproj",
+    "outputPath": "/home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/obj/",
     "projectStyle": "PackageReference",
     "originalTargetFrameworks": [
       "netcoreapp3.1"
@@ -25,6 +25,20 @@
   },
   "frameworks": {
     "netcoreapp3.1": {
+      "dependencies": {
+        "Microsoft.EntityFrameworkCore": {
+          "target": "Package",
+          "version": "[5.0.1, )"
+        },
+        "Npgsql.EntityFrameworkCore.PostgreSQL": {
+          "target": "Package",
+          "version": "[5.0.0, )"
+        },
+        "System.Linq": {
+          "target": "Package",
+          "version": "[4.3.0, )"
+        }
+      },
       "imports": [
         "net461",
         "net462",

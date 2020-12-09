@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/orhan/Desktop/Task_fin/WebApiOrkhan/WebApiOrkhan/WebApiOrkhan.csproj": {}
+    "/home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/WebApiOrkhan.csproj": {}
   },
   "projects": {
-    "/home/orhan/Desktop/Task_fin/WebApiOrkhan/WebApiOrkhan/WebApiOrkhan.csproj": {
+    "/home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/WebApiOrkhan.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/orhan/Desktop/Task_fin/WebApiOrkhan/WebApiOrkhan/WebApiOrkhan.csproj",
+        "projectUniqueName": "/home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/WebApiOrkhan.csproj",
         "projectName": "WebApiOrkhan",
-        "projectPath": "/home/orhan/Desktop/Task_fin/WebApiOrkhan/WebApiOrkhan/WebApiOrkhan.csproj",
+        "projectPath": "/home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/WebApiOrkhan.csproj",
         "packagesPath": "/home/orhan/.nuget/packages/",
-        "outputPath": "/home/orhan/Desktop/Task_fin/WebApiOrkhan/WebApiOrkhan/obj/",
+        "outputPath": "/home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/orhan/.nuget/NuGet/NuGet.Config"
@@ -35,6 +35,20 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "System.Linq": {
+              "target": "Package",
+              "version": "[4.3.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

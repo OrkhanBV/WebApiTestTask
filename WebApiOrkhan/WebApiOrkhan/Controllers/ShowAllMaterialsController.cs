@@ -7,7 +7,7 @@ using WebApiOrkhan.Data;
 namespace WebApiOrkhan.Controllers
 {
     [ApiController]
-    [Route("[Controller]")]
+    [Route("/Materials/ShowAll")]
     public class ShowAllMaterialsController : ControllerBase
     {
         private readonly AppDBContent appDBContent;

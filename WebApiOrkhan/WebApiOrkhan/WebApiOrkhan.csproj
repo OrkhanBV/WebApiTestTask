@@ -14,4 +14,8 @@
       <PackageReference Include="System.Linq" Version="4.3.0" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\UploadMaterial\Index.cshtml" />
+    </ItemGroup>
+
 </Project>

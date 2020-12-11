@@ -12,6 +12,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Logging;
 using WebApiOrkhan.Controllers.Models;
 
+/*Еще не определился с реализацией либо
+через модель(с возможностью назвать файл, задать тип файла и т.д.)
+либо чисто файл*/
 
 namespace WebApiOrkhan.Controllers
 {
@@ -31,7 +34,7 @@ namespace WebApiOrkhan.Controllers
         public IActionResult Indexupload() => View();
         
         /*[HttpPost]*/
-        /*public IActionResult FileInModel(FormForMaterials FormForMaterials)
+        public IActionResult FileInModel(FormForMaterials FormForMaterials)
         {
             using (var fileStream = new FileStream(Path.Combine(_dir, $"{FormForMaterials.Name}.png"), 
                 FileMode.Create, 
@@ -40,7 +43,10 @@ namespace WebApiOrkhan.Controllers
                 FormForMaterials.File.CopyTo(fileStream);
             }
             return RedirectToAction("Indexupload");
-        }*/
+        }
+        
+        //ИЛИ
+        
         public IActionResult SingleFile(IFormFile file)
         {
             var dir = _env.ContentRootPath;
@@ -50,7 +56,6 @@ namespace WebApiOrkhan.Controllers
             }
             return RedirectToAction("Indexupload");
         }
-
-
+        
     }
 }

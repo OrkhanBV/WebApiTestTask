@@ -19,15 +19,8 @@ using WebApiOrkhan;
 #line default
 #line hidden
 #nullable disable
-#nullable restore
-#line 2 "/home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/Views/_ViewImports.cshtml"
-using WebApiOrkhan.Models;
-
-#line default
-#line hidden
-#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"536f464e99b2191d7dc1c0d749ac82f76cb62aad", @"/Views/Home/Index.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"930edabe0766bd70f0668a2487800ccf71fb2c13", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"777a8064d36175e9feff124a87f8b7c97c2de8fa", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

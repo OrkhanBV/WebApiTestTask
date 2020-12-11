@@ -1,0 +1,30 @@
+@model object
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h1>Загрузка файла</h1>
+
+<div class="row mt-5 mb-2">
+    <h4>Single File upload</h4>
+    <form asp-conroller="Home" asp-action="SingleFile"
+          enctype="multipart/form-data" method="post">
+        <input type="file" name = "file" />
+        <button type="submit">Submit</button>
+    </form>
+          
+</div>
+
+@*<h2>title</h2>
+<div class="row mt-5 mb-2">
+    <h4>File in Model</h4>
+    <form asp-conroller="Home" asp-action="FileInModel"
+          enctype="multipart/form-data" method="post">
+         <input type="text" name = "FormForMaterials.Name" />
+        <input type="file" multiple name="FormForMaterials.File"/>
+        <button type="submit">Submit</button>
+    </form>
+          
+</div>*@

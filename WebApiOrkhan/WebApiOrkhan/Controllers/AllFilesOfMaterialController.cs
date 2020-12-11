@@ -9,7 +9,7 @@ using WebApiOrkhan.Data.Models;
 
 /*This controller allow us to get all file versions by ID of material*/
 /*Usage 1 parametr https://localhost:5001/Material/AllFiles/?id=1
-        2 parametra pattern = http://mysite.ru/?a=2&b=3             */
+        2 parametrs pattern = http://mysite.ru/?a=2&b=3             */
 
 namespace WebApiOrkhan.Controllers
 {

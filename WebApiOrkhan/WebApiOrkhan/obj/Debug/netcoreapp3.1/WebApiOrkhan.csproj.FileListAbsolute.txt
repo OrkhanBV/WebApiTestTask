@@ -55,3 +55,5 @@
 /home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/obj/Debug/netcoreapp3.1/WebApiOrkhan.genruntimeconfig.cache
 /home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/bin/Debug/netcoreapp3.1/Humanizer.dll
 /home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/bin/Debug/netcoreapp3.1/Microsoft.EntityFrameworkCore.Design.dll
+/home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/obj/Debug/netcoreapp3.1/Razor/Pages/UploadMaterial/Index.cshtml.g.cs
+/home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/obj/Debug/netcoreapp3.1/Razor/Views/UploadMaterial/Indexupload.cshtml.g.cs

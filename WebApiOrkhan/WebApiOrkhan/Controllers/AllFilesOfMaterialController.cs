@@ -8,7 +8,8 @@ using WebApiOrkhan.Data;
 using WebApiOrkhan.Data.Models;
 
 /*This controller allow us to get all file versions by ID of material*/
-/*Usage https://localhost:5001/Material/AllFiles/?id=1*/
+/*Usage 1 parametr https://localhost:5001/Material/AllFiles/?id=1
+        2 parametra pattern = http://mysite.ru/?a=2&b=3             */
 
 namespace WebApiOrkhan.Controllers
 {
@@ -23,17 +24,35 @@ namespace WebApiOrkhan.Controllers
             this.appDBContent = appDbContent;
         }
         public IEnumerable<File> GetAllFileInMaterial(int id) => appDBContent.File.Where(c => c.material.id == id).ToList();
+        
+        //public IEnumerable<File> GetFileById(int fileId) => appDBContent.File.Where(c => c.id == fileId).ToList();
+
         [HttpGet]
-        public IEnumerable<File> Get(int id)
+        /*public IEnumerable<File> Get(int id)
         {
             /*Из-за условия которое я написал ниже для защиты установки
-            не входящего в диапозон id возникает стронное поведение браузера*/
-            if (appDBContent.Material.Count() >= id & id != 0)
+            не входящего в диапозон id возникает стронное поведение браузера#1#
+            /*if (appDBContent.Material.Count() >= id & id != 0)
                 return GetAllFileInMaterial(id);
             else
             {
                 return null;
-            }
+            }#1#
+            //return GetFileById(1);
+        }*/
+        /*public IEnumerable<string> NameFile()
+        {
+            return (GetFileById(1).Select(f => f.file_name));
+        }*/
+        
+        /*public string NameFile()
+        {
+            return (GetFileById(1).Select(f => f.file_name).ToList()[0]);
+        }*/
+        
+        public string NameFile(int materialId, int fileId)
+        {
+            return (GetAllFileInMaterial(materialId).Select(f => f.file_name).ToList()[fileId]);
         }
     }
 }

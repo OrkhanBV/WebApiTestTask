@@ -64,15 +64,7 @@ namespace WebApiOrkhan.Controllers
                 new Material
                 {
                     Category = {id = 1},
-                    catecory_type = "1",
-                    files = List<File>.Add(new File{
-                        file_data = DateTime.Now,
-                        file_name = FormForMaterials.Name,
-                        path_of_file = _dir,
-                        size = FormForMaterials.File.Length
-
-                    }),
-                    material_data = DateTime.Now,
+                    material_date = DateTime.Now,
                     material_name = FormForMaterials.Name
                 });
         

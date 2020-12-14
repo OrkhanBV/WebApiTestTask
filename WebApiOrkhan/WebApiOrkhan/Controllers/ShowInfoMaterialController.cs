@@ -22,7 +22,7 @@ namespace WebApiOrkhan.Controllers
             this.appDBContent = appDbContent;
         }
 
-        public int ShowCountFiles(int materialId) => appDBContent.File.
+        /*public int ShowCountFiles(int materialId) => appDBContent.File.
             Where(m => m.material.id == materialId).
             Count();
         
@@ -39,6 +39,6 @@ namespace WebApiOrkhan.Controllers
             string lastUpdate = GetLastVersionFiles(materialId).Select(f => f.file_data).ToList()[0].ToString();
             return ($"Count ov versions of material = {count} \n" +
                     $"Last update = {lastUpdate}");
-        }
+        }*/
     }
 }

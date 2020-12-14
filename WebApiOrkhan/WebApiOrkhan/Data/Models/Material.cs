@@ -32,9 +32,7 @@ namespace WebApi5.Data.Models
     {
         public int id { set; get; }
         public string material_name { set; get; }
-        public string catecory_type { set; get; }
-        public DateTime material_data { set; get; }
-        /*public List<File> files { set; get; }*/
-        public virtual Category Category { set; get; } //Правильно я указываю связь и как заполнять
+        public DateTime material_date { set; get; }
+        public virtual Category Category { set; get; } 
     }
 }

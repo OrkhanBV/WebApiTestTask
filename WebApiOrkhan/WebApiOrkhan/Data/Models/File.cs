@@ -33,9 +33,9 @@ namespace WebApiOrkhan.Data.Models
     { 
         public int id { set; get; }
         public string file_name { set; get; }
-        public long size { set; get; } //I changed the size from int to long
+        public long size { set; get; }
         public string path_of_file { set; get; }
-        public DateTime file_data { get; set; }
+        public DateTime file_date { get; set; }
         
         public virtual Material material { set; get; }
     }

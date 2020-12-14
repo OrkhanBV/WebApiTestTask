@@ -30,10 +30,9 @@ namespace WebApiOrkhan.Data.Models
 {
     public class Category
     {
-        public int id { set; get; }
+        public int id { set; get; } //у нас будет всего три категории поэтому можно по id определять
         public string category_type { set; get; }
         public List<Material> material { set; get; }
-        //public List<File> File { set; get; }
     }
 }
 

@@ -22,7 +22,7 @@ namespace WebApiOrkhan.Controllers
             this.appDBContent = appDbContent;
         }
 
-        public IOrderedEnumerable<Material> FilterMaterialsByDate() => appDBContent.Material.
+        /*public IOrderedEnumerable<Material> FilterMaterialsByDate() => appDBContent.Material.
             ToList().
             OrderByDescending(m => m.material_data);
 
@@ -30,6 +30,6 @@ namespace WebApiOrkhan.Controllers
         public IEnumerable<Material> GetFilterByDate()
         {
             return FilterMaterialsByDate();
-        }
+        }*/
     }
 }

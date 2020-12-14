@@ -28,7 +28,7 @@ namespace WebApiOrkhan.Controllers
             _appEnvironment = appEnvironment;
         }
         
-        public IEnumerable<File> GetLastVersionFiles(int materialId) =>
+        /*public IEnumerable<File> GetLastVersionFiles(int materialId) =>
             appDBContent.File.
                 Where(m => m.material.id == materialId).
                 ToList().
@@ -49,6 +49,6 @@ namespace WebApiOrkhan.Controllers
             // Путь к файлу
             string file_path = Path.Combine(_appEnvironment.ContentRootPath, "AppStorage/" + file_name);
             return PhysicalFile(file_path, file_type, file_name);
-        }
+        }*/
     }
 }

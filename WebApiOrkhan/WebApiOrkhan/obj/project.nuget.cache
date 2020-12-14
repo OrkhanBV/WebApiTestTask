@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "cihadybyH9kSMxPf60EbDF0CGW/4QBewldC4wvMCQXoju9TgYfYNzIzvuVBwjZbNxDAaOr8ObKLjhO0F2jUkag==",
+  "dgSpecHash": "0O+Y0/fselzmp85xU9MifNFKpHPoqPwnS4+vyNWolZBjeb/yUev8AHdkkFqsZs4wrfbsiy/Q8vRODmJPgZQSAQ==",
   "success": true,
   "projectFilePath": "/home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/WebApiOrkhan.csproj",
   "expectedPackageFiles": [
     "/home/orhan/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
+    "/home/orhan/.nuget/packages/m365.system.data.linq/1.0.0/m365.system.data.linq.1.0.0.nupkg.sha512",
     "/home/orhan/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/home/orhan/.nuget/packages/microsoft.entityframeworkcore/5.0.1/microsoft.entityframeworkcore.5.0.1.nupkg.sha512",
     "/home/orhan/.nuget/packages/microsoft.entityframeworkcore.abstractions/5.0.1/microsoft.entityframeworkcore.abstractions.5.0.1.nupkg.sha512",

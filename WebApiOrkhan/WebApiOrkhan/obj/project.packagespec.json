@@ -26,6 +26,10 @@
   "frameworks": {
     "netcoreapp3.1": {
       "dependencies": {
+        "M365.System.Data.Linq": {
+          "target": "Package",
+          "version": "[1.0.0, )"
+        },
         "Microsoft.EntityFrameworkCore": {
           "target": "Package",
           "version": "[5.0.1, )"

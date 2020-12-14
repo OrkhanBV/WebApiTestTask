@@ -21,7 +21,7 @@ namespace WebApiOrkhan.Controllers
         
         private readonly AppDBContent appDBContent;
         private readonly IWebHostEnvironment _appEnvironment;
-        public DownloadFileByIdController (AppDBContent appDbContent, IWebHostEnvironment appEnvironment)
+        public DownloadFileByIdController (AppDBContent appDbContent , IWebHostEnvironment appEnvironment)
         {
             this.appDBContent = appDbContent;
             _appEnvironment = appEnvironment;

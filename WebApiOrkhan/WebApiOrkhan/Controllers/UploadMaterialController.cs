@@ -4,13 +4,19 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.Linq;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Logging;
+using WebApi5.Data.Models;
 using WebApiOrkhan.Controllers.Models;
+using WebApiOrkhan.Data;
+using WebApiOrkhan.Data.Models;
+using File = WebApiOrkhan.Data.Models.File;
 
 /*Еще не определился с реализацией либо
 через модель(с возможностью назвать файл, задать тип файла и т.д.)
@@ -22,25 +28,59 @@ namespace WebApiOrkhan.Controllers
     [Route("/Material/Upload")]*/
     public class UploadMaterialController : Controller
     {
-        private IHostingEnvironment _env;
+        //private IHostingEnvironment _env;
+        private IWebHostEnvironment _env;
         private string _dir;
+        private readonly AppDBContent appDBContent;
         
-        
-        public UploadMaterialController(IHostingEnvironment env)
+        public UploadMaterialController(IWebHostEnvironment env, AppDBContent appDbContent)
         {
             _env = env;
-            _dir = _env.ContentRootPath;
+            _dir = _env.ContentRootPath  + "/AppStorage";
+            this.appDBContent = appDbContent;
         }
+        
         public IActionResult Indexupload() => View();
+        
+        
+        /*Пример как записывать в БД
+            db.TruckTable.AddObject(trucktbl);
+            db.SaveChanges();
+         */
+        
         
         /*[HttpPost]*/
         public IActionResult FileInModel(FormForMaterials FormForMaterials)
         {
-            using (var fileStream = new FileStream(Path.Combine(_dir + "/AppStorage", $"{FormForMaterials.Name}.png"), 
+            /*Попытка реализовать добавление данных в БД, но тут я понял, что усложнил историю с таблицами
+             буду переделывать таблички через миграции 
+             1)нужно переделать табличку с материалами оставить 
+                - убрать список файлов
+                - возможно ссылку на таблицу с категориями (не уверен)
+                - тип категории лишняя информация
+                - категори тайп
+             */
+            appDBContent.Material.Add(
+                new Material
+                {
+                    Category = {id = 1},
+                    catecory_type = "1",
+                    files = List<File>.Add(new File{
+                        file_data = DateTime.Now,
+                        file_name = FormForMaterials.Name,
+                        path_of_file = _dir,
+                        size = FormForMaterials.File.Length
+
+                    }),
+                    material_data = DateTime.Now,
+                    material_name = FormForMaterials.Name
+                });
+        
+               
+            using (var fileStream = new FileStream(Path.Combine(_dir, $"{FormForMaterials.Name}.pdf"), 
                 FileMode.Create, 
                 FileAccess.Write))
             {
-                
                 FormForMaterials.File.CopyTo(fileStream);
             }
             return RedirectToAction("Indexupload");
@@ -57,6 +97,5 @@ namespace WebApiOrkhan.Controllers
             }
             return RedirectToAction("Indexupload");
         }
-        
     }
 }

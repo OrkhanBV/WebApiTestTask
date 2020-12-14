@@ -36,10 +36,11 @@ namespace WebApiOrkhan.Controllers
         /*[HttpPost]*/
         public IActionResult FileInModel(FormForMaterials FormForMaterials)
         {
-            using (var fileStream = new FileStream(Path.Combine(_dir, $"{FormForMaterials.Name}.png"), 
+            using (var fileStream = new FileStream(Path.Combine(_dir + "/AppStorage", $"{FormForMaterials.Name}.png"), 
                 FileMode.Create, 
                 FileAccess.Write))
             {
+                
                 FormForMaterials.File.CopyTo(fileStream);
             }
             return RedirectToAction("Indexupload");

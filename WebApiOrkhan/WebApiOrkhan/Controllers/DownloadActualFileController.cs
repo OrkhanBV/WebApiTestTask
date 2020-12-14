@@ -17,7 +17,9 @@ namespace WebApiOrkhan.Controllers
     public class DownloadActualFileController: Controller
     {
         /*Скачивание актуальной версии материала
-         Я это понял как актульный файл в конкретном материале*/
+         Я это понял как актульный файл в конкретном материале 
+         котоорый мы определяем через materialId*/
+        
         private readonly AppDBContent appDBContent;
         private readonly IWebHostEnvironment _appEnvironment;
         public DownloadActualFileController (AppDBContent appDbContent, IWebHostEnvironment appEnvironment)

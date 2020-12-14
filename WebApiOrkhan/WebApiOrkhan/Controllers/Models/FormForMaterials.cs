@@ -11,6 +11,6 @@ namespace WebApiOrkhan.Controllers.Models
         
         public string MaterialName { get; set; } 
         
-        Возможно и другие данные*/
+        Возможны и другие данные*/
     }
 }

@@ -21,14 +21,14 @@ namespace WebApiOrkhan.Controllers
             this.appDBContent = appDbContent;
         }
 
-        /*public IOrderedEnumerable<Material> FilterMaterialsByDate() => appDBContent.Material.
+        public IOrderedEnumerable<Material> FilterMaterialsByDate() => appDBContent.Materials.
             ToList().
-            OrderByDescending(m => m.material_data);
+            OrderByDescending(m => m.material_date);
 
         [HttpGet]
         public IEnumerable<Material> GetFilterByDate()
         {
             return FilterMaterialsByDate();
-        }*/
+        }
     }
 }

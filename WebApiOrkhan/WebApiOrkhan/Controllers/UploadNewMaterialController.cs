@@ -1,23 +1,19 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Data;
-using System.Data.Linq;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Microsoft.Extensions.Logging;
-//using WebApi5.Data.Models;
 using WebApiOrkhan.Controllers.Models;
 using WebApiOrkhan.Data;
 using WebApiOrkhan.Data.Models;
 using File = WebApiOrkhan.Data.Models.File;
+
+/*
+ 
+ Реализацию один ко многим разобрал на сайте,
+    https://metanit.com/sharp/entityframework/3.7.php
+    
+*/
 
 namespace WebApiOrkhan.Controllers
 {
@@ -54,7 +50,7 @@ namespace WebApiOrkhan.Controllers
                     material_name = FormForMaterials.Name, 
                     category_type = FormForMaterials.CategoryName};
                 //вроде я должен был здесь добавить материал в БД, но когда
-                //делал забыл, но всё равно работает, т.к. добавляю позже при создании файла
+                //делал забыл, но всё равно работает, видимо из-за того что добавляю позже при создании файла
                 appDBContent.SaveChanges();
                 
                 

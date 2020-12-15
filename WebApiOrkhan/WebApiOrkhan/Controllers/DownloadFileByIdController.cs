@@ -1,4 +1,4 @@
-/*using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,11 +6,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApiOrkhan.Data;
-using File = WebApiOrkhan.Data.Models.File;*/
+using File = WebApiOrkhan.Data.Models.File;
 
 /*Скачивание отдельной версии материала.*/
 
-/*
 namespace WebApiOrkhan.Controllers
 {
     [ApiController]
@@ -18,7 +17,9 @@ namespace WebApiOrkhan.Controllers
     public class DownloadFileByIdController : Controller
     {
         /*Скачивание конкретного материала
-         Я это реализовал через подачу конкретных Id#1#
+         1)Можно реализовать по конкретному id file в таблице file
+         2)Нужно создать поле в таблице файлы с порядковым номером версии конкретного материала
+         --можно поробовать реализовать метод который позволит записывать номер версии при загрузке*/
         
         private readonly AppDBContent appDBContent;
         private readonly IWebHostEnvironment _appEnvironment;
@@ -28,16 +29,16 @@ namespace WebApiOrkhan.Controllers
             _appEnvironment = appEnvironment;
         }
         
-        public IEnumerable<File> GetListOfFiles(int materialId) => appDBContent.File.
+        public IEnumerable<File> GetListOfFiles(int materialId) => appDBContent.Files.
             Where(c => c.material.id == materialId).ToList();
 
-        public string NameFile(int materialId, int fileId)
+        public string NameFile(int materialId, int IndexInList)
         {
-            if (appDBContent.Material.Count() >= materialId &&
-                GetListOfFiles(materialId).Count() >= fileId &&
-                materialId >= 0 && 
-                fileId >= 0)
-                return (GetListOfFiles(materialId).Select(f => f.file_name).ToList()[fileId]);
+            if (appDBContent.Materials.Count() >= materialId ||
+                GetListOfFiles(materialId).Count() >= IndexInList ||
+                materialId >= 0 || 
+                IndexInList >= 0)
+                return (GetListOfFiles(materialId).Select(f => f.file_name).ToList()[IndexInList]);
             else
             {
                 //Нужно написать правильное исключение
@@ -48,15 +49,10 @@ namespace WebApiOrkhan.Controllers
         [HttpGet]
         public PhysicalFileResult GetFile(int materialId, int fileId)
         {
-            // Тип файла - content-type, например pdf можно указать универсальный формат
             string file_type = "application/pdf";
-            // Имя файла - необязательно
             string file_name = NameFile(materialId, fileId);
-            // Путь к файлу
-            string file_path = Path.Combine(_appEnvironment.ContentRootPath, "AppStorage/" + file_name);
+            string file_path = Path.Combine(_appEnvironment.ContentRootPath, "AppStorage/" + file_name + ".pdf");
             return PhysicalFile(file_path, file_type, file_name);
-            
-            
         }
     }
-}*/
+}

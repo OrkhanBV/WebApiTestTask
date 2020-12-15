@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using WebApi5.Data.Models;
 using WebApiOrkhan.Data;
 using WebApiOrkhan.Data.Models;
 

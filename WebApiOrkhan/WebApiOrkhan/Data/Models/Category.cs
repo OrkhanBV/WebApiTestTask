@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using WebApi5.Data.Models;
 using WebApiOrkhan.Data.Models;
 
 /***********************************************************************

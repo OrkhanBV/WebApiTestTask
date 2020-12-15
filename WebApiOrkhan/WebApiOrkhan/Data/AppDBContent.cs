@@ -1,6 +1,5 @@
 using System;
 using Microsoft.EntityFrameworkCore;
-using WebApi5.Data.Models;
 using WebApiOrkhan.Data.Models;
 
 namespace WebApiOrkhan.Data

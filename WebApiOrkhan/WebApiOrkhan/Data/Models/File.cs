@@ -25,7 +25,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.Design;
-using WebApi5.Data.Models;
 using WebApiOrkhan.Data.Models;
 
 namespace WebApiOrkhan.Data.Models

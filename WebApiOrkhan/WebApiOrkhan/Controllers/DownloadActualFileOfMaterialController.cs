@@ -1,28 +1,31 @@
-using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using WebApiOrkhan.Data;
-using WebApiOrkhan.Data.Models;
 using File = WebApiOrkhan.Data.Models.File;
 
-/*Скачивание отдельной версии материала.*/
+/*    Скачивание отдельной версии материала.
+    как улучшить ?
+    - разобраться с форматами файлов, хочется чтобы любой считывался
+    - ("AppStorage/" + file_name + ".pdf") это не должно так выглядеть
+    - создать класс DBHandler  в котором будут реализованы все необходимые методы
+    чтобы не прописывать их реализацию непосредственно в контроллерах
+ */
+
+/*
+    Скачивание актуальной версии материала
+    Я это понял как актульный файл в конкретном материале 
+    кототорый мы определяем через materialId
+*/
 
 namespace WebApiOrkhan.Controllers
 {
     [ApiController]
     [Route("/Material/File/DownloadActual/")]
     public class DownloadActualFileController: Controller
-    { 
-    /*
-        Скачивание актуальной версии материала
-        Я это понял как актульный файл в конкретном материале 
-        котоорый мы определяем через materialId
-    */
-        
+    {
         private readonly AppDBContent appDBContent;
         private readonly IWebHostEnvironment _appEnvironment;
         public DownloadActualFileController (AppDBContent appDbContent, IWebHostEnvironment appEnvironment)
@@ -44,11 +47,8 @@ namespace WebApiOrkhan.Controllers
         [HttpGet]
         public PhysicalFileResult GetFile(int mId, int fileId)
         {
-            // Тип файла - content-type, например pdf можно указать универсальный формат
             string file_type = "application/pdf";
-            // Имя файла - необязательно
             string file_name = NameOfActualFile(mId);
-            // Путь к файлу
             string file_path = Path.Combine(_appEnvironment.ContentRootPath, "AppStorage/" + file_name + ".pdf");
             return PhysicalFile(file_path, file_type, file_name);
         }

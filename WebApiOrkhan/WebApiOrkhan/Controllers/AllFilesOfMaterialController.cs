@@ -14,35 +14,38 @@ namespace WebApiOrkhan.Controllers
 {
     [ApiController]
     [Route("/Material/AllFiles")]
-    public class AllFilesOfMaterialController : ControllerBase
+    public class AllFilesOfMaterialByIdController : ControllerBase
     {
         private readonly AppDBContent appDBContent;
 
-        public AllFilesOfMaterialController(AppDBContent appDbContent)
+        public AllFilesOfMaterialByIdController(AppDBContent appDbContent)
         {
             this.appDBContent = appDbContent;
         }
-        /*public IEnumerable<File> GetAllFileInMaterial(int id) => appDBContent.File.Where(c => c.material.id == id).ToList();*/
         
-        /*
-         Сортировка по дате
-         public IEnumerable<File> GetLastVersionFiles(int materialId) =>
-            appDBContent.File.Where(m => m.material.id == materialId).ToList().
-                OrderByDescending(m => m.file_data);*/
-        //public IEnumerable<File> GetFileById(int fileId) => appDBContent.File.Where(c => c.id == fileId).ToList();
+        
+        public IEnumerable<File> OrderAllFilesOfMaterial(int mId) =>
+            appDBContent.Files.Where(m => m.material.id == mId).ToList();
 
-        /*[HttpGet]
-        public IEnumerable<File> Get(int id)
+        [HttpGet]
+        public IEnumerable<File> Get(int mId)
         {
-            /*Из-за условия которое я написал ниже для защиты установки
-            не входящего в диапозон id возникает стронное поведение браузера#1#
-            if (appDBContent.Material.Count() >= id & id != 0)
-                return GetAllFileInMaterial(id);
+           
+            if (appDBContent.Materials.Count() >= mId & mId != 0)
+                return OrderAllFilesOfMaterial(mId);
             else
             { 
-                return null;
+                return null; //Как правильно обработать событие в таком случае??
             }
-        }*/
+        }
+        
+        /*
+        ПРИМЕР СОРТИРОВКИ ПО ДАТЕ
+        public IEnumerable<File> OrderAllFilesOfMaterial(int mId) =>
+            appDBContent.Files.Where(m => m.material.id == mId).ToList().
+                OrderByDescending(f => f.file_date);
+        */
+        
         /*public IEnumerable<string> NameFile()
         {
             return (GetFileById(1).Select(f => f.file_name));

@@ -43,15 +43,22 @@ namespace WebApiOrkhan.Controllers
         /*[HttpPost]*/
         public IActionResult FileInModel(FormForMaterials FormForMaterials)
         {
+            //заменить на кейсы 
             if(FormForMaterials.CategoryName == "Приложение" ||
                FormForMaterials.CategoryName == "Презентация" ||
                FormForMaterials.CategoryName == "Другое")
             {
+                //Создаем материал и сохраняем изменения
                 Material mt1;
                 mt1 = new Material{material_date = DateTime.Now, 
                     material_name = FormForMaterials.Name, 
                     category_type = FormForMaterials.CategoryName};
+                //вроде я должен был здесь добавить материал в БД, но когда
+                //делал забыл, но всё равно работает, т.к. добавляю позже при создании файла
                 appDBContent.SaveChanges();
+                
+                
+                //Создаем файл и
                 File file = new File
                 {
                     file_date = DateTime.Now, 

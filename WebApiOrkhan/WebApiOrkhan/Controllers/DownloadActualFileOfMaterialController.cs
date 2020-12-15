@@ -16,10 +16,12 @@ namespace WebApiOrkhan.Controllers
     [ApiController]
     [Route("/Material/File/DownloadActual/")]
     public class DownloadActualFileController: Controller
-    {
-        /*Скачивание актуальной версии материала
-         Я это понял как актульный файл в конкретном материале 
-         котоорый мы определяем через materialId*/
+    { 
+    /*
+        Скачивание актуальной версии материала
+        Я это понял как актульный файл в конкретном материале 
+        котоорый мы определяем через materialId
+    */
         
         private readonly AppDBContent appDBContent;
         private readonly IWebHostEnvironment _appEnvironment;
@@ -29,26 +31,16 @@ namespace WebApiOrkhan.Controllers
             _appEnvironment = appEnvironment;
         }
 
-        public IEnumerable<File> GetMaterialById(int mId) =>
+        public IEnumerable<File> GetMaterialByIdSortFiles(int mId) =>
             appDBContent.Files.Where(c => c.material.id == mId).
                 ToList().
                 OrderByDescending(m => m.file_date);
 
         public string NameOfActualFile(int mId)
         {
-            return (GetMaterialById(mId).Select(c => c.file_name).ToList()[0]);
+            return (GetMaterialByIdSortFiles(mId).Select(c => c.file_name).ToList()[0]);
         }
-        /*public IEnumerable<File> GetLastVersionFiles(int materialId) =>
-            appDBContent.Files.
-                Where(m => m.material.id == materialId).
-                ToList().
-                OrderByDescending(m => m.file_date);
         
-        public string NameOfActualFile(int materialId)
-        {
-            return (GetLastVersionFiles(materialId).Select(f => f.file_name).ToList()[0]);
-        }*/
-
         [HttpGet]
         public PhysicalFileResult GetFile(int mId, int fileId)
         {

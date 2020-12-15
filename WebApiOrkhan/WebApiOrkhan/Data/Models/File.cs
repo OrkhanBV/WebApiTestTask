@@ -36,8 +36,8 @@ namespace WebApiOrkhan.Data.Models
         public string file_name { set; get; }
         public long size { set; get; }
         public string path_of_file { set; get; }
-        public DateTime file_date { get; set; }
-        
+        public DateTime file_date { set; get; }
+
         public Material material { set; get; }
     }
 }

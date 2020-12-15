@@ -6,7 +6,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApiOrkhan.Data;
-/*using File = WebApiOrkhan.Data.Models.File;*/
+using WebApiOrkhan.Data.Models;
+using File = WebApiOrkhan.Data.Models.File;
 
 /*Скачивание отдельной версии материала.*/
 
@@ -27,28 +28,37 @@ namespace WebApiOrkhan.Controllers
             this.appDBContent = appDbContent;
             _appEnvironment = appEnvironment;
         }
-        
+
+        public IEnumerable<File> GetMaterialById(int mId) =>
+            appDBContent.Files.Where(c => c.material.id == mId).
+                ToList().
+                OrderByDescending(m => m.file_date);
+
+        public string NameOfActualFile(int mId)
+        {
+            return (GetMaterialById(mId).Select(c => c.file_name).ToList()[0]);
+        }
         /*public IEnumerable<File> GetLastVersionFiles(int materialId) =>
-            appDBContent.File.
+            appDBContent.Files.
                 Where(m => m.material.id == materialId).
                 ToList().
-                OrderByDescending(m => m.file_data);
+                OrderByDescending(m => m.file_date);
         
         public string NameOfActualFile(int materialId)
         {
             return (GetLastVersionFiles(materialId).Select(f => f.file_name).ToList()[0]);
-        }
+        }*/
 
         [HttpGet]
-        public PhysicalFileResult GetFile(int materialId, int fileId)
+        public PhysicalFileResult GetFile(int mId, int fileId)
         {
             // Тип файла - content-type, например pdf можно указать универсальный формат
             string file_type = "application/pdf";
             // Имя файла - необязательно
-            string file_name = NameOfActualFile(materialId);
+            string file_name = NameOfActualFile(mId);
             // Путь к файлу
-            string file_path = Path.Combine(_appEnvironment.ContentRootPath, "AppStorage/" + file_name);
+            string file_path = Path.Combine(_appEnvironment.ContentRootPath, "AppStorage/" + file_name + ".pdf");
             return PhysicalFile(file_path, file_type, file_name);
-        }*/
+        }
     }
 }

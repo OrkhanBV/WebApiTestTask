@@ -21,23 +21,23 @@ namespace WebApiOrkhan.Controllers
             this.appDBContent = appDbContent;
         }
 
-        /*public int ShowCountFiles(int materialId) => appDBContent.File.
+        public int ShowCountFiles(int materialId) => appDBContent.Files.
             Where(m => m.material.id == materialId).
             Count();
         
         public IEnumerable<File> GetLastVersionFiles(int materialId) =>
-            appDBContent.File.
+            appDBContent.Files.
                 Where(m => m.material.id == materialId).
                 ToList().
-                OrderByDescending(m => m.file_data);
+                OrderByDescending(m => m.file_date);
         
         [HttpGet]
         public string GetInfo(int materialId)
         {
             int count = ShowCountFiles(materialId);
-            string lastUpdate = GetLastVersionFiles(materialId).Select(f => f.file_data).ToList()[0].ToString();
+            string lastUpdate = GetLastVersionFiles(materialId).Select(f => f.file_date).ToList()[0].ToString();
             return ($"Count ov versions of material = {count} \n" +
                     $"Last update = {lastUpdate}");
-        }*/
+        }
     }
 }

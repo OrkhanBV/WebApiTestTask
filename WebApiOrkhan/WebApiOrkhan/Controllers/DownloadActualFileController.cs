@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApiOrkhan.Data;
-using File = WebApiOrkhan.Data.Models.File;
+/*using File = WebApiOrkhan.Data.Models.File;*/
 
 /*Скачивание отдельной версии материала.*/
 

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using WebApiOrkhan.Data.Models;
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
 
 /***********************************************************************
 ************************************************************************
@@ -29,10 +30,18 @@ https://metanit.com/sharp/mvc/5.1.php
 namespace WebApi5.Data.Models
 {
     public class Material
-    {
+    {         
+        //ДАННОЕ РЕШЕНИЕ ПОЗВОЛИТ МНЕ РЕАЛИЗОВАТЬ АВТОИНКРИМЕНТИРОВАНИЕ И РЕШИТЬ ПРОБЛЕМУ С duplicate key value violates unique constraint
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { set; get; }
         public string material_name { set; get; }
         public DateTime material_date { set; get; }
-        public virtual Category Category { set; get; } 
+        public string category_type { get; set; }
+        public ICollection<File> Files { get; set; }
+        public Material()
+        {
+            Files = new List<File>();
+        }
+        
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using WebApi5.Data.Models;
 using WebApiOrkhan.Data.Models;
 
@@ -26,15 +27,22 @@ https://metanit.com/sharp/mvc/5.1.php
 ************************************************************************/
 
 
-namespace WebApiOrkhan.Data.Models
+/*namespace WebApiOrkhan.Data.Models
 {
     public class Category
     {
+        //[Column(TypeName="SERIAL")] //не сработало
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { set; get; } //у нас будет всего три категории поэтому можно по id определять
-        public string category_type { set; get; }
-        public List<Material> material { set; get; }
+        public string category_name { set; get; }
+        public ICollection<Material> Materials { get; set; }
+        public Category()
+        {
+            Materials = new List<Material>();
+        }
+        //public List<Material> material { set; get; }
     }
-}
+}*/
 
 /*namespace WebApi5.Data.Models
 {

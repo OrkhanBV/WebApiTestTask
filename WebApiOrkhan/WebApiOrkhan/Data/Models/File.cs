@@ -23,6 +23,7 @@ https://metanit.com/sharp/mvc/5.1.php
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.Design;
 using WebApi5.Data.Models;
 using WebApiOrkhan.Data.Models;
@@ -31,12 +32,13 @@ namespace WebApiOrkhan.Data.Models
 {
     public class File
     { 
+            //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { set; get; }
         public string file_name { set; get; }
         public long size { set; get; }
         public string path_of_file { set; get; }
         public DateTime file_date { get; set; }
         
-        public virtual Material material { set; get; }
+        public Material material { set; get; }
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using WebApiOrkhan.Data;
@@ -9,15 +10,31 @@ using WebApiOrkhan.Data;
 namespace WebApiOrkhan.Migrations
 {
     [DbContext(typeof(AppDBContent))]
-    partial class AppDBContentModelSnapshot : ModelSnapshot
+    [Migration("20201215012215_Variant4")]
+    partial class Variant4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .UseIdentityByDefaultColumns()
                 .HasAnnotation("Relational:MaxIdentifierLength", 63)
                 .HasAnnotation("ProductVersion", "5.0.1");
+
+            modelBuilder.Entity("CategoryMaterial", b =>
+                {
+                    b.Property<int>("Categoryid")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Materialsid")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Categoryid", "Materialsid");
+
+                    b.HasIndex("Materialsid");
+
+                    b.ToTable("CategoryMaterial");
+                });
 
             modelBuilder.Entity("WebApi5.Data.Models.Material", b =>
                 {
@@ -26,8 +43,8 @@ namespace WebApiOrkhan.Migrations
                         .HasColumnType("integer")
                         .UseIdentityByDefaultColumn();
 
-                    b.Property<string>("category_type")
-                        .HasColumnType("text");
+                    b.Property<int?>("CategoryId")
+                        .HasColumnType("integer");
 
                     b.Property<DateTime>("material_date")
                         .HasColumnType("timestamp without time zone");
@@ -40,47 +57,34 @@ namespace WebApiOrkhan.Migrations
                     b.ToTable("Materials");
                 });
 
-            modelBuilder.Entity("WebApiOrkhan.Data.Models.File", b =>
+            modelBuilder.Entity("WebApiOrkhan.Data.Models.Category", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .UseIdentityByDefaultColumn();
 
-                    b.Property<DateTime>("file_date")
-                        .HasColumnType("timestamp without time zone");
-
-                    b.Property<string>("file_name")
+                    b.Property<string>("category_name")
                         .HasColumnType("text");
-
-                    b.Property<int?>("materialid")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("path_of_file")
-                        .HasColumnType("text");
-
-                    b.Property<long>("size")
-                        .HasColumnType("bigint");
 
                     b.HasKey("id");
 
-                    b.HasIndex("materialid");
-
-                    b.ToTable("Files");
+                    b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("WebApiOrkhan.Data.Models.File", b =>
+            modelBuilder.Entity("CategoryMaterial", b =>
                 {
-                    b.HasOne("WebApi5.Data.Models.Material", "material")
-                        .WithMany("Files")
-                        .HasForeignKey("materialid");
+                    b.HasOne("WebApiOrkhan.Data.Models.Category", null)
+                        .WithMany()
+                        .HasForeignKey("Categoryid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Navigation("material");
-                });
-
-            modelBuilder.Entity("WebApi5.Data.Models.Material", b =>
-                {
-                    b.Navigation("Files");
+                    b.HasOne("WebApi5.Data.Models.Material", null)
+                        .WithMany()
+                        .HasForeignKey("Materialsid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

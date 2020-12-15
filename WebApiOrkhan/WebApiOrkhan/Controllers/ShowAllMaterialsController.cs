@@ -17,7 +17,7 @@ namespace WebApiOrkhan.Controllers
             this.appDBContent = appDbContent;
         }
 
-        public IEnumerable<Material> GetAllMaterials => appDBContent.Material.ToList();
+        public IEnumerable<Material> GetAllMaterials => appDBContent.Materials.ToList();
         
         [HttpGet]
         public IEnumerable<Material> Get()

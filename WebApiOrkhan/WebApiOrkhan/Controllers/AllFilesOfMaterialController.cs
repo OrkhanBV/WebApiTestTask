@@ -23,7 +23,7 @@ namespace WebApiOrkhan.Controllers
         {
             this.appDBContent = appDbContent;
         }
-        public IEnumerable<File> GetAllFileInMaterial(int id) => appDBContent.File.Where(c => c.material.id == id).ToList();
+        /*public IEnumerable<File> GetAllFileInMaterial(int id) => appDBContent.File.Where(c => c.material.id == id).ToList();*/
         
         /*
          Сортировка по дате
@@ -32,18 +32,18 @@ namespace WebApiOrkhan.Controllers
                 OrderByDescending(m => m.file_data);*/
         //public IEnumerable<File> GetFileById(int fileId) => appDBContent.File.Where(c => c.id == fileId).ToList();
 
-        [HttpGet]
+        /*[HttpGet]
         public IEnumerable<File> Get(int id)
         {
             /*Из-за условия которое я написал ниже для защиты установки
-            не входящего в диапозон id возникает стронное поведение браузера*/
+            не входящего в диапозон id возникает стронное поведение браузера#1#
             if (appDBContent.Material.Count() >= id & id != 0)
                 return GetAllFileInMaterial(id);
             else
             { 
                 return null;
             }
-        }
+        }*/
         /*public IEnumerable<string> NameFile()
         {
             return (GetFileById(1).Select(f => f.file_name));

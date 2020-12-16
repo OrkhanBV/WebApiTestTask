@@ -12,8 +12,7 @@ using File = WebApiOrkhan.Data.Models.File;
     - ("AppStorage/" + file_name + ".pdf") это не должно так выглядеть
     - создать класс DBHandler  в котором будут реализованы все необходимые методы
     чтобы не прописывать их реализацию непосредственно в контроллерах
- */
-
+*/
 /*
     Скачивание актуальной версии материала
     Я это понял как актульный файл в конкретном материале 
@@ -49,7 +48,7 @@ namespace WebApiOrkhan.Controllers
         {
             string file_type = "application/pdf";
             string file_name = NameOfActualFile(mId);
-            string file_path = Path.Combine(_appEnvironment.ContentRootPath, "AppStorage/" + file_name + ".pdf");
+            string file_path = Path.Combine(_appEnvironment.ContentRootPath, "AppStorage/" + file_name + ".pdf"); 
             return PhysicalFile(file_path, file_type, file_name);
         }
     }

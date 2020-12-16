@@ -60,3 +60,4 @@
 /home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/bin/Debug/netcoreapp3.1/System.Net.Http.Formatting.dll
 /home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
 /home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/bin/Debug/netcoreapp3.1/Newtonsoft.Json.Bson.dll
+/home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/obj/Debug/netcoreapp3.1/Razor/Views/UploadVersion/UploadVersion.cshtml.g.cs

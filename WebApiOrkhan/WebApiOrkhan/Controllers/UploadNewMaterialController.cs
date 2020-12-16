@@ -17,8 +17,8 @@ using File = WebApiOrkhan.Data.Models.File;
 
 namespace WebApiOrkhan.Controllers
 {
-    [ApiController]
-    [Route("/Material/Upload")]
+    /*[ApiController]
+    [Route("/Material/Upload")]*/
     public class UploadMaterialController : Controller
     {
         //private IHostingEnvironment _env;
@@ -85,5 +85,6 @@ namespace WebApiOrkhan.Controllers
             return RedirectToAction("Indexupload");
             
         }
+        
     }
 }

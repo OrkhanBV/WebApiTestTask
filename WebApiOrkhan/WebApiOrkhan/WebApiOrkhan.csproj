@@ -20,4 +20,8 @@
       <_ContentIncludedByDefault Remove="Pages\UploadMaterial\Index.cshtml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="AppStorage" />
+    </ItemGroup>
+
 </Project>

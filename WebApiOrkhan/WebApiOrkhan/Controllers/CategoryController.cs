@@ -16,18 +16,12 @@ namespace WebApiOrkhan.Controllers
         {
             this.appDBContent = appDbContent;
         }
-
-        Material SelectMaterialsById(int mId)
+        
+        //Вопрос какой запрос у меня здесь должен быть по хорошему Get или Put и так далее
+        [HttpGet("CategoryType")] //По рекомендации Димы!! Заработало спасибо!
+        public Material ChangeCategoryType(int mId) //Для теста сырая версия!!
         {
             var mat = appDBContent.Materials.Where(m => m.id == mId).FirstOrDefault();
-            return mat;
-        }
-            
-        
-        [HttpGet("CategoryType")] //По рекомендации Димы!! Заработало спасибо!
-        public Material ChangeCategoryType(int mId)
-        {
-            var mat = SelectMaterialsById(mId);
             mat.category_type = "Преза"; ///Заменяем на Enum и в БД тоже,
             appDBContent.SaveChanges();
             return mat;

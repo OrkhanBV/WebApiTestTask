@@ -61,3 +61,9 @@
 /home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/bin/Debug/netcoreapp3.1/Newtonsoft.Json.dll
 /home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/bin/Debug/netcoreapp3.1/Newtonsoft.Json.Bson.dll
 /home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/obj/Debug/netcoreapp3.1/Razor/Views/UploadVersion/UploadVersion.cshtml.g.cs
+/home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/bin/Debug/netcoreapp3.1/Microsoft.OpenApi.dll
+/home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.Swagger.dll
+/home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.SwaggerGen.dll
+/home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/bin/Debug/netcoreapp3.1/Swashbuckle.AspNetCore.SwaggerUI.dll
+/home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/obj/Debug/netcoreapp3.1/WebApiOrkhan.MvcApplicationPartsAssemblyInfo.cs
+/home/orhan/Desktop/WEB_FIN/WebApiOrkhan/WebApiOrkhan/bin/Debug/netcoreapp3.1/Microsoft.IO.RecyclableMemoryStream.dll

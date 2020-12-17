@@ -21,39 +21,31 @@ namespace WebApiOrkhan.Controllers
     [Route("/Material/Upload")]*/
     public class UploadMaterialController : Controller
     {
-        //private IHostingEnvironment _env;
         private IWebHostEnvironment _env;
         private string _dir;
         private readonly AppDBContent appDBContent;
-        
-        
         public UploadMaterialController(IWebHostEnvironment env, AppDBContent appDbContent)
         {
             _env = env;
             _dir = _env.ContentRootPath  + "/AppStorage";
             this.appDBContent = appDbContent;
         }
-        
         public IActionResult Indexupload() => View();
         
         [HttpPost]
         public IActionResult FileInModel(FormForMaterials FormForMaterials)
         {
-            //заменить на кейсы 
+            //заменить на Enum
             if(FormForMaterials.CategoryName == "Приложение" ||
                FormForMaterials.CategoryName == "Презентация" ||
                FormForMaterials.CategoryName == "Другое")
             {
-                //Создаем материал и сохраняем изменения
+                //Создаем материал и сохраняем изменения в BD
                 Material mt1;
                 mt1 = new Material{material_date = DateTime.Now, 
                     material_name = FormForMaterials.Name, 
                     category_type = FormForMaterials.CategoryName};
-                //вроде я должен был здесь добавить материал в БД, но когда
-                //делал забыл, но всё равно работает, видимо из-за того что добавляю позже при создании файла
                 appDBContent.SaveChanges();
-                
-                
                 //Создаем файл и
                 File file = new File
                 {
@@ -71,10 +63,6 @@ namespace WebApiOrkhan.Controllers
                 return BadRequest("WRONG TYPE OF CATEGORY");
             }
             using (var fileStream = new FileStream(
-                /*Path.Combine(_dir,
-                    $"{FormForMaterials.Name}{FormForMaterials.File.FileName.Substring(FormForMaterials.File.FileName.LastIndexOf('.'))}"), //path.GetExtension() <-плохо работает с формами
-                FileMode.Create, 
-                FileAccess.Write))*/
                 Path.Combine(_dir,
                     $"{FormForMaterials.Name}{Path.GetExtension(FormForMaterials.File.FileName)}"),
                 FileMode.Create, 
@@ -83,8 +71,6 @@ namespace WebApiOrkhan.Controllers
                 FormForMaterials.File.CopyTo(fileStream);
             }
             return RedirectToAction("Indexupload");
-            
         }
-        
     }
 }

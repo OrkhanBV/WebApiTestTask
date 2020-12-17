@@ -73,7 +73,7 @@ namespace WebApiOrkhan
             */
             
             app.UseRouting();
-            app.UseAuthorization(); //НАЧИНАЮ РЕАЛИЗАЦИЮПО КНИГЕ АДАМА ФРИМАНА MVC CORE 2 с примерами для Профссионалов
+            app.UseAuthorization();
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();
             

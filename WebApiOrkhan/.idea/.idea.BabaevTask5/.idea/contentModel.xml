@@ -31,6 +31,13 @@
           </e>
         </e>
         <e p="MaterialStorage" t="Include">
+          <e p="Mat1_Version1_version.png" t="Include" />
+          <e p="Mat1_Version2_version.png" t="Include" />
+          <e p="Mat1_Version3_version.png" t="Include" />
+          <e p="Mat1_Version4_version.png" t="Include" />
+          <e p="Mat1_Version5_version.png" t="Include" />
+          <e p="Mat1_Version6_version.png" t="Include" />
+          <e p="Mat2_Version1_version.png" t="Include" />
           <e p="Material_1.png" t="Include" />
           <e p="Material_2.png" t="Include" />
           <e p="Material_3.png" t="Include" />

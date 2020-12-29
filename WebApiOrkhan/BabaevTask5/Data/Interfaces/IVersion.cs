@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using BabaevTask5.Controllers.Models;
@@ -17,7 +18,8 @@ namespace BabaevTask5.Data.Interfaces
         public IOrderedEnumerable<MaterialVersion> FilterVersionsByType { get; set; }//
         
         /*Upload & Download version of material*/
-        public IActionResult UploadNewVersionOfMaterial(FormForVersion formForVersion);
+        /*public IActionResult UploadNewVersionOfMaterial(FormForVersion formForVersion);*/
+        public Guid UploadNewVersionOfMaterial(FormForVersion formForVersion);
         /*public PhysicalFileResult DownloadFirstVersionByMaterialId { get; set; }
         public PhysicalFileResult DownloadLastVersionByMaterialId { get; set; }
         public PhysicalFileResult DownloadConcreteVersionByMaterialIdByVersionId { get; set; }*/

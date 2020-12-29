@@ -18,7 +18,7 @@ namespace BabaevTask5.Controllers
         [HttpPost]
         public IActionResult UploadVersion(FormForVersion formForVersion)
         {
-            _iVersion.UploadNewVersionOfMaterial(formForVersion);
+            var verId = _iVersion.UploadNewVersionOfMaterial(formForVersion);
             return RedirectToAction("UploadVersion");
         }
         

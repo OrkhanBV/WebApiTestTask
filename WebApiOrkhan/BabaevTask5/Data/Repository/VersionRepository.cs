@@ -49,8 +49,9 @@ namespace BabaevTask5.Data.Repository
             set => throw new System.NotImplementedException();
         }
 
-        public IActionResult UploadNewVersionOfMaterial(FormForVersion formForVersion)
+        public Guid UploadNewVersionOfMaterial(FormForVersion formForVersion)
         {
+            
             Data.Models.MaterialVersion f1 = new MaterialVersion
             {
                 FileDate = DateTime.Now,
@@ -59,13 +60,6 @@ namespace BabaevTask5.Data.Repository
                 Size = formForVersion.File.Length,
                 Material = appDbContent.Materials.Where(m => m.Id == formForVersion.MaterialId).ToList()[0]////////
             };
-            //вроде я должен был здесь добавить материал в БД, но когда
-            //делал забыл, но всё равно работает, видимо из-за того что добавляю позже при создании файла
-            appDbContent.SaveChanges();
-                
-            appDbContent.MaterialVersions.AddRange(new List<MaterialVersion>{f1});
-            appDbContent.SaveChanges();
-         
             using (var fileStream = new FileStream(
                 Path.Combine(_dir,
                     $"{formForVersion.Name}_version{Path.GetExtension(formForVersion.File.FileName)}"),
@@ -74,8 +68,12 @@ namespace BabaevTask5.Data.Repository
             {
                 formForVersion.File.CopyTo(fileStream);
             }
-            //return RedirectToAction("UploadVersion");
-            return null;
+            appDbContent.MaterialVersions.AddRange(new List<MaterialVersion>{f1});
+            appDbContent.SaveChanges();
+
+            Guid GetVersionId() => appDbContent.MaterialVersions
+                .Where(v => v == f1).SingleOrDefault().Id;
+            return GetVersionId();
         }
 
         public PhysicalFileResult DownloadFirstVersionByMaterialId

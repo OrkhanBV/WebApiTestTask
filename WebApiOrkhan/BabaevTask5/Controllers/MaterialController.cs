@@ -15,6 +15,7 @@ namespace BabaevTask5.Controllers
     {
         
         private readonly IMaterialHandler _materialHandler;
+        public IActionResult Indexupload() => View();
 
         public MaterialController(IMaterialHandler iMaterialHandler)
         {
@@ -25,6 +26,19 @@ namespace BabaevTask5.Controllers
         public IEnumerable<Material> ShowMaterialsByDate()
         {
             return _materialHandler.FilterMaterialsByDate;
+        }
+
+        [HttpGet("ByType")]
+        public IEnumerable<Material> ShowMaterialsByType(string type)
+        {
+            return _materialHandler.FilterMaterialByType(type);
+        }
+        
+        [HttpPost("Upload")]
+        public IActionResult UploadMaterial(FormForMaterials formForMaterials)
+        {
+            _materialHandler.UploadNewMaterial(formForMaterials);
+            return RedirectToAction("Indexupload");
         }
         
     }

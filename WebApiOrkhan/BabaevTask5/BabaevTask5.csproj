@@ -20,4 +20,8 @@
       <Folder Include="MaterialStorage" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Views\UploadMaterial\Indexupload.cshtml" />
+    </ItemGroup>
+
 </Project>

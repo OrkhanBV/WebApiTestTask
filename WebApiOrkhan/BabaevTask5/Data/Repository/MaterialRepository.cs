@@ -9,6 +9,7 @@ using BabaevTask5.Controllers.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.VisualBasic;
 
 namespace BabaevTask5.Data.Repository
 {
@@ -31,28 +32,59 @@ namespace BabaevTask5.Data.Repository
             set => throw new NotImplementedException();
         }
 
-        /*IOrderedEnumerable<Material> IMaterialHandler.FilterMaterialsByDate
+        public List<Material> FilterMaterialByType(string type)
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
-        }*/
-
-        /*public IOrderedEnumerable<Material> FilterMaterialsBySize
-        {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            if(type == "Другое" || type == "Приложение" || type == "Презентация")
+                return appDbContent.Materials.Where(m => m.CategoryType == type).ToList();
+            else
+            {
+                return null;
+            }
         }
 
-        public IOrderedEnumerable<Material> FilterMaterialByType
+        public IActionResult UploadNewMaterial(FormForMaterials formMaterials)
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
+            if(formMaterials.CategoryName == "Приложение" ||
+               formMaterials.CategoryName == "Презентация" ||
+               formMaterials.CategoryName == "Другое")
+            {
+                //Создаем материал и сохраняем изменения в BD
+                Material mt1;
+                mt1 = new Material{MaterialDate = DateTime.Now, 
+                    MaterialName = formMaterials.Name, 
+                    CategoryType = formMaterials.CategoryName};
+                appDbContent.SaveChanges();
+                //Создаем файл и
+                MaterialVersion version = new MaterialVersion
+                {
+                    FileDate = DateTime.Now, 
+                    Material = mt1, 
+                    FileName = formMaterials.Name, 
+                    Size = formMaterials.File.Length, 
+                    PathOfFile = _dir
+                };
+                appDbContent.MaterialVersions.AddRange(new List<MaterialVersion>{version});
+                appDbContent.SaveChanges();
+            }
+            else
+            {
+                return null;
+            }
+            using (var fileStream = new FileStream(
+                Path.Combine(_dir,
+                    $"{formMaterials.Name}{Path.GetExtension(formMaterials.File.FileName)}"),
+                FileMode.Create, 
+                FileAccess.Write))
+            {
+                formMaterials.File.CopyTo(fileStream);
+            }
+            return null;
         }
 
-        public IEnumerable<Material> FilterOnlyFirstVersionMaterial
+        public IEnumerable<Material> FilterOnlyFirstVersionMaterial(int id)
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
-        }*/
+            throw new NotImplementedException();
+        }
+
     }
 }

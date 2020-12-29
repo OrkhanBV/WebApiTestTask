@@ -36,7 +36,8 @@ namespace BabaevTask5
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AppDbContent>(options => options.UseNpgsql(_confString.GetConnectionString("DefaultConnection")));
-            services.AddTransient<IMaterialHandler, MaterialRepository>();
+            services.AddTransient<IMaterial, MaterialRepository>();
+            //services.AddTransient<MaterialStorageSettings>();
             
             /*services.AddScoped<IMaterialHandler, MaterialRepository>();*/
             services.AddControllersWithViews();

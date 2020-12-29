@@ -17,10 +17,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="MaterialStorage" />
-    </ItemGroup>
-
-    <ItemGroup>
       <_ContentIncludedByDefault Remove="Views\UploadMaterial\Indexupload.cshtml" />
       <_ContentIncludedByDefault Remove="Pages\MaterialRepository\Indexupload.cshtml" />
     </ItemGroup>

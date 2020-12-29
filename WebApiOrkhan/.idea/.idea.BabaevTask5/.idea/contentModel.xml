@@ -18,8 +18,8 @@
         <e p="Data" t="Include">
           <e p="AppDBContent.cs" t="Include" />
           <e p="Interfaces" t="Include">
-            <e p="IMaterialHandler.cs" t="Include" />
-            <e p="IVersionHandler.cs" t="Include" />
+            <e p="IMaterial.cs" t="Include" />
+            <e p="IVersion.cs" t="Include" />
           </e>
           <e p="Models" t="Include">
             <e p="Material.cs" t="Include" />
@@ -27,6 +27,7 @@
           </e>
           <e p="Repository" t="Include">
             <e p="MaterialRepository.cs" t="Include" />
+            <e p="VersionRepository.cs" t="Include" />
           </e>
         </e>
         <e p="MaterialStorage" t="Include">

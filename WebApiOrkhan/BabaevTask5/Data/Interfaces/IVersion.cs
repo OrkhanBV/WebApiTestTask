@@ -1,11 +1,12 @@
 using System.Collections.Generic;
 using System.Linq;
+using BabaevTask5.Controllers.Models;
 using BabaevTask5.Data.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BabaevTask5.Data.Interfaces
 {
-    public interface IVersionHandler
+    public interface IVersion
     {
         /*Info for versions*/
         public string GetInfoAboutMaterialVersion { get; set; }
@@ -16,7 +17,7 @@ namespace BabaevTask5.Data.Interfaces
         public IOrderedEnumerable<MaterialVersion> FilterVersionsByType { get; set; }//
         
         /*Upload & Download version of material*/
-        public IActionResult UploadNewVersionOfMaterial { get; set; }
+        public IActionResult UploadNewVersionOfMaterial(FormForVersion formForVersion);
         public PhysicalFileResult DownloadFirstVersionByMaterialId { get; set; }
         public PhysicalFileResult DownloadLastVersionByMaterialId { get; set; }
         public PhysicalFileResult DownloadConcreteVersionByMaterialIdByVersionId { get; set; }

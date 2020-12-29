@@ -29,8 +29,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8fefc81-844c-4984-b07b-07a6e7026822" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/BabaevTask5/Data/Repository/VersionRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BabaevTask5/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BabaevTask5/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BabaevTask5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BabaevTask5/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BabaevTask5/BabaevTask5.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/BabaevTask5.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BabaevTask5/Pages/MaterialRepository/Indexupload.cshtml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BabaevTask5/Controllers/MaterialController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/Controllers/MaterialController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BabaevTask5/Data/Interfaces/IMaterialHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/Data/Interfaces/IMaterial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BabaevTask5/Data/Interfaces/IVersionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/Data/Interfaces/IVersion.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BabaevTask5/Data/Repository/MaterialRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/Data/Repository/MaterialRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BabaevTask5/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BabaevTask5/bin/Debug/netcoreapp3.1/BabaevTask5.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/bin/Debug/netcoreapp3.1/BabaevTask5.Views.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BabaevTask5/bin/Debug/netcoreapp3.1/BabaevTask5.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/bin/Debug/netcoreapp3.1/BabaevTask5.Views.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BabaevTask5/bin/Debug/netcoreapp3.1/BabaevTask5.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/bin/Debug/netcoreapp3.1/BabaevTask5.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BabaevTask5/bin/Debug/netcoreapp3.1/BabaevTask5.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/bin/Debug/netcoreapp3.1/BabaevTask5.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.Views.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.Views.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,9 +68,14 @@
         <option value="$PROJECT_DIR$/BabaevTask5/Controllers/UploadMaterialController.cs" />
         <option value="$PROJECT_DIR$/BabaevTask5/Views/Shared/_Layout.cshtml" />
         <option value="$PROJECT_DIR$/BabaevTask5/Views/UploadMaterial/Indexupload.cshtml" />
-        <option value="$PROJECT_DIR$/BabaevTask5/Data/Repository/MaterialRepository.cs" />
         <option value="$PROJECT_DIR$/BabaevTask5/Data/Interfaces/IMaterialHandler.cs" />
+        <option value="$PROJECT_DIR$/BabaevTask5/Data/Interfaces/IVersion.cs" />
+        <option value="$PROJECT_DIR$/BabaevTask5/Data/Repository/VersionRepository.cs" />
+        <option value="$PROJECT_DIR$/BabaevTask5/MaterialStorage/StoregeSettings/MaterialStorageSettings.cs" />
+        <option value="$PROJECT_DIR$/BabaevTask5/Startup.cs" />
+        <option value="$PROJECT_DIR$/BabaevTask5/Data/Interfaces/IMaterial.cs" />
         <option value="$PROJECT_DIR$/BabaevTask5/Controllers/MaterialController.cs" />
+        <option value="$PROJECT_DIR$/BabaevTask5/Data/Repository/MaterialRepository.cs" />
       </list>
     </option>
   </component>
@@ -67,6 +88,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../WEB_FIN/WebApiOrkhan" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -110,14 +132,16 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1609211465546</updated>
-      <workItem from="1609211473488" duration="7352000" />
+      <workItem from="1609211473488" duration="7582000" />
+      <workItem from="1609231055810" duration="1056000" />
+      <workItem from="1609252551963" duration="12238000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -141,30 +165,39 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1324" height="176" key="GridCell.Tab.0.bottom" timestamp="1609218801880">
+    <state x="466" y="126" width="424" height="483" key="FileChooserDialogImpl" timestamp="1609263027268">
       <screen x="0" y="0" width="1366" height="737" />
     </state>
-    <state width="1324" height="176" key="GridCell.Tab.0.bottom/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1609218801880" />
-    <state width="1324" height="176" key="GridCell.Tab.0.center" timestamp="1609218801880">
+    <state x="466" y="126" width="424" height="483" key="FileChooserDialogImpl/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1609263027268" />
+    <state width="662" height="175" key="GridCell.Tab.0.bottom" timestamp="1609278680595">
       <screen x="0" y="0" width="1366" height="737" />
     </state>
-    <state width="1324" height="176" key="GridCell.Tab.0.center/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1609218801880" />
-    <state width="1324" height="176" key="GridCell.Tab.0.left" timestamp="1609218801880">
+    <state width="662" height="175" key="GridCell.Tab.0.bottom/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1609278680595" />
+    <state width="1238" height="270" key="GridCell.Tab.0.bottom/0.0.1366.737/1366.0.1280.1024@1366.0.1280.1024" timestamp="1609240122474" />
+    <state width="662" height="175" key="GridCell.Tab.0.center" timestamp="1609278680595">
       <screen x="0" y="0" width="1366" height="737" />
     </state>
-    <state width="1324" height="176" key="GridCell.Tab.0.left/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1609218801880" />
-    <state width="1324" height="176" key="GridCell.Tab.0.right" timestamp="1609218801880">
+    <state width="662" height="175" key="GridCell.Tab.0.center/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1609278680595" />
+    <state width="1238" height="270" key="GridCell.Tab.0.center/0.0.1366.737/1366.0.1280.1024@1366.0.1280.1024" timestamp="1609240122474" />
+    <state width="662" height="175" key="GridCell.Tab.0.left" timestamp="1609278680595">
       <screen x="0" y="0" width="1366" height="737" />
     </state>
-    <state width="1324" height="176" key="GridCell.Tab.0.right/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1609218801880" />
-    <state x="439" y="77" width="477" height="582" key="RiderGenerateDialog" timestamp="1609213034474">
+    <state width="662" height="175" key="GridCell.Tab.0.left/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1609278680595" />
+    <state width="1238" height="270" key="GridCell.Tab.0.left/0.0.1366.737/1366.0.1280.1024@1366.0.1280.1024" timestamp="1609240122474" />
+    <state width="662" height="175" key="GridCell.Tab.0.right" timestamp="1609278680595">
       <screen x="0" y="0" width="1366" height="737" />
     </state>
-    <state x="439" y="77" width="477" height="582" key="RiderGenerateDialog/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1609213034474" />
+    <state width="662" height="175" key="GridCell.Tab.0.right/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1609278680595" />
+    <state width="1238" height="270" key="GridCell.Tab.0.right/0.0.1366.737/1366.0.1280.1024@1366.0.1280.1024" timestamp="1609240122474" />
+    <state x="439" y="77" width="477" height="582" key="RiderGenerateDialog" timestamp="1609259957713">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state x="439" y="77" width="477" height="582" key="RiderGenerateDialog/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1609259957713" />
   </component>
 </project>

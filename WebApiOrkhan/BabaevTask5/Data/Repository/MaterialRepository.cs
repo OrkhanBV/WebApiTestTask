@@ -5,15 +5,17 @@ using System.Linq;
 using BabaevTask5.Data.Interfaces;
 using BabaevTask5.Data.Models;
 using System.Linq;
+using System.Linq.Expressions;
 using BabaevTask5.Controllers.Models;
 using Microsoft.AspNetCore.Hosting;
+//using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.VisualBasic;
 
 namespace BabaevTask5.Data.Repository
 {
-    public class MaterialRepository : IMaterialHandler
+    public class MaterialRepository : IMaterial
     {
         private AppDbContent appDbContent;
         private IWebHostEnvironment _env;
@@ -54,9 +56,54 @@ namespace BabaevTask5.Data.Repository
                      $"Last update = {lastUpdate}");
         }
         
-        
-
         public IActionResult UploadNewMaterial(FormForMaterials formMaterials)
+        {
+            if(formMaterials.CategoryName == "Приложение" ||
+               formMaterials.CategoryName == "Презентация" ||
+               formMaterials.CategoryName == "Другое")
+            {
+                //Создаем материал и сохраняем изменения в BD
+                Material mt1;
+                mt1 = new Material{MaterialDate = DateTime.Now, 
+                    MaterialName = formMaterials.Name, 
+                    CategoryType = formMaterials.CategoryName};
+                //appDbContent.SaveChanges();
+                //Создаем файл и
+                MaterialVersion version = new MaterialVersion
+                {
+                    FileDate = DateTime.Now, 
+                    Material = mt1, 
+                    FileName = formMaterials.Name, 
+                    Size = formMaterials.File.Length, 
+                    PathOfFile = _dir
+                };
+                using (var fileStream = new FileStream(
+                    Path.Combine(_dir,
+                        $"{formMaterials.Name}{Path.GetExtension(formMaterials.File.FileName)}"),
+                    FileMode.Create, 
+                    FileAccess.Write))
+                {
+                    formMaterials.File.CopyTo(fileStream);
+                }
+                appDbContent.MaterialVersions.AddRange(new List<MaterialVersion>{version});
+                appDbContent.SaveChanges();
+            }
+            else
+            {
+                return null;
+            }
+            /*using (var fileStream = new FileStream(
+                Path.Combine(_dir,
+                    $"{formMaterials.Name}{Path.GetExtension(formMaterials.File.FileName)}"),
+                FileMode.Create, 
+                FileAccess.Write))
+            {
+                formMaterials.File.CopyTo(fileStream);
+            }*/
+            return null;
+        }
+
+        /*public IActionResult UploadNewMaterial(FormForMaterials formMaterials)
         {
             if(formMaterials.CategoryName == "Приложение" ||
                formMaterials.CategoryName == "Презентация" ||
@@ -93,8 +140,8 @@ namespace BabaevTask5.Data.Repository
                 formMaterials.File.CopyTo(fileStream);
             }
             return null;
-        }
-        
+        }*/
+
 
     }
 }

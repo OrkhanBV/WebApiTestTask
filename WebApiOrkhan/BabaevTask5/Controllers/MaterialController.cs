@@ -15,18 +15,18 @@ namespace BabaevTask5.Controllers
     public class MaterialController : Controller
     {
         
-        private readonly IMaterialHandler _materialHandler;
+        private readonly IMaterial _imaterial;
         public IActionResult Indexupload() => View();
 
-        public MaterialController(IMaterialHandler iMaterialHandler)
+        public MaterialController(IMaterial iMaterial)
         {
-            _materialHandler = iMaterialHandler;
+            _imaterial = iMaterial;
         }
 
         [HttpGet("ByDate")]
         public IEnumerable<Material> ShowMaterialsByDate()
         {
-            return _materialHandler.FilterMaterialsByDate;
+            return _imaterial.FilterMaterialsByDate;
         }
         
         /*Пример https://localhost:5001/Material/ByType?type=другое*/
@@ -34,19 +34,19 @@ namespace BabaevTask5.Controllers
         [HttpGet("ByType")]
         public IEnumerable<Material> ShowMaterialsByType(string type)
         {
-            return _materialHandler.FilterMaterialByType(type);
+            return _imaterial.FilterMaterialByType(type);
         }
-
+        //пример https://localhost:5001/Material/Info/?id=86306de9-b97c-4c6c-b94a-7bfa61fccb0f
         [HttpGet("Info")]
         public string ShowInfo(Guid id)
         {
-            return _materialHandler.GetInfoAboutMaterial(id);
+            return _imaterial.GetInfoAboutMaterial(id);
         }
 
         [HttpPost]
         public IActionResult UploadMaterial(FormForMaterials formForMaterials)
         {
-            _materialHandler.UploadNewMaterial(formForMaterials);
+            _imaterial.UploadNewMaterial(formForMaterials);
             return RedirectToAction("Indexupload");
         }
         

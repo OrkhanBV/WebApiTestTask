@@ -29,23 +29,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8fefc81-844c-4984-b07b-07a6e7026822" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BabaevTask5/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BabaevTask5/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BabaevTask5/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BabaevTask5/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BabaevTask5/Controllers/MaterialController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/Controllers/MaterialController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BabaevTask5/Data/Interfaces/IMaterialHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/Data/Interfaces/IMaterialHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BabaevTask5/Data/Repository/MaterialRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/Data/Repository/MaterialRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BabaevTask5/bin/Debug/netcoreapp3.1/BabaevTask5.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/bin/Debug/netcoreapp3.1/BabaevTask5.Views.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BabaevTask5/bin/Debug/netcoreapp3.1/BabaevTask5.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/bin/Debug/netcoreapp3.1/BabaevTask5.Views.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BabaevTask5/bin/Debug/netcoreapp3.1/BabaevTask5.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/bin/Debug/netcoreapp3.1/BabaevTask5.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BabaevTask5/bin/Debug/netcoreapp3.1/BabaevTask5.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/bin/Debug/netcoreapp3.1/BabaevTask5.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.RazorCoreGenerate.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.RazorCoreGenerate.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.Views.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.Views.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.Views.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.Views.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.dll" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BabaevTask5/obj/Debug/netcoreapp3.1/Razor/Views/UploadMaterial/Indexupload.cshtml.g.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BabaevTask5/BabaevTask5.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/BabaevTask5/BabaevTask5.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BabaevTask5/Pages/MaterialRepository/Indexupload.cshtml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +110,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1609211465546</updated>
-      <workItem from="1609211473488" duration="6297000" />
+      <workItem from="1609211473488" duration="7352000" />
     </task>
     <servers />
   </component>
@@ -161,22 +146,22 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1324" height="176" key="GridCell.Tab.0.bottom" timestamp="1609218256011">
+    <state width="1324" height="176" key="GridCell.Tab.0.bottom" timestamp="1609218801880">
       <screen x="0" y="0" width="1366" height="737" />
     </state>
-    <state width="1324" height="176" key="GridCell.Tab.0.bottom/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1609218256011" />
-    <state width="1324" height="176" key="GridCell.Tab.0.center" timestamp="1609218256011">
+    <state width="1324" height="176" key="GridCell.Tab.0.bottom/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1609218801880" />
+    <state width="1324" height="176" key="GridCell.Tab.0.center" timestamp="1609218801880">
       <screen x="0" y="0" width="1366" height="737" />
     </state>
-    <state width="1324" height="176" key="GridCell.Tab.0.center/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1609218256011" />
-    <state width="1324" height="176" key="GridCell.Tab.0.left" timestamp="1609218256011">
+    <state width="1324" height="176" key="GridCell.Tab.0.center/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1609218801880" />
+    <state width="1324" height="176" key="GridCell.Tab.0.left" timestamp="1609218801880">
       <screen x="0" y="0" width="1366" height="737" />
     </state>
-    <state width="1324" height="176" key="GridCell.Tab.0.left/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1609218256011" />
-    <state width="1324" height="176" key="GridCell.Tab.0.right" timestamp="1609218256011">
+    <state width="1324" height="176" key="GridCell.Tab.0.left/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1609218801880" />
+    <state width="1324" height="176" key="GridCell.Tab.0.right" timestamp="1609218801880">
       <screen x="0" y="0" width="1366" height="737" />
     </state>
-    <state width="1324" height="176" key="GridCell.Tab.0.right/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1609218256011" />
+    <state width="1324" height="176" key="GridCell.Tab.0.right/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1609218801880" />
     <state x="439" y="77" width="477" height="582" key="RiderGenerateDialog" timestamp="1609213034474">
       <screen x="0" y="0" width="1366" height="737" />
     </state>

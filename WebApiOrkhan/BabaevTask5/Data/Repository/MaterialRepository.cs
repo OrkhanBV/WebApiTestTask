@@ -56,7 +56,7 @@ namespace BabaevTask5.Data.Repository
                      $"Last update = {lastUpdate}");
         }
         
-        public IActionResult UploadNewMaterial(FormForMaterials formMaterials)
+        public Guid UploadNewMaterial(FormForMaterials formMaterials)
         {
             if(formMaterials.CategoryName == "Приложение" ||
                formMaterials.CategoryName == "Презентация" ||
@@ -87,10 +87,12 @@ namespace BabaevTask5.Data.Repository
                 }
                 appDbContent.MaterialVersions.AddRange(new List<MaterialVersion>{version});
                 appDbContent.SaveChanges();
+                Guid GetUploadedMaterialId() => appDbContent.Materials.Where(m => m == mt1).SingleOrDefault().Id;
+                return GetUploadedMaterialId();
             }
             else
             {
-                return null;
+                return Guid.Empty;
             }
             /*using (var fileStream = new FileStream(
                 Path.Combine(_dir,
@@ -100,7 +102,8 @@ namespace BabaevTask5.Data.Repository
             {
                 formMaterials.File.CopyTo(fileStream);
             }*/
-            return null;
+            
+            
         }
 
         /*public IActionResult UploadNewMaterial(FormForMaterials formMaterials)

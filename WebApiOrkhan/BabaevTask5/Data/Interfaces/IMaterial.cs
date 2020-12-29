@@ -16,7 +16,7 @@ namespace BabaevTask5.Data.Interfaces
         /*Info about Material*/
         public string GetInfoAboutMaterial(Guid id);
         /*Upload new material & Download Material(actual version of)*/
-        public IActionResult UploadNewMaterial(FormForMaterials formMaterials);
-        //public Guid UploadNewMaterial(FormForMaterials formForMaterials);
+        //public IActionResult UploadNewMaterial(FormForMaterials formMaterials);
+        public Guid UploadNewMaterial(FormForMaterials formForMaterials);
     }
 }

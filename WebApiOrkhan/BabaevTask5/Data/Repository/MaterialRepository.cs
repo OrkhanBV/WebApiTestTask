@@ -45,7 +45,9 @@ namespace BabaevTask5.Data.Repository
         public string GetInfoAboutMaterial(Guid id)
         {
              int countOfVersion = appDbContent.MaterialVersions.Where(v => v.Material.Id == id).Count();
-             string lastUpdate = GetAllVersions(id).Select(v => v.FileDate).SingleOrDefault().ToString();
+             //string lastUpdate = GetAllVersions(id).Select(v => v.FileDate).SingleOrDefault().ToString();
+             var mat = appDbContent.Materials.Where(m => m.Id == id).SingleOrDefault();
+             string lastUpdate = mat.MaterialVersions.Select(m => m.FileDate).SingleOrDefault().ToString();
              return ($"Count ov versions of material = {countOfVersion} \n" +
                      $"Last update = {lastUpdate}");
         }

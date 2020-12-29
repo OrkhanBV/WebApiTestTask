@@ -1,4 +1,4 @@
-@*model object
+model object
 
 @{
     ViewBag.Title = "title";
@@ -9,16 +9,16 @@
 <h2>Загрузка версии</h2>
 <div class="row mt-5 mb-2">
     <h4>File in Model</h4>
-    <form asp-conroller="Home" asp-action="FileInModelVersion"
+    <form asp-conroller="Home" asp-action="UploadVersion"
           enctype="multipart/form-data" method="post">
         <label >Name of File Version</label>
         <input type="text" name = "FormForVersion.Name" />
         
         <label >materialId</label>
-        <input type="number" name = "FormForVersion.materialId" />
+        <input type="text" name = "FormForVersion.materialId" />
         
         <input type="file" multiple name="FormForVersion.File"/>
         <button type="submit">Submit</button>
     </form>
           
-</div>*@
+</div>

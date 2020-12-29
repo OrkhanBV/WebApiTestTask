@@ -123,7 +123,6 @@
 /home/orhan/Desktop/Orkhan/WebApiTestTask/WebApiOrkhan/BabaevTask5/obj/Debug/netcoreapp3.1/Razor/Views/Shared/Error.cshtml.g.cs
 /home/orhan/Desktop/Orkhan/WebApiTestTask/WebApiOrkhan/BabaevTask5/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_Layout.cshtml.g.cs
 /home/orhan/Desktop/Orkhan/WebApiTestTask/WebApiOrkhan/BabaevTask5/obj/Debug/netcoreapp3.1/Razor/Views/Shared/_ValidationScriptsPartial.cshtml.g.cs
-/home/orhan/Desktop/Orkhan/WebApiTestTask/WebApiOrkhan/BabaevTask5/obj/Debug/netcoreapp3.1/Razor/Views/UploadVersion/UploadVersion.cshtml.g.cs
 /home/orhan/Desktop/Orkhan/WebApiTestTask/WebApiOrkhan/BabaevTask5/obj/Debug/netcoreapp3.1/Razor/Views/_ViewImports.cshtml.g.cs
 /home/orhan/Desktop/Orkhan/WebApiTestTask/WebApiOrkhan/BabaevTask5/obj/Debug/netcoreapp3.1/Razor/Views/_ViewStart.cshtml.g.cs
 /home/orhan/Desktop/Orkhan/WebApiTestTask/WebApiOrkhan/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.RazorTargetAssemblyInfo.cache
@@ -135,3 +134,4 @@
 /home/orhan/Desktop/Orkhan/WebApiTestTask/WebApiOrkhan/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.dll
 /home/orhan/Desktop/Orkhan/WebApiTestTask/WebApiOrkhan/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.pdb
 /home/orhan/Desktop/Orkhan/WebApiTestTask/WebApiOrkhan/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.genruntimeconfig.cache
+/home/orhan/Desktop/Orkhan/WebApiTestTask/WebApiOrkhan/BabaevTask5/obj/Debug/netcoreapp3.1/Razor/Views/Version/UploadVersion.cshtml.g.cs

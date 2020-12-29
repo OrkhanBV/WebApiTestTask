@@ -18,8 +18,8 @@ namespace BabaevTask5.Data.Interfaces
         
         /*Upload & Download version of material*/
         public IActionResult UploadNewVersionOfMaterial(FormForVersion formForVersion);
-        public PhysicalFileResult DownloadFirstVersionByMaterialId { get; set; }
+        /*public PhysicalFileResult DownloadFirstVersionByMaterialId { get; set; }
         public PhysicalFileResult DownloadLastVersionByMaterialId { get; set; }
-        public PhysicalFileResult DownloadConcreteVersionByMaterialIdByVersionId { get; set; }
+        public PhysicalFileResult DownloadConcreteVersionByMaterialIdByVersionId { get; set; }*/
     }
 }

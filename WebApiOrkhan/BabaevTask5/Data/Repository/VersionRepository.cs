@@ -1,4 +1,4 @@
-/*using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -56,32 +56,51 @@ namespace BabaevTask5.Data.Repository
                 FileDate = DateTime.Now,
                 FileName = formForVersion.Name,
                 PathOfFile = _dir,
-                Size = FormForVersion.File.Length,
-                material = appDBContent.Materials.Where(m => m.id == FormForVersion.materialId).ToList()[0]////////
+                Size = formForVersion.File.Length,
+                Material = appDbContent.Materials.Where(m => m.Id == formForVersion.MaterialId).ToList()[0]////////
             };
             //вроде я должен был здесь добавить материал в БД, но когда
             //делал забыл, но всё равно работает, видимо из-за того что добавляю позже при создании файла
-            appDBContent.SaveChanges();
+            appDbContent.SaveChanges();
                 
-            appDBContent.Files.AddRange(new List<File>{f1});
-            appDBContent.SaveChanges();
+            appDbContent.MaterialVersions.AddRange(new List<MaterialVersion>{f1});
+            appDbContent.SaveChanges();
          
             using (var fileStream = new FileStream(
                 Path.Combine(_dir,
-                    $"{FormForVersion.Name}_version{Path.GetExtension(FormForVersion.File.FileName)}"),
+                    $"{formForVersion.Name}_version{Path.GetExtension(formForVersion.File.FileName)}"),
                 FileMode.Create, 
                 FileAccess.Write))
             {
-                FormForVersion.File.CopyTo(fileStream);
+                formForVersion.File.CopyTo(fileStream);
             }
-            return RedirectToAction("UploadVersion");
+            //return RedirectToAction("UploadVersion");
+            return null;
         }
 
-        public IActionResult UploadVersion() => View();
+        public PhysicalFileResult DownloadFirstVersionByMaterialId
+        {
+            get => throw new NotImplementedException();
+            set => throw new NotImplementedException();
+        }
+
+        public PhysicalFileResult DownloadLastVersionByMaterialId
+        {
+            get => throw new NotImplementedException();
+            set => throw new NotImplementedException();
+        }
+
+        public PhysicalFileResult DownloadConcreteVersionByMaterialIdByVersionId
+        {
+            get => throw new NotImplementedException();
+            set => throw new NotImplementedException();
+        }
+
+        /*public IActionResult UploadVersion() => View();*/
         }
         
 
-        public PhysicalFileResult DownloadFirstVersionByMaterialId
+        /*public PhysicalFileResult DownloadFirstVersionByMaterialId
         {
             get => throw new System.NotImplementedException();
             set => throw new System.NotImplementedException();
@@ -97,6 +116,6 @@ namespace BabaevTask5.Data.Repository
         {
             get => throw new System.NotImplementedException();
             set => throw new System.NotImplementedException();
-        }
-    }
-}*/
+        }*/
+    
+}

@@ -10,18 +10,12 @@ namespace BabaevTask5.Data.Interfaces
     /*public class IMaterialHandler<T> : IDisposable where T : class */
     public interface IMaterialHandler
     {
-        /*Info about Material*/
-        /*public string GetInfoAboutMaterial { get; set; }*/
         /*Filter for Materials*/
         public IOrderedEnumerable<Material> FilterMaterialsByDate { get; set; }
-        /*public IOrderedEnumerable<Material> FilterMaterialsBySize { get; set; }*/
         public List<Material> FilterMaterialByType(string type);
+        /*Info about Material*/
+        public string GetInfoAboutMaterial(Guid id);
         /*Upload new material & Download Material(actual version of)*/
         public IActionResult UploadNewMaterial(FormForMaterials formMaterials);
-        //public PhysicalFileResult DownloadMaterialById { get; set; } //возможно и не нужно , так как можем обойтись скачкой конкретной версии
-
-
-        public IEnumerable<Material> FilterOnlyFirstVersionMaterial(int id); //
-
     }
 }

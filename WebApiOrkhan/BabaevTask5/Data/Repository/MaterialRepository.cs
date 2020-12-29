@@ -42,6 +42,20 @@ namespace BabaevTask5.Data.Repository
             }
         }
 
+        public IEnumerable<MaterialVersion> GetAllVersions(Guid id) => appDbContent.MaterialVersions
+            .Where(m => m.Id == id).ToList()
+            .OrderByDescending(v => v.Material.Id == id);
+        
+        public string GetInfoAboutMaterial(Guid id)
+        {
+             int countOfVersion = appDbContent.MaterialVersions.Where(v => v.Material.Id == id).Count();
+             string lastUpdate = GetAllVersions(id).Select(v => v.FileDate).ToList()[0].ToString();
+             return ($"Count ov versions of material = {countOfVersion} \n" +
+                     $"Last update = {lastUpdate}");
+        }
+        
+        
+
         public IActionResult UploadNewMaterial(FormForMaterials formMaterials)
         {
             if(formMaterials.CategoryName == "Приложение" ||
@@ -80,11 +94,7 @@ namespace BabaevTask5.Data.Repository
             }
             return null;
         }
-
-        public IEnumerable<Material> FilterOnlyFirstVersionMaterial(int id)
-        {
-            throw new NotImplementedException();
-        }
+        
 
     }
 }

@@ -13,7 +13,6 @@
             <e p="FormForMaterials.cs" t="Include" />
             <e p="FormForVersion.cs" t="Include" />
           </e>
-          <e p="UploadMaterialController.cs" t="Include" />
           <e p="VersionController.cs" t="Include" />
         </e>
         <e p="Data" t="Include">
@@ -34,6 +33,7 @@
           <e p="Material_1.png" t="Include" />
           <e p="Material_2.png" t="Include" />
           <e p="Material_3.png" t="Include" />
+          <e p="Material_4.png" t="Include" />
         </e>
         <e p="Middleware" t="Include">
           <e p="RequestResponseLoggingMiddleware.cs" t="Include" />
@@ -69,9 +69,6 @@
             <e p="Error.cshtml" t="Include" />
             <e p="_Layout.cshtml" t="Include" />
             <e p="_ValidationScriptsPartial.cshtml" t="Include" />
-          </e>
-          <e p="UploadMaterial" t="Include">
-            <e p="Indexupload.cshtml" t="Include" />
           </e>
           <e p="UploadVersion" t="Include">
             <e p="UploadVersion.cshtml" t="Include" />

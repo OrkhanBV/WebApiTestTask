@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using BabaevTask5.Controllers.Models;
@@ -27,14 +28,22 @@ namespace BabaevTask5.Controllers
         {
             return _materialHandler.FilterMaterialsByDate;
         }
-
+        
+        /*Пример https://localhost:5001/Material/ByType?type=другое*/
+        /*Переделать CategoryType в ENUM in BD*/
         [HttpGet("ByType")]
         public IEnumerable<Material> ShowMaterialsByType(string type)
         {
             return _materialHandler.FilterMaterialByType(type);
         }
-        
-        [HttpPost("Upload")]
+
+        [HttpGet("Info")]
+        public string ShowInfo(Guid id)
+        {
+            return _materialHandler.GetInfoAboutMaterial(id);
+        }
+
+        [HttpPost]
         public IActionResult UploadMaterial(FormForMaterials formForMaterials)
         {
             _materialHandler.UploadNewMaterial(formForMaterials);

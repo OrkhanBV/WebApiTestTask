@@ -1,13 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using BabaevTask5.Controllers.Models;
-using BabaevTask5.Data;
 using BabaevTask5.Data.Interfaces;
 using BabaevTask5.Data.Models;
-using BabaevTask5.Data.Repository;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Query.Internal;
 
 namespace BabaevTask5.Controllers
 {
@@ -49,7 +45,5 @@ namespace BabaevTask5.Controllers
             _imaterial.UploadNewMaterial(formForMaterials);
             return RedirectToAction("Indexupload");
         }
-        
     }
-    
 }

@@ -36,6 +36,7 @@
           <e p="Material_3.png" t="Include" />
           <e p="Material_4.png" t="Include" />
           <e p="Material_5.png" t="Include" />
+          <e p="Material_6.png" t="Include" />
         </e>
         <e p="Middleware" t="Include">
           <e p="RequestResponseLoggingMiddleware.cs" t="Include" />

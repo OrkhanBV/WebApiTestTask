@@ -9,9 +9,6 @@ namespace BabaevTask5.Data.Interfaces
 {
     public interface IVersion
     {
-        /*Info for versions*/
-        /*public string GetInfoAboutMaterialVersion { get; set; }*/
-        
         /*Filters for versions*/
         /*public IOrderedEnumerable<MaterialVersion> FilterVersionsByDate { get; set; }
         public IOrderedEnumerable<MaterialVersion> FilterVersionsBySize { get; set; }
@@ -19,13 +16,6 @@ namespace BabaevTask5.Data.Interfaces
         
         /*Upload & Download version of material*/
         public Guid UploadNewVersionOfMaterial(FormForVersion formForVersion);
-        /*public PhysicalFileResult DownloadConcreteVersionByMaterialIdByVersionId(Guid mId, Guid vId);*/
-        public FileModel GetFileParametrsForDownload(/*Guid mId, */Guid vId);
-        
-
-        /*public Guid DownloadConcreteVersionByMaterialIdByVersionId(FormForVersion formForVersion);*/
-        /*public PhysicalFileResult DownloadFirstVersionByMaterialId { get; set; }
-        public PhysicalFileResult DownloadLastVersionByMaterialId { get; set; }
-        public PhysicalFileResult DownloadConcreteVersionByMaterialIdByVersionId { get; set; }*/
+        public FileModel GetFileParametrsForDownload(Guid vId);
     }
 }

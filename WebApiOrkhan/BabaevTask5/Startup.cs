@@ -17,6 +17,22 @@ using BabaevTask5.Data.Repository;
 using BabaevTask5.Middleware;
 using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
+/*
+ *
+ * Что предстоить сделать
+ *
+ * 
+ * 1)Разобраться в инъекциях
+ *   --избавиться от using Microsoft.AspNetCore.Hosting; в классах типа репозиторий
+ * 2)Как сделать так чтобы контроллеры возвращали некую универсальную прослойку
+ *   --переделать всё под сваггер
+ * 3)Как правильно обрабатывать ошибки и что возвращать
+ * 4)Связать типы Материалов в Enum
+ * 5)Исследовать вопрос с мапперами
+ * 6)Доделать контроль ролей
+ * 7)Проработать работу с конфигурациями
+ */
+
 namespace BabaevTask5
 {
     public class Startup

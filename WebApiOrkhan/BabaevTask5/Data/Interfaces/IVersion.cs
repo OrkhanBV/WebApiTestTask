@@ -21,6 +21,7 @@ namespace BabaevTask5.Data.Interfaces
         public Guid UploadNewVersionOfMaterial(FormForVersion formForVersion);
         /*public PhysicalFileResult DownloadConcreteVersionByMaterialIdByVersionId(Guid mId, Guid vId);*/
         public FileModel GetFileParametrsForDownload(/*Guid mId, */Guid vId);
+        
 
         /*public Guid DownloadConcreteVersionByMaterialIdByVersionId(FormForVersion formForVersion);*/
         /*public PhysicalFileResult DownloadFirstVersionByMaterialId { get; set; }

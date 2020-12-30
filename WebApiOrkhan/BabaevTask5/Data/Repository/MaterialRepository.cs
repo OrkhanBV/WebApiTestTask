@@ -51,6 +51,26 @@ namespace BabaevTask5.Data.Repository
              return ($"Count ov versions of material = {countOfVersion} \n" +
                      $"Last update = {lastUpdate}");
         }
+
+        public Guid ChangeCetagoryOfMaterial(Guid mId, string type)
+        {
+            try
+            {
+                var mat = appDbContent.Materials.Where(m => m.Id == mId).FirstOrDefault();
+                mat.CategoryType = type;
+                appDbContent.SaveChanges();
+                return mId;
+            }
+            catch 
+            {
+                Console.WriteLine("Error");
+                return Guid.Empty;
+            }
+            /*var mat = appDbContent.Materials.Where(m => m.Id == mId).FirstOrDefault();
+            mat.CategoryType = type;
+            appDbContent.SaveChanges();
+            return mId;*/
+        }
         
         public Guid UploadNewMaterial(FormForMaterials formMaterials)
         {
@@ -101,6 +121,20 @@ namespace BabaevTask5.Data.Repository
                 return Guid.Empty;
             }
         }
-        
+
+        public FileModel GetFileParametrsForDownloadActualVersion(Guid mId)
+        {
+            FileModel file = new FileModel();
+            IEnumerable<MaterialVersion> ActualList(Guid mId) => appDbContent.MaterialVersions.
+                Where(m => m.Material.Id == mId).
+                ToList().
+                OrderByDescending(m =>m.FileDate);
+            MaterialVersion ActualVersion = ActualList(mId).Select(m=> m).FirstOrDefault();
+            file.fileName = ActualVersion.FileName;
+            file.filePath = ActualVersion.PathOfFile + "/" + file.fileName + ".png";
+            file.fileType = "application/png";
+            
+            return (file);
+        }
     }
 }

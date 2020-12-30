@@ -15,5 +15,7 @@ namespace BabaevTask5.Data
             }
             public DbSet<Material> Materials { get; set; }
             public DbSet<MaterialVersion> MaterialVersions { get; set; }
+
+        
     }
 }

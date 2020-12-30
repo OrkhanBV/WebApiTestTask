@@ -38,13 +38,27 @@ namespace BabaevTask5.Controllers
         {
             return _imaterial.GetInfoAboutMaterial(id);
         }
-
+        
+        [HttpGet("DownloadActual")]
+        public PhysicalFileResult DownloadActual(Guid mId)
+        {
+            FileModel file = _imaterial.GetFileParametrsForDownloadActualVersion(mId);
+            return PhysicalFile(file.filePath, file.fileType, file.fileName);
+        }
+        
         [HttpPost]
         public IActionResult UploadMaterial(FormForMaterials formForMaterials)
         {
             if (_imaterial.UploadNewMaterial(formForMaterials) == Guid.Empty)
                 return BadRequest("Error");
             return RedirectToAction("Indexupload");
+        }
+        
+        //https://localhost:5001/Material/ChangeCategory/?mId=86306de9-b97c-4c6c-b94a-7bfa61fccb0f&type=Презентация
+        [HttpGet("ChangeCategory")]
+        public Guid ChangeCetagory(Guid mId, string type)
+        {
+            return _imaterial.ChangeCetagoryOfMaterial(mId, type);
         }
 
         

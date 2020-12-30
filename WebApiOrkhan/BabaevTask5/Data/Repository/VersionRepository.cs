@@ -16,37 +16,16 @@ namespace BabaevTask5.Data.Repository
         private string _dir;
         private readonly AppDbContent appDbContent;
         
+        /*private readonly IVersion _iVersion;*/
 
 
-        public VersionRepository(IWebHostEnvironment env, AppDbContent appDbContent)
+
+        public VersionRepository(IWebHostEnvironment env, AppDbContent appDbContent/*, IVersion iVersion*/)
         {
             _env = env;
             _dir = _env.ContentRootPath  + "/MaterialStorage";
+            /*_iVersion = iVersion;*/
             this.appDbContent = appDbContent;
-        }
-        
-        public string GetInfoAboutMaterialVersion
-        {
-            get => throw new System.NotImplementedException();
-            set => throw new System.NotImplementedException();
-        }
-
-        public IOrderedEnumerable<MaterialVersion> FilterVersionsByDate
-        {
-            get => throw new System.NotImplementedException();
-            set => throw new System.NotImplementedException();
-        }
-
-        public IOrderedEnumerable<MaterialVersion> FilterVersionsBySize
-        {
-            get => throw new System.NotImplementedException();
-            set => throw new System.NotImplementedException();
-        }
-
-        public IOrderedEnumerable<MaterialVersion> FilterVersionsByType
-        {
-            get => throw new System.NotImplementedException();
-            set => throw new System.NotImplementedException();
         }
 
         public Guid UploadNewVersionOfMaterial(FormForVersion formForVersion)
@@ -63,7 +42,7 @@ namespace BabaevTask5.Data.Repository
                 };
                 using (var fileStream = new FileStream(
                     Path.Combine(_dir,
-                        $"{formForVersion.Name}_version{Path.GetExtension(formForVersion.File.FileName)}"),
+                        $"{formForVersion.Name}{Path.GetExtension(formForVersion.File.FileName)}"),
                     FileMode.Create, 
                     FileAccess.Write))
                 {
@@ -105,44 +84,31 @@ namespace BabaevTask5.Data.Repository
             return GetVersionId();*/
         }
 
-        public PhysicalFileResult DownloadFirstVersionByMaterialId
+        /*public FileModel GetFileParametrsForDownload(Guid vId)
         {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
-        }
-
-        public PhysicalFileResult DownloadLastVersionByMaterialId
-        {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
-        }
-
-        public PhysicalFileResult DownloadConcreteVersionByMaterialIdByVersionId
-        {
-            get => throw new NotImplementedException();
-            set => throw new NotImplementedException();
-        }
-
-        /*public IActionResult UploadVersion() => View();*/
-        }
-        
-
-        /*public PhysicalFileResult DownloadFirstVersionByMaterialId
-        {
-            get => throw new System.NotImplementedException();
-            set => throw new System.NotImplementedException();
-        }
-
-        public PhysicalFileResult DownloadLastVersionByMaterialId
-        {
-            get => throw new System.NotImplementedException();
-            set => throw new System.NotImplementedException();
-        }
-
-        public PhysicalFileResult DownloadConcreteVersionByMaterialIdByVersionId
-        {
-            get => throw new System.NotImplementedException();
-            set => throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }*/
-    
+
+        public FileModel GetFileParametrsForDownload(/*Guid mId, */Guid vId)
+        {
+            try
+            {
+                MaterialVersion GetOfMaterialVersion(Guid vId) =>
+                    appDbContent.MaterialVersions.Where(m => m.Id == vId).SingleOrDefault();
+                 FileModel fileModel = new FileModel();
+                 
+                 fileModel.fileType = "application/png";/* + $"{Path.GetExtension(GetOfMaterialVersions(mId, vId).FileName)}"*/
+                 fileModel.fileName = GetOfMaterialVersion(vId).FileName;
+                 fileModel.filePath = Path.Combine(_env.ContentRootPath, "MaterialStorage/" + fileModel.fileName + ".png");/*Path.GetExtension(GetOfMaterialVersion(vId).FileName)*/
+                 return(fileModel);
+            }
+            catch 
+            {
+                Console.WriteLine("Error");
+                throw;
+            }
+        }
+
+    }
+
 }

@@ -46,5 +46,7 @@ namespace BabaevTask5.Controllers
                 return BadRequest("Error");
             return RedirectToAction("Indexupload");
         }
+
+        
     }
 }

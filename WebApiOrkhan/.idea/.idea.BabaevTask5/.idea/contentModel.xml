@@ -10,6 +10,7 @@
           <e p="HomeController.cs" t="Include" />
           <e p="MaterialController.cs" t="Include" />
           <e p="Models" t="Include">
+            <e p="FileModel.cs" t="Include" />
             <e p="FormForMaterials.cs" t="Include" />
             <e p="FormForVersion.cs" t="Include" />
           </e>
@@ -31,15 +32,15 @@
           </e>
         </e>
         <e p="MaterialStorage" t="Include">
-          <e p="Mat1_Version1_version.png" t="Include" />
-          <e p="Mat1_Version2_version.png" t="Include" />
-          <e p="Mat1_Version3_version.png" t="Include" />
-          <e p="Mat1_Version4_version.png" t="Include" />
-          <e p="Mat1_Version5_version.png" t="Include" />
-          <e p="Mat1_Version6_version.png" t="Include" />
-          <e p="Mat2_Version1_version.png" t="Include" />
-          <e p="Mat2_Version2_version.png" t="Include" />
-          <e p="Mat2_Version5_version.png" t="Include" />
+          <e p="Mat1_Version1.png" t="Include" />
+          <e p="Mat1_Version2.png" t="Include" />
+          <e p="Mat1_Version3.png" t="Include" />
+          <e p="Mat1_Version4.png" t="Include" />
+          <e p="Mat1_Version5.png" t="Include" />
+          <e p="Mat1_Version6.png" t="Include" />
+          <e p="Mat2_Version1.png" t="Include" />
+          <e p="Mat2_Version2.png" t="Include" />
+          <e p="Mat2_Version5.png" t="Include" />
           <e p="Material_1.png" t="Include" />
           <e p="Material_2.png" t="Include" />
           <e p="Material_3.png" t="Include" />

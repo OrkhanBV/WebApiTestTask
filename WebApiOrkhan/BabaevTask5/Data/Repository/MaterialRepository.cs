@@ -100,46 +100,6 @@ namespace BabaevTask5.Data.Repository
                 Console.WriteLine("error");
                 return Guid.Empty;
             }
-            
-            
-            /*if(formMaterials.CategoryName == "Приложение" ||
-               formMaterials.CategoryName == "Презентация" ||
-               formMaterials.CategoryName == "Другое")
-            {
-                //Создаем материал и сохраняем изменения в BD
-                Material mt1;
-                mt1 = new Material{MaterialDate = DateTime.Now, 
-                    MaterialName = formMaterials.Name, 
-                    CategoryType = formMaterials.CategoryName};
-                //appDbContent.SaveChanges();
-                //Создаем версию материала 
-                MaterialVersion version = new MaterialVersion
-                {
-                    FileDate = DateTime.Now, 
-                    Material = mt1, 
-                    FileName = formMaterials.Name, 
-                    Size = formMaterials.File.Length, 
-                    PathOfFile = _dir
-                };
-                using (var fileStream = new FileStream(
-                    Path.Combine(_dir,
-                        $"{formMaterials.Name}{Path.GetExtension(formMaterials.File.FileName)}"),
-                    FileMode.Create, 
-                    FileAccess.Write))
-                {
-                    formMaterials.File.CopyTo(fileStream);
-                }
-                //После того как убедились, что у нас всё ок сохраняем в бд
-                appDbContent.MaterialVersions.AddRange(new List<MaterialVersion>{version});
-                appDbContent.SaveChanges();
-                Guid GetUploadedMaterialId() => appDbContent.Materials.Where(m => m == mt1).SingleOrDefault().Id;
-                return GetUploadedMaterialId();
-            }
-            else
-            {
-                return Guid.Empty;
-            }*/
-            
         }
         
     }

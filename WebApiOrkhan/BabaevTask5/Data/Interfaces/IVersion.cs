@@ -10,10 +10,9 @@ namespace BabaevTask5.Data.Interfaces
     public interface IVersion
     {
         /*Filters for versions*/
-        /*public IOrderedEnumerable<MaterialVersion> FilterVersionsByDate { get; set; }
-        public IOrderedEnumerable<MaterialVersion> FilterVersionsBySize { get; set; }
-        public IOrderedEnumerable<MaterialVersion> FilterVersionsByType { get; set; }//*/
-        
+        public List<MaterialVersion> FilterVersionsByDate(Guid mId);
+        public List<MaterialVersion> FilterVersionsBySize(Guid mId);
+
         /*Upload & Download version of material*/
         public Guid UploadNewVersionOfMaterial(FormForVersion formForVersion);
         public FileModel GetFileParametrsForDownload(Guid vId);

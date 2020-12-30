@@ -5,7 +5,7 @@ using System.Linq;
 using BabaevTask5.Controllers.Models;
 using BabaevTask5.Data.Interfaces;
 using BabaevTask5.Data.Models;
-using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Hosting;//переделеть через  add transient разобрать тему
 
 namespace BabaevTask5.Data.Repository
 {
@@ -23,6 +23,39 @@ namespace BabaevTask5.Data.Repository
             this.appDbContent = appDbContent;
         }
 
+
+        public List<MaterialVersion> FilterVersionsByDate(Guid mId)
+        {
+            if (appDbContent.Materials.Where(material => material.Id==mId).FirstOrDefault().Id == mId)
+            {
+                return appDbContent.MaterialVersions.
+                    Where(m => m.Material.Id == mId).
+                    OrderByDescending(m => m.FileDate).
+                    ToList();
+            }
+            else
+            {
+                return null;//Надо научиться правильно разьирать ошибки
+            }
+            
+        }
+        
+        public List<MaterialVersion> FilterVersionsBySize(Guid mId)
+        {
+            if (appDbContent.Materials.Where(material => material.Id==mId).FirstOrDefault().Id == mId)
+            {
+                return appDbContent.MaterialVersions.
+                    Where(m => m.Material.Id == mId).
+                    OrderByDescending(m => m.Size).
+                    ToList();
+            }
+            else
+            {
+                return null;//Надо научиться правильно разьирать ошибки
+            }
+            
+        }
+        
         public Guid UploadNewVersionOfMaterial(FormForVersion formForVersion)
         {
             try
@@ -59,8 +92,9 @@ namespace BabaevTask5.Data.Repository
             }
         }
 
-        //Как улучшить скачивание ?? в базе данных хранить дополнительно и
+        //Как улучшить скачивание ?? в базе данных хранить дополнительно
         //расширение файла которое мы моожем получить при загрузке файла
+        //с помощью Path.GetExtension
         public FileModel GetFileParametrsForDownload(Guid vId)
         {
             try

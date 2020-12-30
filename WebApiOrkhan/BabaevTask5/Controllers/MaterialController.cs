@@ -42,7 +42,8 @@ namespace BabaevTask5.Controllers
         [HttpPost]
         public IActionResult UploadMaterial(FormForMaterials formForMaterials)
         {
-            _imaterial.UploadNewMaterial(formForMaterials);
+            if (_imaterial.UploadNewMaterial(formForMaterials) == Guid.Empty)
+                return BadRequest("Error");
             return RedirectToAction("Indexupload");
         }
     }

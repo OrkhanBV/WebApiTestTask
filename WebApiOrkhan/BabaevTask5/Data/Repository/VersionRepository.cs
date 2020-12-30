@@ -51,8 +51,37 @@ namespace BabaevTask5.Data.Repository
 
         public Guid UploadNewVersionOfMaterial(FormForVersion formForVersion)
         {
-            
-            Data.Models.MaterialVersion f1 = new MaterialVersion
+            try
+            {
+                Data.Models.MaterialVersion f1 = new MaterialVersion
+                {
+                    FileDate = DateTime.Now,
+                    FileName = formForVersion.Name,
+                    PathOfFile = _dir,
+                    Size = formForVersion.File.Length,
+                    Material = appDbContent.Materials.Where(m => m.Id == formForVersion.MaterialId).ToList()[0]////////
+                };
+                using (var fileStream = new FileStream(
+                    Path.Combine(_dir,
+                        $"{formForVersion.Name}_version{Path.GetExtension(formForVersion.File.FileName)}"),
+                    FileMode.Create, 
+                    FileAccess.Write))
+                {
+                    formForVersion.File.CopyTo(fileStream);
+                }
+                appDbContent.MaterialVersions.AddRange(new List<MaterialVersion>{f1});
+                appDbContent.SaveChanges();
+
+                Guid GetVersionId() => appDbContent.MaterialVersions
+                    .Where(v => v == f1).SingleOrDefault().Id;
+                return GetVersionId();
+            }
+            catch
+            {
+                Console.WriteLine("We have a problem");
+                return Guid.Empty;
+            }
+            /*Data.Models.MaterialVersion f1 = new MaterialVersion
             {
                 FileDate = DateTime.Now,
                 FileName = formForVersion.Name,
@@ -73,7 +102,7 @@ namespace BabaevTask5.Data.Repository
 
             Guid GetVersionId() => appDbContent.MaterialVersions
                 .Where(v => v == f1).SingleOrDefault().Id;
-            return GetVersionId();
+            return GetVersionId();*/
         }
 
         public PhysicalFileResult DownloadFirstVersionByMaterialId

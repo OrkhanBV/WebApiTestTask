@@ -1,3 +1,4 @@
+using System;
 using BabaevTask5.Controllers.Models;
 using BabaevTask5.Data.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -18,7 +19,8 @@ namespace BabaevTask5.Controllers
         [HttpPost]
         public IActionResult UploadVersion(FormForVersion formForVersion)
         {
-            var verId = _iVersion.UploadNewVersionOfMaterial(formForVersion);
+            if (_iVersion.UploadNewVersionOfMaterial(formForVersion) == Guid.Empty)
+                return BadRequest("Error");
             return RedirectToAction("UploadVersion");
         }
         

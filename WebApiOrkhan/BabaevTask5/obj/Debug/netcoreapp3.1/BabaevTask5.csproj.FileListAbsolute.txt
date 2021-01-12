@@ -209,3 +209,4 @@
 /home/orhan/Desktop/Actual/WebApiOrkhan/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.pdb
 /home/orhan/Desktop/Actual/WebApiOrkhan/BabaevTask5/obj/Debug/netcoreapp3.1/BabaevTask5.genruntimeconfig.cache
 /home/orhan/Desktop/Actual/WebApiOrkhan/BabaevTask5/obj/Debug/netcoreapp3.1/Razor/Views/Account/Register.cshtml.g.cs
+/home/orhan/Desktop/Actual/WebApiOrkhan/BabaevTask5/obj/Debug/netcoreapp3.1/Razor/Views/Account/Login.cshtml.g.cs

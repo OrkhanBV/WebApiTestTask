@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/orhan/Desktop/Orkhan/WebApiTestTask/WebApiOrkhan/BabaevTask5/BabaevTask5.csproj": {}
+    "/home/orhan/Desktop/Actual/WebApiOrkhan/BabaevTask5/BabaevTask5.csproj": {}
   },
   "projects": {
-    "/home/orhan/Desktop/Orkhan/WebApiTestTask/WebApiOrkhan/BabaevTask5/BabaevTask5.csproj": {
+    "/home/orhan/Desktop/Actual/WebApiOrkhan/BabaevTask5/BabaevTask5.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/orhan/Desktop/Orkhan/WebApiTestTask/WebApiOrkhan/BabaevTask5/BabaevTask5.csproj",
+        "projectUniqueName": "/home/orhan/Desktop/Actual/WebApiOrkhan/BabaevTask5/BabaevTask5.csproj",
         "projectName": "BabaevTask5",
-        "projectPath": "/home/orhan/Desktop/Orkhan/WebApiTestTask/WebApiOrkhan/BabaevTask5/BabaevTask5.csproj",
+        "projectPath": "/home/orhan/Desktop/Actual/WebApiOrkhan/BabaevTask5/BabaevTask5.csproj",
         "packagesPath": "/home/orhan/.nuget/packages/",
-        "outputPath": "/home/orhan/Desktop/Orkhan/WebApiTestTask/WebApiOrkhan/BabaevTask5/obj/",
+        "outputPath": "/home/orhan/Desktop/Actual/WebApiOrkhan/BabaevTask5/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/orhan/.nuget/NuGet/NuGet.Config"
@@ -39,6 +39,10 @@
             "Arch.EntityFrameworkCore.Design": {
               "target": "Package",
               "version": "[2.1.15, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.1, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",

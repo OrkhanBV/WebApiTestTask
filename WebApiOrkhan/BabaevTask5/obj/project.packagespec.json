@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "/home/orhan/Desktop/Orkhan/WebApiTestTask/WebApiOrkhan/BabaevTask5/BabaevTask5.csproj",
+    "projectUniqueName": "/home/orhan/Desktop/Actual/WebApiOrkhan/BabaevTask5/BabaevTask5.csproj",
     "projectName": "BabaevTask5",
-    "projectPath": "/home/orhan/Desktop/Orkhan/WebApiTestTask/WebApiOrkhan/BabaevTask5/BabaevTask5.csproj",
-    "outputPath": "/home/orhan/Desktop/Orkhan/WebApiTestTask/WebApiOrkhan/BabaevTask5/obj/",
+    "projectPath": "/home/orhan/Desktop/Actual/WebApiOrkhan/BabaevTask5/BabaevTask5.csproj",
+    "outputPath": "/home/orhan/Desktop/Actual/WebApiOrkhan/BabaevTask5/obj/",
     "projectStyle": "PackageReference",
     "originalTargetFrameworks": [
       "netcoreapp3.1"
@@ -29,6 +29,10 @@
         "Arch.EntityFrameworkCore.Design": {
           "target": "Package",
           "version": "[2.1.15, )"
+        },
+        "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+          "target": "Package",
+          "version": "[5.0.1, )"
         },
         "Microsoft.EntityFrameworkCore": {
           "target": "Package",

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="$USER_HOME$/.cache/JetBrains/Rider2020.2/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_BabaevTask5.308504416.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/.cache/JetBrains/Rider2020.2/resharper-host/local/Transient/Rider/v202/SolutionCaches/_BabaevTask5.981004009.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="BabaevTask5" t="IncludeRecursive">
         <e p="BabaevTask5.csproj" t="IncludeRecursive" />
@@ -30,6 +30,7 @@
             <e p="MaterialRepository.cs" t="Include" />
             <e p="VersionRepository.cs" t="Include" />
           </e>
+          <e p="UserDBContent.cs" t="Include" />
         </e>
         <e p="MaterialStorage" t="Include">
           <e p="Mat1_Version1.png" t="Include" />

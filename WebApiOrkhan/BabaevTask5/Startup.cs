@@ -37,21 +37,40 @@ namespace BabaevTask5
 {
     public class Startup
     {
-        private IConfigurationRoot _confString;
-
-        /*public Startup(IConfiguration configuration)
+        //private IConfigurationRoot _confString;
+        public IConfiguration Configuration { get; }
+        
+        public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-        }*/
-        
-        public Startup(IHostingEnvironment hostEnv) {
-            _confString = new ConfigurationBuilder().SetBasePath(hostEnv.ContentRootPath).AddJsonFile("dbsettings.json").Build();
         }
+        
+
+        /*public Startup(IHostingEnvironment hostEnv) {
+            _confString = new ConfigurationBuilder().SetBasePath(hostEnv.ContentRootPath).AddJsonFile("dbsettings.json").Build();
+        }*/
         
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDbContent>(options => options.UseNpgsql(_confString.GetConnectionString("DefaultConnection")));
+            /*services.AddDbContext<AppDbContent>(options => 
+                options.UseNpgsql(_confString.GetConnectionString("DefaultConnection")));*/
+            // добавление ApplicationDbContext для взаимодействия с базой данных учетных записей
+            services.AddDbContext<AppDbContent>(options =>
+                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+            
+            
+            
+            
+            /*// добавление ApplicationDbContext для взаимодействия с базой данных учетных записей
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+ 
+            // добавление сервисов Idenity
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddEntityFrameworkStores<ApplicationDbContext>();*/
+            
+            
             services.AddTransient<IMaterial, MaterialRepository>();
             services.AddTransient<IVersion, VersionRepository>();
             //services.AddTransient<MaterialStorageSettings>();
@@ -87,6 +106,8 @@ namespace BabaevTask5
             app.UseStaticFiles();
 
             app.UseRouting();
+            /*app.UseAuthorization();*/
+            app.UseAuthentication();
             app.UseAuthorization();
             app.UseDeveloperExceptionPage();
             app.UseStatusCodePages();

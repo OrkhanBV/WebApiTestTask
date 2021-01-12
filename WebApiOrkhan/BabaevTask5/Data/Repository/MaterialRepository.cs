@@ -6,6 +6,7 @@ using BabaevTask5.Data.Interfaces;
 using BabaevTask5.Data.Models;
 using BabaevTask5.Controllers.Models;
 using Microsoft.AspNetCore.Hosting;
+using static Category;
 
 namespace BabaevTask5.Data.Repository
 {
@@ -30,12 +31,9 @@ namespace BabaevTask5.Data.Repository
 
         public List<Material> FilterMaterialByType(string type)
         {
-            if(type == "Другое" || type == "Приложение" || type == "Презентация")
-                return appDbContent.Materials.Where(m => m.CategoryType == type).ToList();
-            else
-            {
-                return null;
-            }
+            /*if(type == "Другое" || type == "Приложение" || type == "Презентация")
+                return appDbContent.Materials.Where(m => m.Category == type).ToList();*/
+            return appDbContent.Materials.Where(m => m.Category == Другое).ToList();
         }
 
         public IEnumerable<MaterialVersion> GetAllVersions(Guid id) => appDbContent.MaterialVersions
@@ -57,7 +55,12 @@ namespace BabaevTask5.Data.Repository
             try
             {
                 var mat = appDbContent.Materials.Where(m => m.Id == mId).FirstOrDefault();
-                mat.CategoryType = type;
+                if (type == "Другое")
+                    mat.Category = Другое;
+                else if (type == "Прилоэение")
+                    mat.Category = Приложение;
+                else if (type == "Презентация")
+                    mat.Category = Презентация;
                 appDbContent.SaveChanges();
                 return mId;
             }
@@ -72,7 +75,7 @@ namespace BabaevTask5.Data.Repository
             return mId;*/
         }
         
-        public Guid UploadNewMaterial(FormForMaterials formMaterials)
+        /*public Guid UploadNewMaterial(FormForMaterials formMaterials)
         {
             try
             {
@@ -84,7 +87,7 @@ namespace BabaevTask5.Data.Repository
                     Material mt1;
                     mt1 = new Material{MaterialDate = DateTime.Now, 
                         MaterialName = formMaterials.Name, 
-                        CategoryType = formMaterials.CategoryName};
+                        Category = formMaterials.CategoryName};
                     //appDbContent.SaveChanges();
                     //Создаем версию материала 
                     MaterialVersion version = new MaterialVersion
@@ -120,7 +123,7 @@ namespace BabaevTask5.Data.Repository
                 Console.WriteLine("error");
                 return Guid.Empty;
             }
-        }
+        }*/
 
         public FileModel GetFileParametrsForDownloadActualVersion(Guid mId)
         {

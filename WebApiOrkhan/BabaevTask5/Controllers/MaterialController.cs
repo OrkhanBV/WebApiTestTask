@@ -46,13 +46,13 @@ namespace BabaevTask5.Controllers
             return PhysicalFile(file.filePath, file.fileType, file.fileName);
         }
         
-        [HttpPost]
+        /*[HttpPost]
         public IActionResult UploadMaterial(FormForMaterials formForMaterials)
         {
             if (_imaterial.UploadNewMaterial(formForMaterials) == Guid.Empty)
                 return BadRequest("Error");
             return RedirectToAction("Indexupload");
-        }
+        }*/
         
         //https://localhost:5001/Material/ChangeCategory/?mId=86306de9-b97c-4c6c-b94a-7bfa61fccb0f&type=Презентация
         [HttpGet("ChangeCategory")]

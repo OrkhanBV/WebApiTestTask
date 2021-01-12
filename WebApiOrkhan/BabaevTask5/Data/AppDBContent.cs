@@ -1,5 +1,6 @@
 
 using BabaevTask5.Data.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 /*
@@ -9,13 +10,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BabaevTask5.Data
 {
-    public class AppDbContent : DbContext {
+    public class AppDbContent : IdentityDbContext<User>/*DbContext*/ {
         public AppDbContent(DbContextOptions<AppDbContent> options) : base(options) {
                 
             }
             public DbSet<Material> Materials { get; set; }
             public DbSet<MaterialVersion> MaterialVersions { get; set; }
-
-        
     }
 }

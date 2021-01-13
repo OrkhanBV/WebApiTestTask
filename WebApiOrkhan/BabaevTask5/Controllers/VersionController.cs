@@ -5,6 +5,7 @@ using System.IO.Enumeration;
 using BabaevTask5.Controllers.Models;
 using BabaevTask5.Data.Interfaces;
 using BabaevTask5.Data.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 /*
@@ -18,6 +19,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BabaevTask5.Controllers
 {
+    /*[Authorize(Roles="admin")]*/
     [Route("/Version")]
     public class VersionController : Controller
     {
@@ -42,6 +44,7 @@ namespace BabaevTask5.Controllers
         }
 
         [HttpPost]
+        /*[Authorize(Roles = "admin")]*/
         public IActionResult UploadVersion(FormForVersion formForVersion)
         {
             if (_iVersion.UploadNewVersionOfMaterial(formForVersion) == Guid.Empty)
@@ -50,6 +53,7 @@ namespace BabaevTask5.Controllers
         }
         
         [HttpGet("Download")]
+        /*[Authorize(Roles = "admin")]*/
         public PhysicalFileResult DownloadConcreteVersion(Guid vId)
         {
             FileModel file = _iVersion.GetFileParametrsForDownload(vId);

@@ -214,3 +214,7 @@
 /home/orhan/Desktop/Actual/WebApiOrkhan/BabaevTask5/obj/Debug/netcoreapp3.1/Razor/Views/Users/Edit.cshtml.g.cs
 /home/orhan/Desktop/Actual/WebApiOrkhan/BabaevTask5/obj/Debug/netcoreapp3.1/Razor/Views/Users/Index.cshtml.g.cs
 /home/orhan/Desktop/Actual/WebApiOrkhan/BabaevTask5/obj/Debug/netcoreapp3.1/Razor/Views/Users/ChangePassword.cshtml.g.cs
+/home/orhan/Desktop/Actual/WebApiOrkhan/BabaevTask5/obj/Debug/netcoreapp3.1/Razor/Views/Roles/Create.cshtml.g.cs
+/home/orhan/Desktop/Actual/WebApiOrkhan/BabaevTask5/obj/Debug/netcoreapp3.1/Razor/Views/Roles/Edit.cshtml.g.cs
+/home/orhan/Desktop/Actual/WebApiOrkhan/BabaevTask5/obj/Debug/netcoreapp3.1/Razor/Views/Roles/Index.cshtml.g.cs
+/home/orhan/Desktop/Actual/WebApiOrkhan/BabaevTask5/obj/Debug/netcoreapp3.1/Razor/Views/Roles/UserList.cshtml.g.cs

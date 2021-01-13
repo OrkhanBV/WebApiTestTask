@@ -2,12 +2,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using BabaevTask5.Data.Models;
 using BabaevTask5.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BabaevTask5.Controllers
 {
-
+    [Authorize(Roles="admin")]
     public class UsersController : Controller
     {
         UserManager<User> _userManager;

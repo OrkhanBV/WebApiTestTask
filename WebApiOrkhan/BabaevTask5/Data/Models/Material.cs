@@ -26,7 +26,7 @@ https://metanit.com/sharp/mvc/5.1.php
 ************************************************************************
 ************************************************************************/
 
-public enum Category
+public enum MatCategory
 {
     Презентация,
     Приложение,
@@ -40,7 +40,8 @@ namespace BabaevTask5.Data.Models
         public Guid Id { set; get; }
         public string MaterialName { set; get; }
         public DateTime MaterialDate { set; get; }
-        public Category Category { get; set; }
+        public int CategoryId { set; get; } //
+        //public Category Category { get; set; }
         public ICollection<MaterialVersion> MaterialVersions { get; set; }
         public Material()
         {

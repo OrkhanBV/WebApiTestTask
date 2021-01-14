@@ -6,7 +6,7 @@ using BabaevTask5.Data.Interfaces;
 using BabaevTask5.Data.Models;
 using BabaevTask5.Controllers.Models;
 using Microsoft.AspNetCore.Hosting;
-using static Category;
+//using static Category;
 
 namespace BabaevTask5.Data.Repository
 {
@@ -33,7 +33,7 @@ namespace BabaevTask5.Data.Repository
         {
             /*if(type == "Другое" || type == "Приложение" || type == "Презентация")
                 return appDbContent.Materials.Where(m => m.Category == type).ToList();*/
-            return appDbContent.Materials.Where(m => m.Category == Другое).ToList();
+            return appDbContent.Materials.Where(m => m.CategoryId == Convert.ToInt16(type)).ToList();
         }
 
         public IEnumerable<MaterialVersion> GetAllVersions(Guid id) => appDbContent.MaterialVersions
@@ -56,11 +56,11 @@ namespace BabaevTask5.Data.Repository
             {
                 var mat = appDbContent.Materials.Where(m => m.Id == mId).FirstOrDefault();
                 if (type == "Другое")
-                    mat.Category = Другое;
-                else if (type == "Прилоэение")
-                    mat.Category = Приложение;
+                    mat.CategoryId = Convert.ToInt16(MatCategory.Другое);
+                else if (type == "Приложение")
+                    mat.CategoryId = Convert.ToInt16(MatCategory.Приложение);
                 else if (type == "Презентация")
-                    mat.Category = Презентация;
+                    mat.CategoryId = Convert.ToInt16(MatCategory.Презентация);
                 appDbContent.SaveChanges();
                 return mId;
             }
@@ -75,19 +75,25 @@ namespace BabaevTask5.Data.Repository
             return mId;*/
         }
         
-        /*public Guid UploadNewMaterial(FormForMaterials formMaterials)
+        public Guid UploadNewMaterial(FormForMaterials formMaterials)
         {
             try
             {
-                if(formMaterials.CategoryName == "Приложение" ||
-                   formMaterials.CategoryName == "Презентация" ||
-                   formMaterials.CategoryName == "Другое")
+                /*if(formMaterials.CategoryName == Convert.ToInt16(MatCategory.Другое) ||
+                   formMaterials.CategoryName == Convert.ToInt16(MatCategory.Презентация) ||
+                   formMaterials.CategoryName == Convert.ToInt16(MatCategory.Приложение))
+                /*if(formMaterials.CategoryName == 0 ||
+                   formMaterials.CategoryName == 1 ||
+                   formMaterials.CategoryName == 2)*/
+                if(formMaterials.CategoryName == Convert.ToInt16(MatCategory.Другое) ||
+                   formMaterials.CategoryName == Convert.ToInt16(MatCategory.Презентация) ||
+                   formMaterials.CategoryName == Convert.ToInt16(MatCategory.Приложение))
                 {
                     //Создаем материал и сохраняем изменения в BD
                     Material mt1;
                     mt1 = new Material{MaterialDate = DateTime.Now, 
                         MaterialName = formMaterials.Name, 
-                        Category = formMaterials.CategoryName};
+                        CategoryId = formMaterials.CategoryName};
                     //appDbContent.SaveChanges();
                     //Создаем версию материала 
                     MaterialVersion version = new MaterialVersion
@@ -123,7 +129,7 @@ namespace BabaevTask5.Data.Repository
                 Console.WriteLine("error");
                 return Guid.Empty;
             }
-        }*/
+        }
 
         public FileModel GetFileParametrsForDownloadActualVersion(Guid mId)
         {

@@ -33,6 +33,7 @@ public enum MatCategory
     Другое
 }
 
+
 namespace BabaevTask5.Data.Models
 {
     public class Material

@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using BabaevTask5.Controllers.Models;
-using BabaevTask5.Data.Interfaces;
-using BabaevTask5.Data.Models;
+using BabaevTask5.DAL.Interfaces;
+using BabaevTask5.DAL.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BabaevTask5.Controllers

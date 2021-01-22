@@ -1,43 +1,33 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using BabaevTask5.Controllers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using BabaevTask5.Data;
-using BabaevTask5.Data.Interfaces;
-using BabaevTask5.Data.Models;
-using BabaevTask5.Data.Repository;
+
+using System.Text;
+using System.Threading.Tasks;
+/*using Microsoft.AspNetCore.Authentication.JwtBearer;*/
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+/*using Microsoft.IdentityModel.Tokens;*/
+using Microsoft.AspNetCore.Http;
+
 //using BabaevTask5.Data.User;
+using BabaevTask5.DAL;
 using BabaevTask5.Middleware;
 using Microsoft.AspNetCore.Identity;
-using IHostingEnvironment = Microsoft.AspNetCore.Hosting.IHostingEnvironment;
 
-/*
- *
- * Что предстоить сделать
- *
- * 
- * 1)  Разобраться в инъекциях
- *     --избавиться от using Microsoft.AspNetCore.Hosting; в классах типа репозиторий ------ СДЕЛАНО
- * 2)  Как сделать так чтобы контроллеры возвращали некую универсальную прослойку
- *     --переделать всё под сваггер -------------------------------------------------------- В ПРОЦЕССЕ
- * 3)  Как правильно обрабатывать ошибки и что возвращать ---------------------------------- В ПРОЦЕССЕ
- * 4)  Связать типы Материалов в Enum ------------------------------------------------------ СДЕЛАНО
- * 5)  Сделать регистрацию ----------------------------------------------------------------- СДЕЛАНО
- * 6)  Авторизацию ------------------------------------------------------------------------- СДЕЛАНО
- * 7)  Управление пользователями ----------------------------------------------------------- СДЕЛАНО
- * 8)  Изменение пароля -------------------------------------------------------------------- СДЕЛАНО
- * 9)  Доделать контроль ролей ------------------------------------------------------------- СДЕЛАНО
- * 10) 
- * 11)Исследовать вопрос с мапперами 
- */
 
 namespace BabaevTask5
 {
@@ -66,7 +56,8 @@ namespace BabaevTask5
             
             // добавление ApplicationDbContext для взаимодействия с базой данных учетных записей
             services.AddDbContext<AppDbContent>(options =>
-                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
+                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"), 
+                    x => x.MigrationsAssembly("BabaevTask5")));
 
             services.AddIdentity<User, IdentityRole>(options =>
             {

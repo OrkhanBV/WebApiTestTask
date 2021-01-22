@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.Enumeration;
 using BabaevTask5.Controllers.Models;
-using BabaevTask5.Data.Interfaces;
-using BabaevTask5.Data.Models;
+using BabaevTask5.DAL.Interfaces;
+using BabaevTask5.DAL.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

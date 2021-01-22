@@ -1,6 +1,6 @@
 using System.Linq;
 using System.Threading.Tasks;
-using BabaevTask5.Data.Models;
+using BabaevTask5.DAL.Models;
 using BabaevTask5.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;

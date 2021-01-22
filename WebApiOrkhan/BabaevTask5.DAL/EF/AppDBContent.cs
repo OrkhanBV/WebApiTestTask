@@ -1,4 +1,4 @@
-
+using BabaevTask5.DAL.Models;
 using BabaevTask5.Data.Models;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
         Смотреть ссылку https://metanit.com/sharp/entityframework/3.7.php
  */
 
-namespace BabaevTask5.Data
+namespace BabaevTask5.DAL
 {
     public class AppDbContent : IdentityDbContext<User>/*DbContext*/ {
         public AppDbContent(DbContextOptions<AppDbContent> options) : base(options) {

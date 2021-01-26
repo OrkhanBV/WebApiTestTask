@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "4Zf7zbiJY4gaFFc2AcQznKt47F3Z+21Qjo9JIPnDD2L0OsSMqgWirplbpGOAnLrrdP2VZ4BK8aiaxHCOJi71kA==",
+  "dgSpecHash": "ooJsxl0gAMu4YYrUBbyu2Pwzb6F6ERR4GFuEuCq8X4tj9Mkg46WdDkhgpmCY/aCeDSeUZwphrPM2HCqkBgRMWA==",
   "success": true,
   "projectFilePath": "/home/orhan/Desktop/LLL/Task3.DAL/Task3.DAL.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "/home/orhan/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/home/orhan/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -4,7 +4,7 @@
     ".NETCoreApp,Version=v3.1": {
       "Task3.BLL/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
+        "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Task3.Core": "1.0.0"
         },
@@ -13,27 +13,21 @@
         },
         "runtime": {
           "bin/placeholder/Task3.BLL.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "Task3.Core/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
+        "framework": ".NETStandard,Version=v2.0",
         "compile": {
           "bin/placeholder/Task3.Core.dll": {}
         },
         "runtime": {
           "bin/placeholder/Task3.Core.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "Task3.DAL/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
+        "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "Task3.Core": "1.0.0"
         },
@@ -42,10 +36,7 @@
         },
         "runtime": {
           "bin/placeholder/Task3.DAL.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       }
     }
   },

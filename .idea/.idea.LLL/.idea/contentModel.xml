@@ -40,7 +40,23 @@
         </e>
       </e>
       <e p="Task3.Core" t="IncludeRecursive">
-        <e p="Class1.cs" t="Include" />
+        <e p="DTO" t="Include">
+          <e p="UploadMaterialVersionDTO.cs" t="Include" />
+        </e>
+        <e p="IUnitOfWork.cs" t="Include" />
+        <e p="Models" t="Include">
+          <e p="Material.cs" t="Include" />
+          <e p="MaterialVersion.cs" t="Include" />
+        </e>
+        <e p="Repositories" t="Include">
+          <e p="IMaterialRepository.cs" t="Include" />
+          <e p="IMaterialVersionRepository.cs" t="Include" />
+          <e p="IRepository.cs" t="Include" />
+        </e>
+        <e p="Services" t="Include">
+          <e p="IMaterialServices.cs" t="Include" />
+          <e p="IMaterialVersionServices.cs" t="Include" />
+        </e>
         <e p="Task3.Core.csproj" t="IncludeRecursive" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="obj" t="ExcludeRecursive">

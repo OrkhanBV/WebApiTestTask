@@ -6,74 +6,61 @@
     <projectFile>Task3.DAL/Task3.DAL.csproj</projectFile>
     <projectFile>Task3.BLL/Task3.BLL.csproj</projectFile>
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="693c176a-5eba-4370-a384-0adedb283ba7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Task3.Core/DTO/UploadMaterialVersionDTO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task3.Core/IUnitOfWork.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task3.Core/Models/Material.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task3.Core/Models/MaterialVersion.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task3.Core/Repositories/IMaterialRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task3.Core/Repositories/IMaterialVersionRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task3.Core/Repositories/IRepository.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task3.Core/Services/IMaterialServices.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task3.Core/Services/IMaterialVersionServices.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LLL/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LLL/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LLL/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LLL/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.API/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.API/Properties/launchSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.API/Task3.API.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.API/Task3.API.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task3.API/obj/Debug/netcoreapp3.1/Task3.API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.API/obj/Debug/netcoreapp3.1/Task3.API.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task3.API/obj/Task3.API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.API/obj/Task3.API.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task3.API/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.API/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task3.API/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.API/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.API/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.API/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task3.API/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.API/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/Controllers/WeatherForecastController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/Startup.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/Task3.BLL.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/Task3.BLL.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/WeatherForecast.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/obj/Debug/netcoreapp3.1/.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/obj/Debug/netcoreapp3.1/Task3.BLL.AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/obj/Debug/netcoreapp3.1/Task3.BLL.AssemblyInfoInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/obj/Debug/netcoreapp3.1/Task3.BLL.assets.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task3.BLL/obj/Task3.BLL.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/obj/Task3.BLL.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/obj/Task3.BLL.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/obj/Task3.BLL.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/obj/Task3.BLL.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/obj/Task3.BLL.csproj.nuget.g.targets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task3.BLL/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task3.BLL/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/obj/rider.project.restore.info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.Core/Controllers/WeatherForecastController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.Core/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.Core/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.Core/Startup.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3.BLL/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3.Core/Class1.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Task3.Core/Task3.Core.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.Core/Task3.Core.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.Core/WeatherForecast.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.Core/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.Core/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.Core/obj/Debug/netcoreapp3.1/.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.Core/obj/Debug/netcoreapp3.1/Task3.Core.AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.Core/obj/Debug/netcoreapp3.1/Task3.Core.AssemblyInfoInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.Core/obj/Debug/netcoreapp3.1/Task3.Core.assets.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.Core/obj/Debug/netcoreapp3.1/Task3.Core.csprojAssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3.Core/obj/Debug/netstandard2.0/Task3.Core.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.Core/obj/Debug/netstandard2.0/Task3.Core.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3.Core/obj/Debug/netstandard2.0/Task3.Core.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.Core/obj/Debug/netstandard2.0/Task3.Core.csprojAssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task3.Core/obj/Task3.Core.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.Core/obj/Task3.Core.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.Core/obj/Task3.Core.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.Core/obj/Task3.Core.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3.Core/obj/Task3.Core.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.Core/obj/Task3.Core.csproj.nuget.g.props" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task3.Core/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.Core/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task3.Core/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.Core/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task3.Core/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.Core/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.DAL/Controllers/WeatherForecastController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.DAL/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.DAL/Properties/launchSettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.DAL/Startup.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.DAL/Task3.DAL.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.DAL/Task3.DAL.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.DAL/WeatherForecast.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.DAL/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.DAL/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.DAL/obj/Debug/netcoreapp3.1/.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.DAL/obj/Debug/netcoreapp3.1/Task3.DAL.AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.DAL/obj/Debug/netcoreapp3.1/Task3.DAL.AssemblyInfoInputs.cache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.DAL/obj/Debug/netcoreapp3.1/Task3.DAL.assets.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3.DAL/obj/Debug/netstandard2.0/Task3.DAL.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.DAL/obj/Debug/netstandard2.0/Task3.DAL.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task3.DAL/obj/Task3.DAL.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.DAL/obj/Task3.DAL.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.DAL/obj/Task3.DAL.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.DAL/obj/Task3.DAL.csproj.nuget.g.props" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.DAL/obj/Task3.DAL.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.DAL/obj/Task3.DAL.csproj.nuget.g.targets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task3.DAL/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.DAL/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task3.DAL/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.DAL/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.DAL/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.DAL/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.DAL/obj/rider.project.restore.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3.DAL/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.DAL/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +69,21 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Task3.Core/Models/MaterialVersion.cs" />
+        <option value="$PROJECT_DIR$/Task3.Core/Models/Material.cs" />
+        <option value="$PROJECT_DIR$/Task3.Core/Repositories/IRepository.cs" />
+        <option value="$PROJECT_DIR$/Task3.Core/Repositories/IMaterialRepository.cs" />
+        <option value="$PROJECT_DIR$/Task3.Core/Repositories/IMaterialVersionRepository.cs" />
+        <option value="$PROJECT_DIR$/Task3.Core/IUnitOfWork.cs" />
+        <option value="$PROJECT_DIR$/Task3.Core/Services/IMaterialServices.cs" />
+        <option value="$PROJECT_DIR$/Task3.Core/Services/IMaterialVersionServices.cs" />
+        <option value="$PROJECT_DIR$/Task3.Core/DTO/UploadMaterialVersionDTO.cs" />
+      </list>
+    </option>
   </component>
   <component name="ProjectId" id="1ncgCkGMXNrFU0W61SAXF9cuayT" />
   <component name="ProjectViewState">
@@ -224,7 +226,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1611694668881</updated>
-      <workItem from="1611694712248" duration="626000" />
+      <workItem from="1611694712248" duration="6141000" />
     </task>
     <servers />
   </component>
@@ -233,10 +235,25 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="466" y="126" width="424" height="483" key="FileChooserDialogImpl" timestamp="1611701612629">
+      <screen x="0" y="0" width="1366" height="737" />
+    </state>
+    <state x="466" y="126" width="424" height="483" key="FileChooserDialogImpl/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1611701612629" />
     <state x="346" y="58" key="search.everywhere.popup" timestamp="1611694938805">
       <screen x="0" y="0" width="1366" height="737" />
     </state>

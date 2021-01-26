@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <ItemGroup>
+    <ProjectReference Include="..\Task3.Core\Task3.Core.csproj" />
+    <ProjectReference Include="..\Task3.BLL\Task3.BLL.csproj" />
+    <ProjectReference Include="..\Task3.DAL\Task3.DAL.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+
+</Project>

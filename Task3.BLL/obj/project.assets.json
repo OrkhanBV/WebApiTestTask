@@ -1,0 +1,92 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Task3.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Task3.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Task3.Core.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      }
+    }
+  },
+  "libraries": {
+    "Task3.Core/1.0.0": {
+      "type": "project",
+      "path": "../Task3.Core/Task3.Core.csproj",
+      "msbuildProject": "../Task3.Core/Task3.Core.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "Task3.Core >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "/home/orhan/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/home/orhan/Desktop/LLL/Task3.BLL/Task3.BLL.csproj",
+      "projectName": "Task3.BLL",
+      "projectPath": "/home/orhan/Desktop/LLL/Task3.BLL/Task3.BLL.csproj",
+      "packagesPath": "/home/orhan/.nuget/packages/",
+      "outputPath": "/home/orhan/Desktop/LLL/Task3.BLL/obj/",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "/home/orhan/.nuget/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "projectReferences": {
+            "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj": {
+              "projectPath": "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.404/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

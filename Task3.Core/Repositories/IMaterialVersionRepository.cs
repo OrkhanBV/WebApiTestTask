@@ -7,8 +7,7 @@ namespace Task3.Core.Repositories
 {
     public interface IMaterialVersionRepository : IRepository<MaterialVersion>
     {
-        Task<IEnumerable<MaterialVersion>> GetAllWithMaterialAsync();
-        Task<MaterialVersion> GetWithMaterialByIdAsync(Guid id);
-        Task<IEnumerable<MaterialVersion>> GetAllWithMaterialIdAsync(Guid materialId);
+        Task<IEnumerable<MaterialVersion>> GetFilterVersionsByDate(Guid mId);
+        Task<IEnumerable<MaterialVersion>> GetFilterVersionsBySize(Guid mId);
     }
 }

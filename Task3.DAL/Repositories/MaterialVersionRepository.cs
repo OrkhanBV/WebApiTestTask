@@ -15,7 +15,7 @@ namespace Task3.DAL.Repositories
         {
         }
 
-        public async Task<IEnumerable<MaterialVersion>> GetAllWithMaterialAsync()
+        /*public async Task<IEnumerable<MaterialVersion>> GetAllWithMaterialAsync()
         {
             return await Task3DbContext.MaterialVersions.Include(m => m.Material)
                 .ToListAsync();
@@ -31,13 +31,26 @@ namespace Task3.DAL.Repositories
         {
             return await Task3DbContext.MaterialVersions.Where(m => m.Material.Id == materialId)
                 .ToListAsync();
-        }
+        }*/
 
 
         private Task3DbContext Task3DbContext
         {
             get { return Context as Task3DbContext; }
         }
-        
+
+        public async Task<IEnumerable<MaterialVersion>> GetFilterVersionsByDate(Guid mId)
+        {
+            return await Task3DbContext.MaterialVersions.Where(m => m.Material.Id == mId)
+                .OrderByDescending(m => m.FileDate)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<MaterialVersion>> GetFilterVersionsBySize(Guid mId)
+        {
+            return await Task3DbContext.MaterialVersions.Where(m => m.Material.Id == mId)
+                .OrderByDescending(m => m.Size)
+                .ToListAsync();
+        }
     }
 }

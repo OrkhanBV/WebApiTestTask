@@ -9,8 +9,9 @@ namespace Task3.Core.Services
 {
     public interface IMaterialVersionServices
     {
-        Task<IEnumerable<MaterialVersion>> FilterVersionsByDate(Guid mId);
-        Task<IEnumerable<MaterialVersion>> FilterVersionBySize(Guid mId);
+        Task<IEnumerable<MaterialVersion>> GetFilterVersionsByDate(Guid mId);
+        Task<IEnumerable<MaterialVersion>> GetFilterVersionsBySize(Guid mId);
+        
         IActionResult UploadNewMaterialVersion(UploadMaterialVersionDTO materialVersion);
         IActionResult DownloadMaterialVersion(DownloadMaterialVersionDTO materialId);
 

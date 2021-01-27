@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Task3.Core.DTO;
 using Task3.Core.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Task3.Core.Services
 {
@@ -10,8 +11,9 @@ namespace Task3.Core.Services
     {
         Task<IEnumerable<MaterialVersion>> FilterVersionsByDate(Guid mId);
         Task<IEnumerable<MaterialVersion>> FilterVersionBySize(Guid mId);
-        Task<MaterialVersion> UploadNewMaterialVersion(UploadMaterialVersionDTO materialVersion);
-        
+        IActionResult UploadNewMaterialVersion(UploadMaterialVersionDTO materialVersion);
+        IActionResult DownloadMaterialVersion(DownloadMaterialVersionDTO materialId);
+
 
         /*Task<IEnumerable<Music>> GetAllWithArtist();
         Task<Music> GetMusicById(int id);

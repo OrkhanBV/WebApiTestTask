@@ -6,10 +6,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Task3.Core;
+using Task3.DAL;
 
 namespace Task3.API
 {
@@ -26,6 +29,10 @@ namespace Task3.API
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddDbContext<Task3DbContext>(options => options
+                .UseNpgsql(Configuration.GetConnectionString("DefaultConnection")
+                    , x => x.MigrationsAssembly("Task3.DAL")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

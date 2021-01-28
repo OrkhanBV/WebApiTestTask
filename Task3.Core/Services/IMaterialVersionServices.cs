@@ -9,11 +9,11 @@ namespace Task3.Core.Services
 {
     public interface IMaterialVersionServices
     {
-        Task<IEnumerable<MaterialVersion>> GetFilterVersionsByDate(Guid mId);
-        Task<IEnumerable<MaterialVersion>> GetFilterVersionsBySize(Guid mId);
+        Task<IEnumerable<MaterialVersion>> FilterVersionsByDate(Guid mId);
+        Task<IEnumerable<MaterialVersion>> FilterVersionsBySize(Guid mId);
         
-        IActionResult UploadNewMaterialVersion(UploadMaterialVersionDTO materialVersion);
-        IActionResult DownloadMaterialVersion(DownloadMaterialVersionDTO materialId);
+        Task<MaterialVersion> UploadNewMaterialVersion(UploadMaterialVersionDTO materialVersion);
+        Task<MaterialVersion> DownloadMaterialVersion(DownloadMaterialVersionDTO materialId);
 
 
         /*Task<IEnumerable<Music>> GetAllWithArtist();

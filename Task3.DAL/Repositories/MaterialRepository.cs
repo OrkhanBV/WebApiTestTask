@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Task3.Core.Models;
@@ -11,15 +13,24 @@ namespace Task3.DAL.Repositories
         public MaterialRepository(DbContext context) : base(context)
         {
         }
-
-        public Task<IEnumerable<Material>> GetAllMaterialVersionsAsync()
+        
+        private Task3DbContext Task3DbContext
         {
-            throw new System.NotImplementedException();
+            get { return Context as Task3DbContext; }
         }
 
-        public Task<Material> GetMateriaVersionsByIdAsync(int id)
+        public async Task<IEnumerable<Material>> FilterMaterialsByDate()
         {
-            throw new System.NotImplementedException();
+            return await Task3DbContext.Materials
+                .OrderByDescending(m => m.MaterialDate)
+                .ToListAsync();
+        }
+
+        public async Task<IEnumerable<Material>> FilterMatreerialsByType(int catId)
+        {
+            return await Task3DbContext.Materials
+                .OrderByDescending(m => m.MatCategoryId == catId)
+                .ToListAsync(); //проверить что рабоатет верно
         }
     }
 }

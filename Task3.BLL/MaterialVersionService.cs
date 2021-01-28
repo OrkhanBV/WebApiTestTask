@@ -12,11 +12,10 @@ using Task3.Core.Services;
 
 namespace Task3.BLL
 {
-    public class MaterialVersionService : IMaterialServices
+    public class MaterialVersionService : IMaterialVersionServices
     {
         private readonly IUnitOfWork _unitOfWork;
-        /*private IWebHostEnvironment _env;*/
-        private IHostingEnvironment _env;
+        private readonly IHostingEnvironment _env;
         private string _dir;
 
         public MaterialVersionService(IUnitOfWork unitOfWork, IHostingEnvironment env)
@@ -25,18 +24,18 @@ namespace Task3.BLL
             _env = env;
             _dir = _env.ContentRootPath + "/Task3.DAL/MaterialStorage";
         }
-
-        async Task<IEnumerable<MaterialVersion>> FilterVersionsByDate(Guid mId)
+        
+        public async Task<IEnumerable<MaterialVersion>> FilterVersionsByDate(Guid mId)
         {
-            return await _unitOfWork.MaterialVersions.GetFilterVersionsByDate(mId);//добавить фильтры в материалверсионс
+            return await _unitOfWork.MaterialVersions.GetFilterVersionsByDate(mId);
         }
 
-        async Task<IEnumerable<MaterialVersion>> FilterVersionBySize(Guid mId)
+        public async Task<IEnumerable<MaterialVersion>> FilterVersionsBySize(Guid mId)
         {
             return await _unitOfWork.MaterialVersions.GetFilterVersionsBySize(mId);
         }
 
-        IActionResult UploadNewMaterialVersion(UploadMaterialVersionDTO materialVersionform)
+        public async Task<MaterialVersion> UploadNewMaterialVersion(UploadMaterialVersionDTO materialVersionform)
         {
             MaterialVersion f1 = new MaterialVersion
             {
@@ -44,26 +43,26 @@ namespace Task3.BLL
                 FileName = materialVersionform.Name,
                 PathOfFile = _dir,
                 Size = materialVersionform.File.Length,
-                //ВНИМАНИЕ НУЖНО РЕШИТЬ ВОПРОС 
-                /*Material = _unitOfWork.Materials.Where(m => m.Id == materialVersionform.MaterialId).ToList()[0]*/ ////////
+                //ВНИМАНИЕ НУЖНО РЕАЛИЗОВАТЬ
+                //Material = _unitOfWork.Materials.Where(m => m.Id == materialVersionform.MaterialId).ToList()[0] ////////
             };
             using (var fileStream = new FileStream(
                 Path.Combine(_dir,
                     $"{materialVersionform.Name}{Path.GetExtension(materialVersionform.File.FileName)}"),
-                FileMode.Create,
-                FileAccess.Write))
+                    FileMode.Create,
+                    FileAccess.Write))
             {
                 materialVersionform.File.CopyTo(fileStream);
             }
 
-            _unitOfWork.MaterialVersions.AddRangeAsync(new List<MaterialVersion> {f1});
-            _unitOfWork.CommitAsync();//надо проверить что это сохраняет
-            return OkResult; //Доделать
+            await _unitOfWork.MaterialVersions.AddRangeAsync(new List<MaterialVersion> {f1});
+            await _unitOfWork.CommitAsync();
+            return f1;
         }
-        
-        /*IActionResult DownloadMaterialVersion(DownloadMaterialVersionDTO materialId)
+
+        public Task<MaterialVersion> DownloadMaterialVersion(DownloadMaterialVersionDTO materialId)
         {
-            
-        }*/
+            throw new NotImplementedException();
+        }
     }
 }

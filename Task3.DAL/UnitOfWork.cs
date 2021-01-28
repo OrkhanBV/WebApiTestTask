@@ -8,9 +8,14 @@ namespace Task3.DAL
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly Task3DbContext _context;
+        private Task3DbContext _context;
         private MaterialVersionRepository _materialVersionRepository;
         private MaterialRepository _materialRepository;
+
+        public UnitOfWork(Task3DbContext context)
+        {
+            this._context = context;
+        }
 
         public IMaterialVersionRepository MaterialVersions => _materialVersionRepository = _materialVersionRepository 
             ?? new MaterialVersionRepository(_context);
@@ -18,14 +23,14 @@ namespace Task3.DAL
         public IMaterialRepository Materials => _materialRepository = _materialRepository
             ?? new MaterialRepository(_context);
 
-        public Task<int> CommitAsync()
+        public async Task<int> CommitAsync()
         {
-            throw new System.NotImplementedException();
+            return await _context.SaveChangesAsync();
         }
         
         public void Dispose()
         {
-            throw new System.NotImplementedException();
+            _context.Dispose();
         }
     }
 }

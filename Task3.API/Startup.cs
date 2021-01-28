@@ -11,8 +11,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
+using Task3.BLL;
 using Task3.Core;
+using Task3.Core.Services;
 using Task3.DAL;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace Task3.API
 {
@@ -30,9 +34,15 @@ namespace Task3.API
         {
             services.AddControllers();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<IMaterialServices, MaterialService>();
+            services.AddTransient<IMaterialVersionServices, MaterialVersionService>();
             services.AddDbContext<Task3DbContext>(options => options
                 .UseNpgsql(Configuration.GetConnectionString("DefaultConnection")
                     , x => x.MigrationsAssembly("Task3.DAL")));
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("v1", new OpenApiInfo { Title = "Material", Version = "v1" });
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +58,13 @@ namespace Task3.API
             app.UseRouting();
 
             app.UseAuthorization();
+            
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.RoutePrefix = "";
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Material V1");
+            });
 
             app.UseEndpoints(endpoints =>
             {

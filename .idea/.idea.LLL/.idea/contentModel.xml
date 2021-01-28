@@ -28,6 +28,7 @@
         </e>
       </e>
       <e p="Task3.BLL" t="IncludeRecursive">
+        <e p="MaterialService.cs" t="Include" />
         <e p="MaterialVersionService.cs" t="Include" />
         <e p="Task3.BLL.csproj" t="IncludeRecursive" />
         <e p="bin" t="ExcludeRecursive" />
@@ -42,6 +43,7 @@
       <e p="Task3.Core" t="IncludeRecursive">
         <e p="DTO" t="Include">
           <e p="DownloadMaterialVersionDTO.cs" t="Include" />
+          <e p="UploadMaterialDTO.cs" t="Include" />
           <e p="UploadMaterialVersionDTO.cs" t="Include" />
         </e>
         <e p="IUnitOfWork.cs" t="Include" />

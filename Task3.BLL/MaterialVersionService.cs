@@ -37,14 +37,13 @@ namespace Task3.BLL
 
         public async Task<MaterialVersion> UploadNewMaterialVersion(UploadMaterialVersionDTO materialVersionform)
         {
-            MaterialVersion f1 = new MaterialVersion
+            MaterialVersion uploadedVersion = new MaterialVersion
             {
                 FileDate = DateTime.Now,
                 FileName = materialVersionform.Name,
                 PathOfFile = _dir,
                 Size = materialVersionform.File.Length,
-                //ВНИМАНИЕ НУЖНО РЕАЛИЗОВАТЬ
-                //Material = _unitOfWork.Materials.Where(m => m.Id == materialVersionform.MaterialId).ToList()[0] ////////
+                Material = await _unitOfWork.Materials.GetMaterialById(materialVersionform.MaterialId)
             };
             using (var fileStream = new FileStream(
                 Path.Combine(_dir,
@@ -55,9 +54,9 @@ namespace Task3.BLL
                 materialVersionform.File.CopyTo(fileStream);
             }
 
-            await _unitOfWork.MaterialVersions.AddRangeAsync(new List<MaterialVersion> {f1});
+            await _unitOfWork.MaterialVersions.AddRangeAsync(new List<MaterialVersion> {uploadedVersion});
             await _unitOfWork.CommitAsync();
-            return f1;
+            return uploadedVersion;
         }
 
         public Task<MaterialVersion> DownloadMaterialVersion(DownloadMaterialVersionDTO materialId)

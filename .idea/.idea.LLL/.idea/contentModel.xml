@@ -9,9 +9,21 @@
         <e p="Controllers" t="Include">
           <e p="MaterialController.cs" t="Include" />
         </e>
+        <e p="Mapping" t="Include">
+          <e p="MappingProfile.cs" t="Include" />
+        </e>
+        <e p="MaterialStorage" t="Include">
+          <e p="ApiTest03.png" t="Include" />
+          <e p="Material_00.jpeg" t="Include" />
+        </e>
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
+        </e>
+        <e p="Resources" t="Include">
+          <e p="MaterialResources.cs" t="Include" />
+          <e p="MaterialVersionResourses.cs" t="Include" />
+          <e p="NewMaterialAddResources.cs" t="Include" />
         </e>
         <e p="Startup.cs" t="Include" />
         <e p="Task3.API.csproj" t="IncludeRecursive" />
@@ -73,6 +85,8 @@
         <e p="Migrations" t="Include">
           <e p="20210127134534_InitialModel.Designer.cs" t="Include" />
           <e p="20210127134534_InitialModel.cs" t="Include" />
+          <e p="20210129151332_Model2.Designer.cs" t="Include" />
+          <e p="20210129151332_Model2.cs" t="Include" />
           <e p="Task3DbContextModelSnapshot.cs" t="Include" />
         </e>
         <e p="Repositories" t="Include">

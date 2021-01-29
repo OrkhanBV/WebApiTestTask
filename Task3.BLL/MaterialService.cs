@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Task3.Core;
 using Task3.Core.DTO;
 using Task3.Core.Models;
@@ -20,7 +21,7 @@ namespace Task3.BLL
         {
             this._unitOfWork = unitOfWork;
             _env = env;
-            _dir = _env.ContentRootPath + "/Task3.DAL/MaterialStorage";
+            _dir = _env.ContentRootPath + "/MaterialStorage";
         }
 
         public async Task<IEnumerable<Material>> GetFilterMaterialsByDate()
@@ -33,47 +34,49 @@ namespace Task3.BLL
             return await _unitOfWork.Materials.FilterMatreerialsByType(categoryId);
         }
 
-        public async Task<Material> UploadNewMaterial(UploadMaterialDTO materialForm)
+        public async Task<Material> UploadNewMaterial(/*IFormFile file,*/ UploadMaterialDTO materialForm)
         {
-            if (materialForm.CategoryName != Convert.ToInt16(MatCategory.Другое) ||
+            /*if (materialForm.CategoryName != Convert.ToInt16(MatCategory.Другое) ||
                 materialForm.CategoryName != Convert.ToInt16(MatCategory.Презентация) ||
                 materialForm.CategoryName != Convert.ToInt16(MatCategory.Приложение))
                 return null;
             else
-            {
+            {*/
                 //Создаем материал и сохраняем изменения в BD
-                Material mt1;
-                mt1 = new Material
+                Material uploadedMaterial = new Material
                 {
                     MaterialDate = DateTime.Now,
                     MaterialName = materialForm.Name,
-                    MatCategoryId = materialForm.CategoryName
+                    MatCategoryId = 1/*materialForm.CategoryName*/
                 };
                 //appDbContent.SaveChanges();
                 //Создаем версию материала 
                 MaterialVersion version = new MaterialVersion
                 {
                     FileDate = DateTime.Now,
-                    Material = mt1,
+                    Material = uploadedMaterial,
                     FileName = materialForm.Name,
                     Size = materialForm.File.Length,
+                    /*Size = file.Length,*/
                     PathOfFile = _dir
                 };
                 using (var fileStream = new FileStream(
                     Path.Combine(_dir,
                         $"{materialForm.Name}{Path.GetExtension(materialForm.File.FileName)}"),
+                        /*$"{materialForm.Name}{Path.GetExtension(file.FileName)}"),*/
                     FileMode.Create,
                     FileAccess.Write))
                 {
                     materialForm.File.CopyTo(fileStream);
+                    /*file.CopyTo(fileStream);*/
                 }
 
                 //После того как убедились, что у нас всё ок сохраняем в бд
                 await _unitOfWork.MaterialVersions.AddRangeAsync(new List<MaterialVersion> {version});
                 await _unitOfWork.CommitAsync();
-                return mt1;
+                return uploadedMaterial;
             }
         }
 
-    }
+    
 }

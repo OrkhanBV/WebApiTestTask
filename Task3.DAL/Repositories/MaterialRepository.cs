@@ -32,5 +32,10 @@ namespace Task3.DAL.Repositories
                 .OrderByDescending(m => m.MatCategoryId == catId)
                 .ToListAsync(); //проверить что рабоатет верно
         }
+
+        public async Task<Material> GetMaterialById(Guid mId)
+        {
+            return await Task3DbContext.Materials.FindAsync(mId);
+        }
     }
 }

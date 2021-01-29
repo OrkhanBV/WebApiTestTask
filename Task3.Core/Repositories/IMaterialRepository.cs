@@ -9,5 +9,6 @@ namespace Task3.Core.Repositories
     {
         Task<IEnumerable<Material>> FilterMaterialsByDate();
         Task<IEnumerable<Material>> FilterMatreerialsByType(int catId);
+        Task<Material> GetMaterialById(Guid mId);
     }
 }

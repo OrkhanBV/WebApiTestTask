@@ -1,0 +1,4 @@
+/home/orhan/Desktop/LLL/Task3.API/obj/Debug/netcoreapp2.1/Task3.API.csprojAssemblyReference.cache
+/home/orhan/Desktop/LLL/Task3.API/obj/Debug/netcoreapp2.1/Task3.API.AssemblyInfoInputs.cache
+/home/orhan/Desktop/LLL/Task3.API/obj/Debug/netcoreapp2.1/Task3.API.AssemblyInfo.cs
+/home/orhan/Desktop/LLL/Task3.API/obj/Debug/netcoreapp2.1/Task3.API.csproj.CoreCompileInputs.cache

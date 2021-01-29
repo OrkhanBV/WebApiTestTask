@@ -5,10 +5,10 @@
     "version": "v1"
   },
   "paths": {
-    "/WeatherForecast": {
+    "/api/Material": {
       "get": {
         "tags": [
-          "WeatherForecast"
+          "Material"
         ],
         "responses": {
           "200": {
@@ -18,7 +18,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
+                    "$ref": "#/components/schemas/Material"
                   }
                 }
               },
@@ -26,7 +26,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
+                    "$ref": "#/components/schemas/Material"
                   }
                 }
               },
@@ -34,7 +34,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
+                    "$ref": "#/components/schemas/Material"
                   }
                 }
               }
@@ -46,24 +46,59 @@
   },
   "components": {
     "schemas": {
-      "WeatherForecast": {
+      "MaterialVersion": {
         "type": "object",
         "properties": {
-          "date": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "fileName": {
+            "type": "string",
+            "nullable": true
+          },
+          "size": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "pathOfFile": {
+            "type": "string",
+            "nullable": true
+          },
+          "fileDate": {
             "type": "string",
             "format": "date-time"
           },
-          "temperatureC": {
+          "material": {
+            "$ref": "#/components/schemas/Material"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Material": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "materialName": {
+            "type": "string",
+            "nullable": true
+          },
+          "materialDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "matCategoryId": {
             "type": "integer",
             "format": "int32"
           },
-          "temperatureF": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "summary": {
-            "type": "string",
+          "materialVersions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MaterialVersion"
+            },
             "nullable": true
           }
         },

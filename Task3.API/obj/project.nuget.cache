@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "IHRXKErj9Xfw22HNTdlIoBazt/MxJRdmM/6jKy6HwAqXowo5pS/4g5Iy6Fb8Uwgf+y83/kUesNiV1xh/vwiuMA==",
+  "dgSpecHash": "p8xXsPd9QvBgl4OnyvToJ6kjchUFs/fMizdLNJlSpxSraHEpBJzalUuDU6XTJ0/+CsCLX6FEsIYC3/SfEk1jlw==",
   "success": true,
   "projectFilePath": "/home/orhan/Desktop/LLL/Task3.API/Task3.API.csproj",
   "expectedPackageFiles": [
+    "/home/orhan/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
+    "/home/orhan/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/8.1.0/automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
     "/home/orhan/.nuget/packages/microsoft.aspnetcore.antiforgery/2.2.0/microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "/home/orhan/.nuget/packages/microsoft.aspnetcore.authentication.abstractions/2.2.0/microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "/home/orhan/.nuget/packages/microsoft.aspnetcore.authentication.core/2.2.0/microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
@@ -137,7 +139,7 @@
     "/home/orhan/.nuget/packages/system.linq.expressions/4.3.0/system.linq.expressions.4.3.0.nupkg.sha512",
     "/home/orhan/.nuget/packages/system.objectmodel/4.3.0/system.objectmodel.4.3.0.nupkg.sha512",
     "/home/orhan/.nuget/packages/system.reflection/4.3.0/system.reflection.4.3.0.nupkg.sha512",
-    "/home/orhan/.nuget/packages/system.reflection.emit/4.3.0/system.reflection.emit.4.3.0.nupkg.sha512",
+    "/home/orhan/.nuget/packages/system.reflection.emit/4.7.0/system.reflection.emit.4.7.0.nupkg.sha512",
     "/home/orhan/.nuget/packages/system.reflection.emit.ilgeneration/4.3.0/system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
     "/home/orhan/.nuget/packages/system.reflection.emit.lightweight/4.3.0/system.reflection.emit.lightweight.4.3.0.nupkg.sha512",
     "/home/orhan/.nuget/packages/system.reflection.extensions/4.3.0/system.reflection.extensions.4.3.0.nupkg.sha512",

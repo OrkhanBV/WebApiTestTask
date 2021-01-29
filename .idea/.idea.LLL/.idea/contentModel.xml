@@ -7,7 +7,7 @@
       <e p="LLL.sln" t="IncludeFlat" />
       <e p="Task3.API" t="IncludeRecursive">
         <e p="Controllers" t="Include">
-          <e p="WeatherForecastController.cs" t="Include" />
+          <e p="MaterialController.cs" t="Include" />
         </e>
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
@@ -15,7 +15,6 @@
         </e>
         <e p="Startup.cs" t="Include" />
         <e p="Task3.API.csproj" t="IncludeRecursive" />
-        <e p="WeatherForecast.cs" t="Include" />
         <e p="appsettings.Development.json" t="Include" />
         <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />

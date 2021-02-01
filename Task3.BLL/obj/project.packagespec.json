@@ -17,6 +17,9 @@
         "projectReferences": {
           "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj": {
             "projectPath": "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj"
+          },
+          "/home/orhan/Desktop/LLL/Task3.DAL/Task3.DAL.csproj": {
+            "projectPath": "/home/orhan/Desktop/LLL/Task3.DAL/Task3.DAL.csproj"
           }
         }
       }

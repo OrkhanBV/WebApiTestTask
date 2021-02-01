@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
@@ -32,16 +33,19 @@ namespace Task3.API.Controllers
                 Map<IEnumerable<Material>, IEnumerable<MaterialResources>>(materials);
             return Ok(materials);
         }
-
-        /*[HttpPost("")]
-        public async Task<ActionResult<UploadMaterialDTO>> UploadedMaterial([FromBody] UploadMaterialDTO uploadMaterialForm)
+        
+        /*[Route("GetMat")]
+        [HttpPost]
+        public async Task<ActionResult> GetMaterialNew([FromForm] UploadMaterialDTO uploadMaterialForm)
         {
-            var materialToCreate = _mapper.Map<UploadMaterialDTO, Material>(uploadMaterialForm);
-            var material = _materialService.UploadNewMaterial(uploadMaterialForm);
-            var materialResources = _mapper.Map<Material, UploadMaterialDTO>(await material);
-            return Ok(materialResources);
-            /*return BadRequest();#1#
+            var validator = new SaveMaterialValidator();
+            var validationResult = await validator.ValidateAsync(uploadMaterialForm);
+            if (!validationResult.IsValid)
+                return BadRequest(validationResult.Errors);
+            var material = await _materialService.UploadNewMaterial(uploadMaterialForm);
+            return Ok(material);
         }*/
+        
         [HttpPost("")]
         public async Task<ActionResult> UploadedMaterial([FromForm] UploadMaterialDTO uploadMaterialForm)
         {
@@ -52,6 +56,15 @@ namespace Task3.API.Controllers
             var material = await _materialService.UploadNewMaterial(uploadMaterialForm);
             return Ok(material);
         }
-        
+
+        [Route("GetMat")]
+        [HttpPost]
+        public async Task<ActionResult> DownloadMaterialqqqq(Guid mId)
+        {
+            var fileForD = await _materialService.GetDtoForDownloadMaterialAsync(mId);
+            byte[] mas = System.IO.File.ReadAllBytes(fileForD.filePath);
+            return File(mas, "application/octet-stream", "name"); //PhysicalFile(fileForD.filePath, fileForD.fileType, fileForD.fileName);
+        }
+
     }
 }

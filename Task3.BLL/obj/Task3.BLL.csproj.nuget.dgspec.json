@@ -27,6 +27,9 @@
             "projectReferences": {
               "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj": {
                 "projectPath": "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj"
+              },
+              "/home/orhan/Desktop/LLL/Task3.DAL/Task3.DAL.csproj": {
+                "projectPath": "/home/orhan/Desktop/LLL/Task3.DAL/Task3.DAL.csproj"
               }
             }
           }
@@ -122,6 +125,77 @@
             "System.Threading.Tasks.Extensions": {
               "target": "Package",
               "version": "[4.5.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.404/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/orhan/Desktop/LLL/Task3.DAL/Task3.DAL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/orhan/Desktop/LLL/Task3.DAL/Task3.DAL.csproj",
+        "projectName": "Task3.DAL",
+        "projectPath": "/home/orhan/Desktop/LLL/Task3.DAL/Task3.DAL.csproj",
+        "packagesPath": "/home/orhan/.nuget/packages/",
+        "outputPath": "/home/orhan/Desktop/LLL/Task3.DAL/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/orhan/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj": {
+                "projectPath": "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.11, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[3.1.11, )"
             }
           },
           "imports": [

@@ -1908,7 +1908,8 @@
         "dependencies": {
           "Microsoft.AspNetCore.Hosting": "2.2.7",
           "Microsoft.AspNetCore.Hosting.Abstractions": "2.2.0",
-          "Task3.Core": "1.0.0"
+          "Task3.Core": "1.0.0",
+          "Task3.DAL": "1.0.0"
         },
         "runtime": {
           "Task3.BLL.dll": {}

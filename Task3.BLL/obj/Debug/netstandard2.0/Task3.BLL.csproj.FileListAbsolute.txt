@@ -10,3 +10,5 @@
 /home/orhan/Desktop/LLL/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.csproj.CopyComplete
 /home/orhan/Desktop/LLL/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.dll
 /home/orhan/Desktop/LLL/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.pdb
+/home/orhan/Desktop/LLL/Task3.BLL/bin/Debug/netstandard2.0/Task3.DAL.dll
+/home/orhan/Desktop/LLL/Task3.BLL/bin/Debug/netstandard2.0/Task3.DAL.pdb

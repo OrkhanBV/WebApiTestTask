@@ -59,9 +59,10 @@ namespace Task3.BLL
             return uploadedVersion;
         }
 
-        public Task<MaterialVersion> DownloadMaterialVersion(DownloadMaterialVersionDTO materialId)
+        public Task<MaterialVersion> DownloadMaterialVersion(DownloadFileDTO materialId)
         {
             throw new NotImplementedException();
         }
+        
     }
 }

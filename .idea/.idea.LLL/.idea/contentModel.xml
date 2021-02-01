@@ -20,6 +20,8 @@
           <e p="Material_03.png" t="Include" />
           <e p="Material_04.jpeg" t="Include" />
           <e p="Material_05.jpeg" t="Include" />
+          <e p="Material_06.jpeg" t="Include" />
+          <e p="Material_07.jpeg" t="Include" />
         </e>
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
@@ -62,7 +64,7 @@
       </e>
       <e p="Task3.Core" t="IncludeRecursive">
         <e p="DTO" t="Include">
-          <e p="DownloadMaterialVersionDTO.cs" t="Include" />
+          <e p="DownloadFileDTO.cs" t="Include" />
           <e p="UploadMaterialDTO.cs" t="Include" />
           <e p="UploadMaterialVersionDTO.cs" t="Include" />
         </e>

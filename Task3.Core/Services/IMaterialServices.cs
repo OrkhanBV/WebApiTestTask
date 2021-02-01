@@ -12,9 +12,9 @@ namespace Task3.Core.Services
         Task<IEnumerable<Material>> GetFilterMaterialsByDate();
         Task<IEnumerable<Material>> GetFilterMatreerialsByType(int categoryId);
         
-        Task<Material> UploadNewMaterial(/*IFormFile file, */UploadMaterialDTO materialVersion);
-        
-        
+        Task<Material> UploadNewMaterial(UploadMaterialDTO materialVersion);
+        Task<DownloadFileDTO> GetDtoForDownloadMaterialAsync(Guid mId);
+
         /*public IOrderedEnumerable<Material> FilterMaterialsByDate { get; set; }
         public List<Material> FilterMaterialByType(string type);
         public string GetInfoAboutMaterial(Guid id);

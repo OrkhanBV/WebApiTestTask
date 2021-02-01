@@ -85,6 +85,28 @@
           }
         }
       }
+    },
+    "/api/Material/GetMat": {
+      "post": {
+        "tags": [
+          "Material"
+        ],
+        "parameters": [
+          {
+            "name": "mId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
     }
   },
   "components": {

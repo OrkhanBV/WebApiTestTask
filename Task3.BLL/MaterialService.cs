@@ -1,13 +1,16 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Task3.Core;
 using Task3.Core.DTO;
 using Task3.Core.Models;
 using Task3.Core.Services;
+using Task3.DAL;
 
 namespace Task3.BLL
 {
@@ -34,50 +37,59 @@ namespace Task3.BLL
             return await _unitOfWork.Materials.FilterMatreerialsByType(categoryId);
         }
 
+        public async Task<DownloadFileDTO> GetDtoForDownloadMaterialAsync(Guid mId)
+        {
+            DownloadFileDTO file = new DownloadFileDTO();
+            IEnumerable<MaterialVersion> ActualList() => _unitOfWork.MaterialVersions
+                .Find(m => m.Material.Id == mId)/*Where(m => m.Material.Id == mId)*/
+                .ToList()
+                .OrderByDescending(m =>m.FileDate);
+            MaterialVersion ActualVersion = ActualList().Select(m=> m).FirstOrDefault();
+            file.fileName = ActualVersion.FileName;
+            file.filePath = ActualVersion.PathOfFile + "/" + file.fileName + ".jpeg";
+            //file.filePath = ActualVersion.PathOfFile + "/" + file.fileName + Path.GetExtension(file.fileName);
+            file.fileType = "application/png";// + Path.GetExtension(file.fileName);
+            
+            return file;
+        }
+        
         public async Task<Material> UploadNewMaterial(UploadMaterialDTO materialForm)
         {
-            /*if (materialForm.CategoryName != Convert.ToInt16(MatCategory.Другое) ||
-                materialForm.CategoryName != Convert.ToInt16(MatCategory.Презентация) ||
-                materialForm.CategoryName != Convert.ToInt16(MatCategory.Приложение))
-                return null;
-            else
-            {*/
-                //Создаем материал и сохраняем изменения в BD
-                
-                Material uploadedMaterial = new Material
+            Material uploadedMaterial = new Material
                 {
                     MaterialDate = DateTime.Now,
                     MaterialName = materialForm.Name,
                     MatCategoryId = Convert.ToInt16(materialForm.CategoryNameId)
                 };
-                //appDbContent.SaveChanges();
-                //Создаем версию материала 
+            //Создаем версию материала 
                 MaterialVersion version = new MaterialVersion
                 {
                     FileDate = DateTime.Now,
                     Material = uploadedMaterial,
                     FileName = materialForm.Name,
                     Size = materialForm.File.Length,
-                    /*Size = file.Length,*/
                     PathOfFile = _dir
                 };
                 using (var fileStream = new FileStream(
                     Path.Combine(_dir,
                         $"{materialForm.Name}{Path.GetExtension(materialForm.File.FileName)}"),
-                        /*$"{materialForm.Name}{Path.GetExtension(file.FileName)}"),*/
                     FileMode.Create,
                     FileAccess.Write))
                 {
                     materialForm.File.CopyTo(fileStream);
-                    /*file.CopyTo(fileStream);*/
                 }
 
-                //После того как убедились, что у нас всё ок сохраняем в бд
+                //После того как убедились, что у нас всё ок сохраняем в бд используя unitOfWork
                 await _unitOfWork.MaterialVersions.AddRangeAsync(new List<MaterialVersion> {version});
                 await _unitOfWork.CommitAsync();
                 return uploadedMaterial;
             }
-        }
+
+        /*public Task<DownloadFileDTO> GetDtoForDownloadMaterialAsync(Guid mId)
+        {
+            throw new NotImplementedException();
+        }*/
+    }
 
     
 }

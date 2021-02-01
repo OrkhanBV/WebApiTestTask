@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "ELIHfGeU+/sXVWJ3N37JRyEimjgrrtj5dpy2quK9b9n/ynY6yZGHa9TYHLDdkkHJ59rv1MjRGL0+APxvSQWhFw==",
+  "dgSpecHash": "tJg/iYTDQid0M0sKTHebT17IFT3zrcTlocC2XhfpP0HLgbwWIE+MbLwzZpDzAGISdIXLr2is6BevEw23zGkwzA==",
   "success": true,
   "projectFilePath": "/home/orhan/Desktop/LLL/Task3.API/Task3.API.csproj",
   "expectedPackageFiles": [
     "/home/orhan/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
     "/home/orhan/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/8.1.0/automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",
+    "/home/orhan/.nuget/packages/fluentvalidation/9.5.0/fluentvalidation.9.5.0.nupkg.sha512",
     "/home/orhan/.nuget/packages/microsoft.aspnetcore.antiforgery/2.2.0/microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "/home/orhan/.nuget/packages/microsoft.aspnetcore.authentication.abstractions/2.2.0/microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "/home/orhan/.nuget/packages/microsoft.aspnetcore.authentication.core/2.2.0/microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",

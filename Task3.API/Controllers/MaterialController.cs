@@ -4,6 +4,7 @@ using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Task3.API.Resources;
+using Task3.API.Validations;
 using Task3.Core.DTO;
 using Task3.Core.Models;
 using Task3.Core.Services;
@@ -42,13 +43,14 @@ namespace Task3.API.Controllers
             /*return BadRequest();#1#
         }*/
         [HttpPost("")]
-        public async Task<ActionResult> UploadedMaterial(/*IFormFile file,*/ [FromForm] UploadMaterialDTO uploadMaterialForm)
+        public async Task<ActionResult> UploadedMaterial([FromForm] UploadMaterialDTO uploadMaterialForm)
         {
-            /*var materialToCreate = _mapper.Map<UploadMaterialDTO, Material>(uploadMaterialForm);*/
-            var material = await _materialService.UploadNewMaterial(/*file,*/uploadMaterialForm);
-            /*var materialResources = _mapper.Map<Material, UploadMaterialDTO>(await material);*/
+            var validator = new SaveMaterialValidator();
+            var validationResult = await validator.ValidateAsync(uploadMaterialForm);
+            if (!validationResult.IsValid)
+                return BadRequest(validationResult.Errors);
+            var material = await _materialService.UploadNewMaterial(uploadMaterialForm);
             return Ok(material);
-            /*return BadRequest();*/
         }
         
     }

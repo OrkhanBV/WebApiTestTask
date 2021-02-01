@@ -34,7 +34,7 @@ namespace Task3.BLL
             return await _unitOfWork.Materials.FilterMatreerialsByType(categoryId);
         }
 
-        public async Task<Material> UploadNewMaterial(/*IFormFile file,*/ UploadMaterialDTO materialForm)
+        public async Task<Material> UploadNewMaterial(UploadMaterialDTO materialForm)
         {
             /*if (materialForm.CategoryName != Convert.ToInt16(MatCategory.Другое) ||
                 materialForm.CategoryName != Convert.ToInt16(MatCategory.Презентация) ||
@@ -43,11 +43,12 @@ namespace Task3.BLL
             else
             {*/
                 //Создаем материал и сохраняем изменения в BD
+                
                 Material uploadedMaterial = new Material
                 {
                     MaterialDate = DateTime.Now,
                     MaterialName = materialForm.Name,
-                    MatCategoryId = 1/*materialForm.CategoryName*/
+                    MatCategoryId = Convert.ToInt16(materialForm.CategoryNameId)
                 };
                 //appDbContent.SaveChanges();
                 //Создаем версию материала 

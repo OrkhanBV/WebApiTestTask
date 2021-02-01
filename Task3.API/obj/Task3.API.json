@@ -55,6 +55,10 @@
                   "Name": {
                     "type": "string"
                   },
+                  "CategoryNameId": {
+                    "type": "integer",
+                    "format": "int32"
+                  },
                   "File": {
                     "type": "string",
                     "format": "binary"
@@ -63,6 +67,9 @@
               },
               "encoding": {
                 "Name": {
+                  "style": "form"
+                },
+                "CategoryNameId": {
                   "style": "form"
                 },
                 "File": {

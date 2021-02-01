@@ -46,19 +46,29 @@ namespace Task3.BLL
                 .OrderByDescending(m =>m.FileDate);
             MaterialVersion ActualVersion = ActualList().Select(m=> m).FirstOrDefault();
             file.fileName = ActualVersion.FileName;
-            file.filePath = ActualVersion.PathOfFile + "/" + file.fileName + ".jpeg";
-            //file.filePath = ActualVersion.PathOfFile + "/" + file.fileName + Path.GetExtension(file.fileName);
-            file.fileType = "application/png";// + Path.GetExtension(file.fileName);
+            //file.filePath = ActualVersion.PathOfFile + "/" + file.fileName + ".jpeg";
+            file.filePath = ActualVersion.PathOfFile + "/" + file.fileName;
+            file.fileType = "application/octet-stream";// + Path.GetExtension(file.fileName);
             
             return file;
         }
         
         public async Task<Material> UploadNewMaterial(UploadMaterialDTO materialForm)
         {
+            using (var fileStream = new FileStream(
+                Path.Combine(_dir,
+                    $"{materialForm.Name}{Path.GetExtension(materialForm.File.FileName)}"),
+                FileMode.Create,
+                FileAccess.Write))
+            {
+                materialForm.File.CopyTo(fileStream);
+            }
+            
             Material uploadedMaterial = new Material
                 {
                     MaterialDate = DateTime.Now,
-                    MaterialName = materialForm.Name,
+                    //MaterialName = materialForm.Name/* + materialForm.Extensions*/,
+                    MaterialName = $"{materialForm.Name}{Path.GetExtension(materialForm.File.FileName)}",
                     MatCategoryId = Convert.ToInt16(materialForm.CategoryNameId)
                 };
             //Создаем версию материала 
@@ -66,18 +76,19 @@ namespace Task3.BLL
                 {
                     FileDate = DateTime.Now,
                     Material = uploadedMaterial,
-                    FileName = materialForm.Name,
+                    //FileName = materialForm.Name/* + materialForm.Extensions*/,
+                    FileName = $"{materialForm.Name}{Path.GetExtension(materialForm.File.FileName)}",
                     Size = materialForm.File.Length,
                     PathOfFile = _dir
                 };
-                using (var fileStream = new FileStream(
+                /*using (var fileStream = new FileStream(
                     Path.Combine(_dir,
                         $"{materialForm.Name}{Path.GetExtension(materialForm.File.FileName)}"),
                     FileMode.Create,
                     FileAccess.Write))
                 {
                     materialForm.File.CopyTo(fileStream);
-                }
+                }*/
 
                 //После того как убедились, что у нас всё ок сохраняем в бд используя unitOfWork
                 await _unitOfWork.MaterialVersions.AddRangeAsync(new List<MaterialVersion> {version});

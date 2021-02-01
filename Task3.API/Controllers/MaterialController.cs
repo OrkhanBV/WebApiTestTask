@@ -63,7 +63,7 @@ namespace Task3.API.Controllers
         {
             var fileForD = await _materialService.GetDtoForDownloadMaterialAsync(mId);
             byte[] mas = System.IO.File.ReadAllBytes(fileForD.filePath);
-            return File(mas, "application/octet-stream", "name"); //PhysicalFile(fileForD.filePath, fileForD.fileType, fileForD.fileName);
+            return File(mas, fileForD.fileType, fileForD.fileName); //PhysicalFile(fileForD.filePath, fileForD.fileType, fileForD.fileName);
         }
 
     }

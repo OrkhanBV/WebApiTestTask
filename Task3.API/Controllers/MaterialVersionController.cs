@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using Task3.Core.DTO;
 using Task3.Core.Models;
 using Task3.Core.Services;
 
@@ -37,9 +38,12 @@ namespace Task3.API.Controllers
             return Ok(versions);
         }
 
-        public async Task<IEnumerable<MaterialVersion>> FilterVersionsBySize(Guid mId)
+        [Route("UploadVersion")]
+        [HttpGet]
+        public async Task<ActionResult> UploadNewVersionOfMaterial(UploadMaterialVersionDTO materialVersionform)
         {
-            return await _versionService.FilterVersionsBySize(mId);
+            var versionOfMaterial = await _versionService.UploadNewMaterialVersion(materialVersionform);
+            return Ok(versionOfMaterial);
         }
         /*
         public async Task<MaterialVersion> UploadNewMaterialVersion(UploadMaterialVersionDTO materialVersionform)

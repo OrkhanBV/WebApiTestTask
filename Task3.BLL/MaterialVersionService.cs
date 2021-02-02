@@ -38,22 +38,23 @@ namespace Task3.BLL
 
         public async Task<MaterialVersion> UploadNewMaterialVersion(UploadMaterialVersionDTO materialVersionform)
         {
+            using (var fileStream = new FileStream(
+                Path.Combine(_dir,
+                    $"{materialVersionform.Name}{Path.GetExtension(materialVersionform.File.FileName)}"),
+                FileMode.Create,
+                FileAccess.Write))
+            {
+                materialVersionform.File.CopyTo(fileStream);
+            }
+            
             MaterialVersion uploadedVersion = new MaterialVersion
             {
                 FileDate = DateTime.Now,
-                FileName = materialVersionform.Name,
+                FileName = $"{materialVersionform.Name}{Path.GetExtension(materialVersionform.File.FileName)}",
                 PathOfFile = _dir,
                 Size = materialVersionform.File.Length,
                 Material = await _unitOfWork.Materials.GetMaterialById(materialVersionform.MaterialId)
             };
-            using (var fileStream = new FileStream(
-                Path.Combine(_dir,
-                    $"{materialVersionform.Name}{Path.GetExtension(materialVersionform.File.FileName)}"),
-                    FileMode.Create,
-                    FileAccess.Write))
-            {
-                materialVersionform.File.CopyTo(fileStream);
-            }
 
             await _unitOfWork.MaterialVersions.AddRangeAsync(new List<MaterialVersion> {uploadedVersion});
             await _unitOfWork.CommitAsync();
@@ -67,7 +68,8 @@ namespace Task3.BLL
                 _unitOfWork.MaterialVersions.Find(m => m.Id == vId).SingleOrDefault();
             
             file.fileName = GetOfMaterialVersion().FileName;
-            file.filePath = Path.Combine("MaterialStorage/" + file.fileName);
+            file.filePath = /*Path.Combine*/(GetOfMaterialVersion().PathOfFile + "/" + file.fileName);
+            file.fileType = "application/octet-stream";
             return(file);
         }
         

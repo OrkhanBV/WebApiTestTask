@@ -45,35 +45,14 @@ namespace Task3.API.Controllers
             var versionOfMaterial = await _versionService.UploadNewMaterialVersion(materialVersionform);
             return Ok(versionOfMaterial);
         }
-        /*
-        public async Task<MaterialVersion> UploadNewMaterialVersion(UploadMaterialVersionDTO materialVersionform)
+        
+        [Route("DownloadVersion")]
+        [HttpPost]
+        public async Task<ActionResult> DownloadVersionOfMaterial(Guid vId)
         {
-            MaterialVersion uploadedVersion = new MaterialVersion
-            {
-                FileDate = DateTime.Now,
-                FileName = materialVersionform.Name,
-                PathOfFile = _dir,
-                Size = materialVersionform.File.Length,
-                Material = await _unitOfWork.Materials.GetMaterialById(materialVersionform.MaterialId)
-            };
-            using (var fileStream = new FileStream(
-                Path.Combine(_dir,
-                    $"{materialVersionform.Name}{Path.GetExtension(materialVersionform.File.FileName)}"),
-                FileMode.Create,
-                FileAccess.Write))
-            {
-                materialVersionform.File.CopyTo(fileStream);
-            }
-
-            await _unitOfWork.MaterialVersions.AddRangeAsync(new List<MaterialVersion> {uploadedVersion});
-            await _unitOfWork.CommitAsync();
-            return uploadedVersion;
-        }
-
-        public Task<MaterialVersion> DownloadMaterialVersion(DownloadFileDTO materialId)
-        {
-            */
-        throw new NotImplementedException();
+            var fileData = await _versionService.GetMaterialVersionFile(vId);
+            byte[] mas = System.IO.File.ReadAllBytes(fileData.filePath);
+            return File(mas, fileData.fileType, fileData.fileName);
         }
     }
 }

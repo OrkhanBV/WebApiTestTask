@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection.Metadata;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -59,9 +60,15 @@ namespace Task3.BLL
             return uploadedVersion;
         }
 
-        public Task<MaterialVersion> DownloadMaterialVersion(DownloadFileDTO materialId)
+        public async Task<DownloadFileDTO> GetMaterialVersionFile(Guid vId)
         {
-            throw new NotImplementedException();
+            DownloadFileDTO file = new DownloadFileDTO();
+            MaterialVersion GetOfMaterialVersion() =>
+                _unitOfWork.MaterialVersions.Find(m => m.Id == vId).SingleOrDefault();
+            
+            file.fileName = GetOfMaterialVersion().FileName;
+            file.filePath = Path.Combine(_env.ContentRootPath, "MaterialStorage/" + file.fileName);
+            return(file);
         }
         
     }

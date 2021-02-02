@@ -61,9 +61,9 @@ namespace Task3.API.Controllers
         [HttpPost]
         public async Task<ActionResult> DownloadMaterialqqqq(Guid mId)
         {
-            var fileForD = await _materialService.GetDtoForDownloadMaterialAsync(mId);
-            byte[] mas = System.IO.File.ReadAllBytes(fileForD.filePath);
-            return File(mas, fileForD.fileType, fileForD.fileName); //PhysicalFile(fileForD.filePath, fileForD.fileType, fileForD.fileName);
+            var fileData = await _materialService.GetDtoForDownloadMaterialAsync(mId);
+            byte[] mas = System.IO.File.ReadAllBytes(fileData.filePath);
+            return File(mas, fileData.fileType, fileData.fileName); //PhysicalFile(fileForD.filePath, fileForD.fileType, fileForD.fileName);
         }
 
     }

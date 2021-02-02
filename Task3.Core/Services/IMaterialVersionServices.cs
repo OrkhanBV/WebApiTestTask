@@ -13,7 +13,9 @@ namespace Task3.Core.Services
         Task<IEnumerable<MaterialVersion>> FilterVersionsBySize(Guid mId);
         
         Task<MaterialVersion> UploadNewMaterialVersion(UploadMaterialVersionDTO materialVersion);
-        Task<MaterialVersion> DownloadMaterialVersion(DownloadFileDTO materialId);
+
+        Task<DownloadFileDTO> GetMaterialVersionFile(Guid vId);
+        /*Task<MaterialVersion> DownloadMaterialVersion(DownloadFileDTO materialId);*/
 
 
         /*Task<IEnumerable<Music>> GetAllWithArtist();

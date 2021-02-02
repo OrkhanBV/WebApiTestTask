@@ -23,7 +23,7 @@ namespace Task3.BLL
         {
             this._unitOfWork = unitOfWork;
             _env = env;
-            _dir = _env.ContentRootPath + "/Task3.DAL/MaterialStorage";
+            _dir = _env.ContentRootPath + "/MaterialStorage";
         }
         
         public async Task<IEnumerable<MaterialVersion>> FilterVersionsByDate(Guid mId)
@@ -67,7 +67,7 @@ namespace Task3.BLL
                 _unitOfWork.MaterialVersions.Find(m => m.Id == vId).SingleOrDefault();
             
             file.fileName = GetOfMaterialVersion().FileName;
-            file.filePath = Path.Combine(_env.ContentRootPath, "MaterialStorage/" + file.fileName);
+            file.filePath = Path.Combine("MaterialStorage/" + file.fileName);
             return(file);
         }
         

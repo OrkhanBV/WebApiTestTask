@@ -33,19 +33,7 @@ namespace Task3.API.Controllers
                 Map<IEnumerable<Material>, IEnumerable<MaterialResources>>(materials);
             return Ok(materials);
         }
-        
-        /*[Route("GetMat")]
-        [HttpPost]
-        public async Task<ActionResult> GetMaterialNew([FromForm] UploadMaterialDTO uploadMaterialForm)
-        {
-            var validator = new SaveMaterialValidator();
-            var validationResult = await validator.ValidateAsync(uploadMaterialForm);
-            if (!validationResult.IsValid)
-                return BadRequest(validationResult.Errors);
-            var material = await _materialService.UploadNewMaterial(uploadMaterialForm);
-            return Ok(material);
-        }*/
-        
+
         [HttpPost("")]
         public async Task<ActionResult> UploadedMaterial([FromForm] UploadMaterialDTO uploadMaterialForm)
         {

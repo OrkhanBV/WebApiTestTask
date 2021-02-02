@@ -107,6 +107,169 @@
           }
         }
       }
+    },
+    "/api/MaterialVersion/GetVersionsByDate": {
+      "get": {
+        "tags": [
+          "MaterialVersion"
+        ],
+        "parameters": [
+          {
+            "name": "mId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MaterialVersion"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MaterialVersion"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MaterialVersion"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MaterialVersion/GetVersionsBySyze": {
+      "get": {
+        "tags": [
+          "MaterialVersion"
+        ],
+        "parameters": [
+          {
+            "name": "mId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MaterialVersion"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MaterialVersion"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/MaterialVersion"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/MaterialVersion/UploadVersion": {
+      "post": {
+        "tags": [
+          "MaterialVersion"
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "Name": {
+                    "type": "string"
+                  },
+                  "MaterialId": {
+                    "type": "string",
+                    "format": "uuid"
+                  },
+                  "File": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              },
+              "encoding": {
+                "Name": {
+                  "style": "form"
+                },
+                "MaterialId": {
+                  "style": "form"
+                },
+                "File": {
+                  "style": "form"
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/MaterialVersion/DownloadVersion": {
+      "post": {
+        "tags": [
+          "MaterialVersion"
+        ],
+        "parameters": [
+          {
+            "name": "vId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
     }
   },
   "components": {

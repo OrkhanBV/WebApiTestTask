@@ -39,8 +39,8 @@ namespace Task3.API.Controllers
         }
 
         [Route("UploadVersion")]
-        [HttpGet]
-        public async Task<ActionResult> UploadNewVersionOfMaterial(UploadMaterialVersionDTO materialVersionform)
+        [HttpPost]
+        public async Task<ActionResult> UploadNewVersionOfMaterial([FromForm] UploadMaterialVersionDTO materialVersionform)
         {
             var versionOfMaterial = await _versionService.UploadNewMaterialVersion(materialVersionform);
             return Ok(versionOfMaterial);

@@ -8,6 +8,7 @@
       <e p="Task3.API" t="IncludeRecursive">
         <e p="Controllers" t="Include">
           <e p="MaterialController.cs" t="Include" />
+          <e p="MaterialVersionController.cs" t="Include" />
         </e>
         <e p="Mapping" t="Include">
           <e p="MappingProfile.cs" t="Include" />

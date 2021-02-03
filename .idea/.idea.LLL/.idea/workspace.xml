@@ -28,13 +28,10 @@
     <list default="true" id="693c176a-5eba-4370-a384-0adedb283ba7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LLL/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LLL/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LLL/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LLL/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.API/bin/Debug/netcoreapp3.1/Task3.BLL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.API/bin/Debug/netcoreapp3.1/Task3.BLL.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.API/bin/Debug/netcoreapp3.1/Task3.BLL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.API/bin/Debug/netcoreapp3.1/Task3.BLL.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3.API/obj/Debug/netcoreapp3.1/Task3.API.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.API/obj/Debug/netcoreapp3.1/Task3.API.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3.BLL/MaterialService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/MaterialService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task3.BLL/MaterialVersionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/MaterialVersionService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/bin/Debug/netstandard2.0/Task3.BLL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/bin/Debug/netstandard2.0/Task3.BLL.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/bin/Debug/netstandard2.0/Task3.BLL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/bin/Debug/netstandard2.0/Task3.BLL.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.csprojAssemblyReference.cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +39,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="AddIdentity" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -75,11 +77,11 @@
         <option value="$PROJECT_DIR$/Task3.Core/Repositories/IMaterialRepository.cs" />
         <option value="$PROJECT_DIR$/Task3.DAL/Repositories/MaterialRepository.cs" />
         <option value="$PROJECT_DIR$/Task3.Core/DTO/UploadMaterialDTO.cs" />
-        <option value="$PROJECT_DIR$/Task3.BLL/MaterialService.cs" />
         <option value="$PROJECT_DIR$/Task3.Core/Services/IMaterialVersionServices.cs" />
         <option value="$PROJECT_DIR$/Task3.API/Controllers/MaterialController.cs" />
         <option value="$PROJECT_DIR$/Task3.API/Controllers/MaterialVersionController.cs" />
         <option value="$PROJECT_DIR$/Task3.BLL/MaterialVersionService.cs" />
+        <option value="$PROJECT_DIR$/Task3.BLL/MaterialService.cs" />
       </list>
     </option>
   </component>
@@ -234,6 +236,8 @@
       <workItem from="1612171848987" duration="11652000" />
       <workItem from="1612190205564" duration="2121000" />
       <workItem from="1612192471360" duration="12249000" />
+      <workItem from="1612345537663" duration="1723000" />
+      <workItem from="1612381157474" duration="676000" />
     </task>
     <servers />
   </component>

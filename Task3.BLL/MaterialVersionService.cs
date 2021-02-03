@@ -68,7 +68,7 @@ namespace Task3.BLL
                 _unitOfWork.MaterialVersions.Find(m => m.Id == vId).SingleOrDefault();
             
             file.fileName = GetOfMaterialVersion().FileName;
-            file.filePath = /*Path.Combine*/(GetOfMaterialVersion().PathOfFile + "/" + file.fileName);
+            file.filePath = (GetOfMaterialVersion().PathOfFile + "/" + file.fileName);
             file.fileType = "application/octet-stream";
             return(file);
         }

@@ -25,14 +25,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="693c176a-5eba-4370-a384-0adedb283ba7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LLL/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LLL/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LLL/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LLL/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.API/obj/Debug/netcoreapp3.1/Task3.API.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.API/obj/Debug/netcoreapp3.1/Task3.API.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/MaterialService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/MaterialService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/MaterialVersionService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/MaterialVersionService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.csprojAssemblyReference.cache" afterDir="false" />
-    </list>
+    <list default="true" id="693c176a-5eba-4370-a384-0adedb283ba7" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,7 +34,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="AddIdentity" />
+        <entry key="$PROJECT_DIR$" value="reserv2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -237,7 +230,7 @@
       <workItem from="1612190205564" duration="2121000" />
       <workItem from="1612192471360" duration="12249000" />
       <workItem from="1612345537663" duration="1723000" />
-      <workItem from="1612381157474" duration="676000" />
+      <workItem from="1612381157474" duration="1447000" />
     </task>
     <servers />
   </component>

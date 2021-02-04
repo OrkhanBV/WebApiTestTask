@@ -14,6 +14,12 @@ namespace Task3.Core.Services
         
         Task<Material> UploadNewMaterial(UploadMaterialDTO materialVersion);
         Task<DownloadFileDTO> GetDtoForDownloadMaterialAsync(Guid mId);
+        
+        Task<IEnumerable<MaterialVersion>> FilterVersionsByDate(Guid mId);
+        Task<IEnumerable<MaterialVersion>> FilterVersionsBySize(Guid mId);
+        
+        Task<MaterialVersion> UploadNewMaterialVersion(UploadMaterialVersionDTO materialVersion);
+        Task<DownloadFileDTO> GetMaterialVersionFile(Guid vId);
 
         /*public IOrderedEnumerable<Material> FilterMaterialsByDate { get; set; }
         public List<Material> FilterMaterialByType(string type);

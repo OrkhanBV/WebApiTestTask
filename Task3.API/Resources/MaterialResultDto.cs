@@ -6,5 +6,6 @@ namespace Task3.API.Resources
     {
         public Guid Id { get; set; }
         public string MaterialName { get; set; }
+        public int MatCategoryId { set; get; }
     }
 }

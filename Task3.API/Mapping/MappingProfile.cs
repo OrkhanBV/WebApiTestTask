@@ -8,10 +8,10 @@ namespace Task3.API.Mapping
     {
         public MappingProfile()
         {
-            CreateMap<MaterialVersion, MaterialVersionResources>();
+            CreateMap<MaterialVersion, MaterialVersionResultDto>();
             CreateMap<Material, MaterialResultDto>();
 
-            CreateMap<MaterialVersionResources, MaterialVersion>();
+            CreateMap<MaterialVersionResultDto, MaterialVersion>();
             CreateMap<MaterialResultDto, Material>();
         }
     }

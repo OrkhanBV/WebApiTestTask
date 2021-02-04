@@ -1,5 +1,6 @@
 using System;
 using FluentValidation;
+using Microsoft.AspNetCore.Mvc;
 using Task3.Core.DTO;
 
 namespace Task3.API.Validations
@@ -13,9 +14,9 @@ namespace Task3.API.Validations
                 .MaximumLength(50);
             RuleFor(m => m.File)
                 .NotNull();
-            RuleFor(m => m.CategoryNameId == 0
-                         || m.CategoryNameId == 1
-                         || m.CategoryNameId == 2);
+            RuleFor(m => m.CategoryNameId)
+                .GreaterThanOrEqualTo(0)
+                .LessThanOrEqualTo(2);
         }
     }
 }

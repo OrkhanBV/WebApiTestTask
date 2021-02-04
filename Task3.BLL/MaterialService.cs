@@ -48,10 +48,11 @@ namespace Task3.BLL
             file.fileName = ActualVersion.FileName;
             file.filePath = ActualVersion.PathOfFile + "/" + file.fileName;
             file.fileType = "application/octet-stream";
+            file.mas = System.IO.File.ReadAllBytes(file.filePath);
             
             return file;
         }
-        
+
         public async Task<Material> UploadNewMaterial(UploadMaterialDTO materialForm)
         {
             using (var fileStream = new FileStream(
@@ -84,5 +85,54 @@ namespace Task3.BLL
                 await _unitOfWork.CommitAsync();
                 return uploadedMaterial;
             }
+        
+        //FOR VERSIONS
+        public async Task<IEnumerable<MaterialVersion>> FilterVersionsByDate(Guid mId)
+        {
+            return await _unitOfWork.MaterialVersions.GetFilterVersionsByDate(mId);
+        }
+
+        public async Task<IEnumerable<MaterialVersion>> FilterVersionsBySize(Guid mId)
+        {
+            return await _unitOfWork.MaterialVersions.GetFilterVersionsBySize(mId);
+        }
+
+        public async Task<MaterialVersion> UploadNewMaterialVersion(UploadMaterialVersionDTO materialVersionform)
+        {
+            using (var fileStream = new FileStream(
+                Path.Combine(_dir,
+                    $"{materialVersionform.Name}{Path.GetExtension(materialVersionform.File.FileName)}"),
+                FileMode.Create,
+                FileAccess.Write))
+            {
+                materialVersionform.File.CopyTo(fileStream);
+            }
+            
+            MaterialVersion uploadedVersion = new MaterialVersion
+            {
+                FileDate = DateTime.Now,
+                FileName = $"{materialVersionform.Name}{Path.GetExtension(materialVersionform.File.FileName)}",
+                PathOfFile = _dir,
+                Size = materialVersionform.File.Length,
+                Material = await _unitOfWork.Materials.GetMaterialById(materialVersionform.MaterialId)
+            };
+
+            await _unitOfWork.MaterialVersions.AddRangeAsync(new List<MaterialVersion> {uploadedVersion});
+            await _unitOfWork.CommitAsync();
+            return uploadedVersion;
+        }
+
+        public async Task<DownloadFileDTO> GetMaterialVersionFile(Guid vId)
+        {
+            DownloadFileDTO file = new DownloadFileDTO();
+            MaterialVersion GetOfMaterialVersion() =>
+                _unitOfWork.MaterialVersions.Find(m => m.Id == vId).SingleOrDefault();
+            
+            file.fileName = GetOfMaterialVersion().FileName;
+            file.filePath = (GetOfMaterialVersion().PathOfFile + "/" + file.fileName);
+            file.fileType = "application/octet-stream";
+            file.mas = System.IO.File.ReadAllBytes(file.filePath);
+            return(file);
+        }
     }
 }

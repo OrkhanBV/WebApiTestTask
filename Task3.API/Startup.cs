@@ -36,7 +36,7 @@ namespace Task3.API
             services.AddControllers();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IMaterialServices, MaterialService>();
-            services.AddTransient<IMaterialVersionServices, MaterialVersionService>();
+            //services.AddTransient<IMaterialVersionServices, MaterialVersionService>();
             services.AddDbContext<Task3DbContext>(options => options
                 .UseNpgsql(Configuration.GetConnectionString("DefaultConnection")
                     , x => x.MigrationsAssembly("Task3.DAL")));

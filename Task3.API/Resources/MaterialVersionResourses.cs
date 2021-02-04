@@ -6,7 +6,7 @@ namespace Task3.API.Resources
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public MaterialResources Material { get; set; }
+        public MaterialResultDto Material { get; set; }
         
     }
 }

@@ -81,7 +81,24 @@
         },
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaterialResultDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaterialResultDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaterialResultDto"
+                }
+              }
+            }
           }
         }
       }
@@ -327,6 +344,20 @@
             "items": {
               "$ref": "#/components/schemas/MaterialVersion"
             },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MaterialResultDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "materialName": {
+            "type": "string",
             "nullable": true
           }
         },

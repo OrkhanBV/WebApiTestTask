@@ -29,29 +29,32 @@ namespace Task3.API.Controllers
         public async Task<ActionResult<IEnumerable<Material>>> GetMaterialsByDate()
         {
             var materials = await _materialService.GetFilterMaterialsByDate();
-            var materialResources = _mapper.
-                Map<IEnumerable<Material>, IEnumerable<MaterialResources>>(materials);
-            return Ok(materials);
+            var materialResultDto = _mapper.
+                Map<IEnumerable<Material>, IEnumerable<MaterialResultDto>>(materials);
+            return Ok(materialResultDto);
         }
 
         [HttpPost("")]
-        public async Task<ActionResult> UploadedMaterial([FromForm] UploadMaterialDTO uploadMaterialForm)
+        public async Task<MaterialResultDto> UploadedMaterial([FromForm] UploadMaterialDTO uploadMaterialForm)
         {
             var validator = new SaveMaterialValidator();
             var validationResult = await validator.ValidateAsync(uploadMaterialForm);
-            if (!validationResult.IsValid)
-                return BadRequest(validationResult.Errors);
+            /*if (!validationResult.IsValid)
+                return BadRequest(validationResult.Errors);*/
             var material = await _materialService.UploadNewMaterial(uploadMaterialForm);
-            return Ok(material);
+            var materialResultDto = _mapper.
+                Map<Material, MaterialResultDto>(material);
+            //return Ok(material);
+            return materialResultDto;
         }
 
         [Route("GetMat")]
         [HttpPost]
-        public async Task<ActionResult> DownloadMaterialqqqq(Guid mId)
+        public async Task<ActionResult> DownloadMaterial(Guid mId)
         {
             var fileData = await _materialService.GetDtoForDownloadMaterialAsync(mId);
             byte[] mas = System.IO.File.ReadAllBytes(fileData.filePath);
-            return File(mas, fileData.fileType, fileData.fileName); //PhysicalFile(fileForD.filePath, fileForD.fileType, fileForD.fileName);
+            return File(mas, fileData.fileType, fileData.fileName);
         }
 
     }

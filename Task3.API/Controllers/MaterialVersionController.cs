@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.JsonPatch.Internal;
 using Microsoft.AspNetCore.Mvc;
 using Task3.Core.DTO;
 using Task3.Core.Models;
@@ -35,7 +37,11 @@ namespace Task3.API.Controllers
         public async Task<ActionResult<IEnumerable<MaterialVersion>>>  GetVersionsOrdergniBySyze(Guid mId)
         {
             var versions = await  _versionService.FilterVersionsBySize(mId);
-            return Ok(versions);
+            /*var versionResult = new*/
+            var versionsRes = versions;
+            
+            return Ok(versionsRes);
+            //return Ok(versions);
         }
 
         [Route("UploadVersion")]

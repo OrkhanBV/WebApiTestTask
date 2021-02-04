@@ -9,10 +9,10 @@ namespace Task3.API.Mapping
         public MappingProfile()
         {
             CreateMap<MaterialVersion, MaterialVersionResources>();
-            CreateMap<Material, MaterialResources>();
+            CreateMap<Material, MaterialResultDto>();
 
             CreateMap<MaterialVersionResources, MaterialVersion>();
-            CreateMap<MaterialResources, Material>();
+            CreateMap<MaterialResultDto, Material>();
         }
     }
 }

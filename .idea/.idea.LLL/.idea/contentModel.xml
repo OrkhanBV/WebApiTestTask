@@ -72,6 +72,7 @@
           <e p="DownloadFileDTO.cs" t="Include" />
           <e p="UploadMaterialDTO.cs" t="Include" />
           <e p="UploadMaterialVersionDTO.cs" t="Include" />
+          <e p="VersionsResultDTO.cs" t="Include" />
         </e>
         <e p="IUnitOfWork.cs" t="Include" />
         <e p="Models" t="Include">

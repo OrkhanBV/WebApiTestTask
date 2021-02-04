@@ -27,7 +27,7 @@ namespace Task3.API.Controllers
             this._materialService = materialService;
         }
 
-        [HttpGet("/api/materials/date")]
+        [HttpGet("/api/materials/dateOrder")]
         public async Task<ActionResult<IEnumerable<MaterialResultDto>>> GetMaterialsByDate()
         {
             var materials = await _materialService.GetFilterMaterialsByDate();
@@ -54,10 +54,10 @@ namespace Task3.API.Controllers
         public async Task<ActionResult> DownloadMaterial(Guid mId)
         {
             var fileData = await _materialService.GetDtoForDownloadMaterialAsync(mId);
-            return File(fileData.mas, fileData.fileType, fileData.fileName);
+            return File(fileData.Mas, fileData.FileType, fileData.FileName);
         }
         
-        [Route("/api/{mId}/versions/date/")]
+        [Route("/api/{mId}/versions/dateOrder")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MaterialVersionResultDto>>>  GetVersionsOrdergniByDate(Guid mId)
         {
@@ -67,7 +67,7 @@ namespace Task3.API.Controllers
             return Ok(materialVersionResultDto);
         }
         
-        [Route("/api/{mId}/versions/syze/")]
+        [Route("/api/{mId}/versions/syzeOrder")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MaterialVersionResultDto>>>  GetVersionsOrdergniBySyze(Guid mId)
         {
@@ -90,7 +90,7 @@ namespace Task3.API.Controllers
         public async Task<ActionResult> DownloadVersionOfMaterial(Guid vId)
         {
             var fileData = await _materialService.GetMaterialVersionFile(vId);
-            return File(fileData.mas, fileData.fileType, fileData.fileName);
+            return File(fileData.Mas, fileData.FileType, fileData.FileName);
         }
 
     }

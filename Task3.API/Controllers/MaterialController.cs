@@ -98,9 +98,21 @@ namespace Task3.API.Controllers
 
         [Route("/api/version/upload/")]
         [HttpPost]
-        public async Task<ActionResult> UploadNewVersionOfMaterial([FromForm] UploadMaterialVersionDTO materialVersionform)
+        public async Task<ActionResult> UploadNewVersionOfMaterial([FromForm] UploadMaterialVersionDTO materialVersionform, IFormFile file)
         {
-            var versionOfMaterial = await _materialService.UploadNewMaterialVersion(materialVersionform);
+            using (var fileStream = new FileStream(
+                Path.Combine(_dir,
+                    $"{materialVersionform.Name}{Path.GetExtension(file.FileName)}"),
+                FileMode.Create,
+                FileAccess.Write))
+            {
+                file.CopyTo(fileStream);
+            }
+            
+            //var versionOfMaterial = await _materialService.UploadNewMaterialVersion(materialVersionform);
+            var versionOfMaterial = await _materialService.UploadNewMaterialVersion($"{materialVersionform.Name}{Path.GetExtension(file.FileName)}",
+                materialVersionform.MaterialId,
+                file.Length);
             return Ok(versionOfMaterial);
         }
         
@@ -109,7 +121,7 @@ namespace Task3.API.Controllers
         public async Task<ActionResult> DownloadVersionOfMaterial(Guid vId)
         {
             var fileData = await _materialService.GetMaterialVersionFile(vId);
-            return File(fileData.Mas, fileData.FileType, fileData.FileName);
+            return File(fileData.mas, fileData.fileType, fileData.fileName);
         }
 
     }

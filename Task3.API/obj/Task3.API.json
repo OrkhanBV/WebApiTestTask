@@ -244,7 +244,7 @@
                     "type": "string",
                     "format": "uuid"
                   },
-                  "File": {
+                  "file": {
                     "type": "string",
                     "format": "binary"
                   }
@@ -257,7 +257,7 @@
                 "MaterialId": {
                   "style": "form"
                 },
-                "File": {
+                "file": {
                   "style": "form"
                 }
               }

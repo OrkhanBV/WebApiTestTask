@@ -8,8 +8,8 @@ namespace Task3.API.Validations
     {
         public SaveVersionValidator()
         {
-            RuleFor(m => m.File)
-                .NotEmpty();
+            /*RuleFor(m => m.File)
+                .NotEmpty();*/
             RuleFor(m => m.Name)
                 .NotEmpty();
         }

@@ -5,7 +5,7 @@
     "version": "v1"
   },
   "paths": {
-    "/API/materials/filter/date": {
+    "/api/materials/dateOrder": {
       "get": {
         "tags": [
           "Material"
@@ -43,7 +43,7 @@
         }
       }
     },
-    "/API/upload/material": {
+    "/api/material/upload": {
       "post": {
         "tags": [
           "Material"
@@ -105,7 +105,7 @@
         }
       }
     },
-    "/API/download/material/actual/{mId}": {
+    "/api/material/{mId}/download": {
       "post": {
         "tags": [
           "Material"
@@ -128,7 +128,7 @@
         }
       }
     },
-    "/API/versions/filter/date/{mId}": {
+    "/api/material/{mId}/versions/dateOrder": {
       "get": {
         "tags": [
           "Material"
@@ -177,7 +177,7 @@
         }
       }
     },
-    "/API/versions/Syze/{mId}": {
+    "/api/{mId}/versions/syzeOrder": {
       "get": {
         "tags": [
           "Material"
@@ -226,7 +226,7 @@
         }
       }
     },
-    "/API/upload/version": {
+    "/api/version/upload": {
       "post": {
         "tags": [
           "Material"
@@ -244,7 +244,7 @@
                     "type": "string",
                     "format": "uuid"
                   },
-                  "File": {
+                  "file": {
                     "type": "string",
                     "format": "binary"
                   }
@@ -257,7 +257,7 @@
                 "MaterialId": {
                   "style": "form"
                 },
-                "File": {
+                "file": {
                   "style": "form"
                 }
               }
@@ -271,7 +271,7 @@
         }
       }
     },
-    "/API/download/version/{vId}": {
+    "/api/version/{vId}/download": {
       "post": {
         "tags": [
           "Material"

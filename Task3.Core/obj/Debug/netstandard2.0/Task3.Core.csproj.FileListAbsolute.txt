@@ -7,3 +7,12 @@
 /home/orhan/Desktop/LLL/Task3.Core/obj/Debug/netstandard2.0/Task3.Core.csproj.CoreCompileInputs.cache
 /home/orhan/Desktop/LLL/Task3.Core/obj/Debug/netstandard2.0/Task3.Core.dll
 /home/orhan/Desktop/LLL/Task3.Core/obj/Debug/netstandard2.0/Task3.Core.pdb
+/home/orhan/Desktop/LLL2/Task3.Core/bin/Debug/netstandard2.0/Task3.Core.deps.json
+/home/orhan/Desktop/LLL2/Task3.Core/bin/Debug/netstandard2.0/Task3.Core.dll
+/home/orhan/Desktop/LLL2/Task3.Core/bin/Debug/netstandard2.0/Task3.Core.pdb
+/home/orhan/Desktop/LLL2/Task3.Core/obj/Debug/netstandard2.0/Task3.Core.csprojAssemblyReference.cache
+/home/orhan/Desktop/LLL2/Task3.Core/obj/Debug/netstandard2.0/Task3.Core.AssemblyInfoInputs.cache
+/home/orhan/Desktop/LLL2/Task3.Core/obj/Debug/netstandard2.0/Task3.Core.AssemblyInfo.cs
+/home/orhan/Desktop/LLL2/Task3.Core/obj/Debug/netstandard2.0/Task3.Core.csproj.CoreCompileInputs.cache
+/home/orhan/Desktop/LLL2/Task3.Core/obj/Debug/netstandard2.0/Task3.Core.dll
+/home/orhan/Desktop/LLL2/Task3.Core/obj/Debug/netstandard2.0/Task3.Core.pdb

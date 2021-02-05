@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Task3.Core.DTO;
 using Task3.Core.Models;
 using Task3.Core.Repositories;
 
@@ -31,13 +30,8 @@ namespace Task3.DAL.Repositories
         {
             return await Task3DbContext.Materials
                 .OrderByDescending(m => m.MatCategoryId == catId)
-                .ToListAsync(); //проверить что рабоатет верно
+                .ToListAsync();
         }
-
-        /*public Task<DownloadFileDTO> GetDtoForDownloadMaterialAsync(Guid mId)
-        {
-            throw new NotImplementedException();
-        }*/
 
         public async Task<Material> GetMaterialById(Guid mId)
         {

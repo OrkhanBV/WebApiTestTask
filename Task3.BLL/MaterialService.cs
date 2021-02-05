@@ -70,7 +70,6 @@ namespace Task3.BLL
                     MaterialName = $"{materialForm.Name}{Path.GetExtension(materialForm.File.FileName)}",
                     MatCategoryId = Convert.ToInt16(materialForm.CategoryNameId)
                 };
-            //Создаем версию материала 
             MaterialVersion version = new MaterialVersion
                 {
                     FileDate = DateTime.Now,
@@ -79,12 +78,11 @@ namespace Task3.BLL
                     Size = materialForm.File.Length,
                     PathOfFile = _dir
                 };
-
-                //После того как убедились, что у нас всё ок сохраняем в бд используя unitOfWork
-                await _unitOfWork.MaterialVersions.AddRangeAsync(new List<MaterialVersion> {version});
-                await _unitOfWork.CommitAsync();
-                return uploadedMaterial;
-            }
+            
+            await _unitOfWork.MaterialVersions.AddRangeAsync(new List<MaterialVersion> {version});
+            await _unitOfWork.CommitAsync();
+            return uploadedMaterial;
+        }
         
         //FOR VERSIONS
         public async Task<IEnumerable<MaterialVersion>> FilterVersionsByDate(Guid mId)

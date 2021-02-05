@@ -12,3 +12,17 @@
 /home/orhan/Desktop/LLL/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.pdb
 /home/orhan/Desktop/LLL/Task3.BLL/bin/Debug/netstandard2.0/Task3.DAL.dll
 /home/orhan/Desktop/LLL/Task3.BLL/bin/Debug/netstandard2.0/Task3.DAL.pdb
+/home/orhan/Desktop/LLL2/Task3.BLL/bin/Debug/netstandard2.0/Task3.BLL.deps.json
+/home/orhan/Desktop/LLL2/Task3.BLL/bin/Debug/netstandard2.0/Task3.BLL.dll
+/home/orhan/Desktop/LLL2/Task3.BLL/bin/Debug/netstandard2.0/Task3.BLL.pdb
+/home/orhan/Desktop/LLL2/Task3.BLL/bin/Debug/netstandard2.0/Task3.Core.dll
+/home/orhan/Desktop/LLL2/Task3.BLL/bin/Debug/netstandard2.0/Task3.DAL.dll
+/home/orhan/Desktop/LLL2/Task3.BLL/bin/Debug/netstandard2.0/Task3.Core.pdb
+/home/orhan/Desktop/LLL2/Task3.BLL/bin/Debug/netstandard2.0/Task3.DAL.pdb
+/home/orhan/Desktop/LLL2/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.csprojAssemblyReference.cache
+/home/orhan/Desktop/LLL2/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.AssemblyInfoInputs.cache
+/home/orhan/Desktop/LLL2/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.AssemblyInfo.cs
+/home/orhan/Desktop/LLL2/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.csproj.CoreCompileInputs.cache
+/home/orhan/Desktop/LLL2/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.csproj.CopyComplete
+/home/orhan/Desktop/LLL2/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.dll
+/home/orhan/Desktop/LLL2/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.pdb

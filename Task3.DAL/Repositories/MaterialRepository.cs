@@ -31,13 +31,8 @@ namespace Task3.DAL.Repositories
         {
             return await Task3DbContext.Materials
                 .OrderByDescending(m => m.MatCategoryId == catId)
-                .ToListAsync(); //проверить что рабоатет верно
+                .ToListAsync();
         }
-
-        /*public Task<DownloadFileDTO> GetDtoForDownloadMaterialAsync(Guid mId)
-        {
-            throw new NotImplementedException();
-        }*/
 
         public async Task<Material> GetMaterialById(Guid mId)
         {

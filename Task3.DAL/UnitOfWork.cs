@@ -27,7 +27,7 @@ namespace Task3.DAL
         {
             return await _context.SaveChangesAsync();
         }
-        //Здеь мы можем прописать правила по удалению, посмотреть внимательнее
+
         public void Dispose()
         {
             _context.Dispose();

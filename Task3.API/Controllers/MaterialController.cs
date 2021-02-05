@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using AutoMapper;
 using FluentValidation.Internal;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Serialization;
@@ -20,11 +22,15 @@ namespace Task3.API.Controllers
     {
         private readonly IMaterialServices _materialService;
         private readonly IMapper _mapper;
+        private readonly IHostingEnvironment _env;
+        private string _dir;
 
-        public MaterialController(IMaterialServices materialService, IMapper mapper)
+        public MaterialController(IMaterialServices materialService, IMapper mapper, IHostingEnvironment env)
         {
             this._mapper = mapper;
             this._materialService = materialService;
+            _env = env;
+            _dir = _env.ContentRootPath + "/MaterialStorage";
         }
 
         [HttpGet("/api/materials/dateOrder")]
@@ -43,7 +49,20 @@ namespace Task3.API.Controllers
             var validationResult = await validator.ValidateAsync(uploadMaterialForm);
             if (!validationResult.IsValid)
                 return BadRequest("Not valid data");
-            var material = await _materialService.UploadNewMaterial(uploadMaterialForm);
+            
+            using (var fileStream = new FileStream(
+                Path.Combine(_dir,
+                    $"{uploadMaterialForm.Name}{Path.GetExtension(uploadMaterialForm.File.FileName)}"),
+                FileMode.Create,
+                FileAccess.Write))
+            {
+                uploadMaterialForm.File.CopyTo(fileStream);
+            }
+            
+            //var material = await _materialService.UploadNewMaterial(uploadMaterialForm);
+            var material = await _materialService.UploadNewMaterial((uploadMaterialForm.Name + uploadMaterialForm.File.Name), 
+                uploadMaterialForm.CategoryNameId, 
+                uploadMaterialForm.File.Length);
             var materialResultDto = _mapper.
                 Map<Material, MaterialResultDto>(material);
             return Ok(materialResultDto);
@@ -53,11 +72,11 @@ namespace Task3.API.Controllers
         [HttpPost]
         public async Task<ActionResult> DownloadMaterial(Guid mId)
         {
-            var fileData = await _materialService.GetDtoForDownloadMaterialAsync(mId);
-            return File(fileData.Mas, fileData.FileType, fileData.FileName);
+            var fileData = await _materialService.GetDataForDownloadMaterialAsync(mId);
+            return File(fileData.mas, fileData.fileType, fileData.fileName);
         }
         
-        [Route("/api/{mId}/versions/dateOrder")]
+        [Route("/api/material/{mId}/versions/dateOrder")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MaterialVersionResultDto>>>  GetVersionsOrdergniByDate(Guid mId)
         {

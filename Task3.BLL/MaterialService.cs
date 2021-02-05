@@ -37,7 +37,7 @@ namespace Task3.BLL
             return await _unitOfWork.Materials.FilterMatreerialsByType(categoryId);
         }
 
-        public async Task<DownloadFileDTO> GetDtoForDownloadMaterialAsync(Guid mId)
+        /*public async Task<DownloadFileDTO> GetDtoForDownloadMaterialAsync(Guid mId)
         {
             DownloadFileDTO file = new DownloadFileDTO();
             IEnumerable<MaterialVersion> ActualList() => _unitOfWork.MaterialVersions
@@ -51,9 +51,45 @@ namespace Task3.BLL
             file.Mas = System.IO.File.ReadAllBytes(file.FilePath);
             
             return file;
+        }*/
+        
+        public async Task<(byte[] mas, string fileType, string fileName)> GetDataForDownloadMaterialAsync(Guid mId)
+        {
+            IEnumerable<MaterialVersion> ActualList() => _unitOfWork.MaterialVersions
+                .Find(m => m.Material.Id == mId)
+                .ToList()
+                .OrderByDescending(m =>m.FileDate);
+            MaterialVersion ActualVersion = ActualList().Select(m=> m).FirstOrDefault();
+            string fileName = ActualVersion.FileName;
+            string filePath = ActualVersion.PathOfFile + "/" + fileName;
+            string fileType = "application/octet-stream";
+            byte[] mas  = System.IO.File.ReadAllBytes(filePath);
+            
+            return (mas, fileType, fileName);
         }
 
-        public async Task<Material> UploadNewMaterial(UploadMaterialDTO materialForm)
+        public async Task<Material> UploadNewMaterial(string fileName, Int32 categoryNameId, long length)
+        {
+            Material uploadedMaterial = new Material
+            {
+                MaterialDate = DateTime.Now, 
+                MaterialName = $"{fileName}", 
+                MatCategoryId = Convert.ToInt16(categoryNameId)
+            };
+            MaterialVersion version = new MaterialVersion
+            {
+                FileDate = DateTime.Now,
+                Material = uploadedMaterial,
+                FileName = $"{fileName}",
+                Size = length,
+                PathOfFile = _dir
+            };
+            
+            await _unitOfWork.MaterialVersions.AddRangeAsync(new List<MaterialVersion> {version});
+            await _unitOfWork.CommitAsync();
+            return uploadedMaterial;
+        }
+        /*public async Task<Material> UploadNewMaterial(UploadMaterialDTO materialForm)
         {
             using (var fileStream = new FileStream(
                 Path.Combine(_dir,
@@ -84,7 +120,7 @@ namespace Task3.BLL
                 await _unitOfWork.MaterialVersions.AddRangeAsync(new List<MaterialVersion> {version});
                 await _unitOfWork.CommitAsync();
                 return uploadedMaterial;
-            }
+            }*/
         
         //FOR VERSIONS
         public async Task<IEnumerable<MaterialVersion>> FilterVersionsByDate(Guid mId)

@@ -27,39 +27,8 @@
   <component name="ChangeListManager">
     <list default="true" id="693c176a-5eba-4370-a384-0adedb283ba7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/Task3.API/Controllers/MaterialController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.API/Controllers/MaterialController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.API/Mapping/MappingProfile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.API/Mapping/MappingProfile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.API/Resources/MaterialDownloadResultDto.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.API/Resources/MaterialResultDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.API/DtoRes/MaterialResultDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.API/Resources/MaterialVersionResultDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.API/DtoRes/MaterialVersionResultDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.API/obj/Debug/netcoreapp3.1/Task3.API.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.API/obj/Debug/netcoreapp3.1/Task3.API.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.API/obj/Debug/netcoreapp3.1/Task3.API.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.API/obj/Debug/netcoreapp3.1/Task3.API.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.API/obj/Task3.API.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.API/obj/Task3.API.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.API/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.API/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.API/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.API/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.API/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.API/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.API/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.API/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Task3.BLL/MaterialService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/MaterialService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/obj/Debug/netstandard2.0/Task3.BLL.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/obj/Task3.BLL.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/obj/Task3.BLL.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.Core/obj/Debug/netstandard2.0/Task3.Core.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.Core/obj/Debug/netstandard2.0/Task3.Core.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.Core/obj/Debug/netstandard2.0/Task3.Core.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.Core/obj/Debug/netstandard2.0/Task3.Core.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.Core/obj/Task3.Core.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.Core/obj/Task3.Core.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.Core/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.Core/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.Core/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.Core/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.Core/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.Core/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.Core/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.Core/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.DAL/obj/Debug/netstandard2.0/Task3.DAL.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.DAL/obj/Debug/netstandard2.0/Task3.DAL.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.DAL/obj/Debug/netstandard2.0/Task3.DAL.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.DAL/obj/Debug/netstandard2.0/Task3.DAL.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.DAL/obj/Task3.DAL.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.DAL/obj/Task3.DAL.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.DAL/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.DAL/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.DAL/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.DAL/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.DAL/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.DAL/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.DAL/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.DAL/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3.Core/Services/IMaterialServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.Core/Services/IMaterialServices.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +38,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="reserv2" />
+        <entry key="$PROJECT_DIR$" value="debug_it" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -104,7 +73,6 @@
         <option value="$PROJECT_DIR$/Task3.API/Resources/MaterialDownloadResultDto.cs" />
         <option value="$PROJECT_DIR$/Task3.API/Validations/SaveMaterialValidator.cs" />
         <option value="$PROJECT_DIR$/Task3.Core/DTO/DownloadFileDTO.cs" />
-        <option value="$PROJECT_DIR$/Task3.Core/Services/IMaterialServices.cs" />
         <option value="$PROJECT_DIR$/Task3.Core/Services/IMaterialVersionServices.cs" />
         <option value="$PROJECT_DIR$/Task3.BLL/MaterialVersionService.cs" />
         <option value="$PROJECT_DIR$/Task3.API/Controllers/MaterialVersionController.cs" />
@@ -112,9 +80,10 @@
         <option value="$PROJECT_DIR$/Task3.API/Resources/MaterialResultDto.cs" />
         <option value="$PROJECT_DIR$/Task3.API/Mapping/MappingProfile.cs" />
         <option value="$PROJECT_DIR$/Task3.API/Resources/MaterialVersionResultDto.cs" />
-        <option value="$PROJECT_DIR$/Task3.API/Controllers/MaterialController.cs" />
-        <option value="$PROJECT_DIR$/Task3.BLL/MaterialService.cs" />
         <option value="$PROJECT_DIR$/Task3.API/DtoRes/MaterialVersionResultDto.cs" />
+        <option value="$PROJECT_DIR$/Task3.BLL/MaterialService.cs" />
+        <option value="$PROJECT_DIR$/Task3.Core/Services/IMaterialServices.cs" />
+        <option value="$PROJECT_DIR$/Task3.API/Controllers/MaterialController.cs" />
       </list>
     </option>
   </component>
@@ -327,10 +296,10 @@
     </state>
     <state x="366" y="66" width="624" height="604" key="RiderGenerateDialog/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1612445993922" />
     <state x="1709" y="92" width="656" height="604" key="RiderGenerateDialog/0.0.1366.737/1366.0.1280.1024@1366.0.1280.1024" timestamp="1611859686645" />
-    <state x="264" y="0" width="975" height="457" maximized="true" key="dock-window-1" timestamp="1612189931122">
-      <screen x="0" y="0" width="1366" height="737" />
+    <state x="1366" y="0" width="1049" height="406" maximized="true" key="dock-window-1" timestamp="1612522306010">
+      <screen x="1366" y="0" width="1280" height="1024" />
     </state>
-    <state x="264" y="0" width="975" height="457" maximized="true" key="dock-window-1/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1612189931122" />
+    <state x="1366" y="0" width="1049" height="406" maximized="true" key="dock-window-1/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1612522306010" />
     <state x="1670" y="233" key="run.anything.popup" timestamp="1612194745543">
       <screen x="1366" y="0" width="1280" height="1024" />
     </state>

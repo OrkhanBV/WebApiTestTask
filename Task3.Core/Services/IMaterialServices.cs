@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
-using Task3.Core.DTO;
 using Task3.Core.Models;
 
 namespace Task3.Core.Services
@@ -26,12 +25,6 @@ namespace Task3.Core.Services
         
         Task<(byte[] mas, string fileType, string fileName)> GetMaterialVersionFile(Guid vId);
         Task<MaterialVersion> UploadNewMaterialVersion(string fileName, Guid mId, long length);
-
-        /*public IOrderedEnumerable<Material> FilterMaterialsByDate { get; set; }
-        public List<Material> FilterMaterialByType(string type);
-        public string GetInfoAboutMaterial(Guid id);
-        public Guid UploadNewMaterial(FormForMaterials formForMaterials);
-        public Guid ChangeCetagoryOfMaterial(Guid mId, string type);
-        public FileModel GetFileParametrsForDownloadActualVersion(Guid mId);*/
+        
     }
 }

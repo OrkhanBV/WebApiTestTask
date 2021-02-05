@@ -1,9 +1,8 @@
 using System;
-using Microsoft.AspNetCore.Http;
 
-namespace Task3.Core.DTO
+namespace Task3.API.DtoRes
 {
-    public class UploadMaterialVersionDTO
+    public class UploadMaterialVersionDto
     {
         public string Name { get; set; }
         public Guid MaterialId { get; set; }

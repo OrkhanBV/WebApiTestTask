@@ -10,7 +10,6 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Serialization;
 using Task3.API.DtoRes;
 using Task3.API.Validations;
-using Task3.Core.DTO;
 using Task3.Core.Models;
 using Task3.Core.Services;
 
@@ -43,7 +42,7 @@ namespace Task3.API.Controllers
         }
 
         [HttpPost("/api/material/upload")]
-        public async Task<ActionResult<MaterialResultDto>> UploadedMaterial([FromForm] UploadMaterialDTO uploadMaterialForm)
+        public async Task<ActionResult<MaterialResultDto>> UploadedMaterial([FromForm] UploadMaterialDto uploadMaterialForm, IFormFile file)
         {
             var validator = new SaveMaterialValidator();
             var validationResult = await validator.ValidateAsync(uploadMaterialForm);
@@ -52,17 +51,17 @@ namespace Task3.API.Controllers
             
             using (var fileStream = new FileStream(
                 Path.Combine(_dir,
-                    $"{uploadMaterialForm.Name}{Path.GetExtension(uploadMaterialForm.File.FileName)}"),
+                    $"{uploadMaterialForm.Name}{Path.GetExtension(file.FileName)}"),
                 FileMode.Create,
                 FileAccess.Write))
             {
-                uploadMaterialForm.File.CopyTo(fileStream);
+                file.CopyTo(fileStream);
             }
             
-            //var material = await _materialService.UploadNewMaterial(uploadMaterialForm);
-            var material = await _materialService.UploadNewMaterial($"{uploadMaterialForm.Name}{Path.GetExtension(uploadMaterialForm.File.FileName)}", 
+            var material = await _materialService.UploadNewMaterial(
+                $"{uploadMaterialForm.Name}{Path.GetExtension(file.FileName)}", 
                 uploadMaterialForm.CategoryNameId, 
-                uploadMaterialForm.File.Length);
+                file.Length);
             var materialResultDto = _mapper.
                 Map<Material, MaterialResultDto>(material);
             return Ok(materialResultDto);
@@ -86,7 +85,7 @@ namespace Task3.API.Controllers
             return Ok(materialVersionResultDto);
         }
         
-        [Route("/api/{mId}/versions/syzeOrder")]
+        [Route("/api/material/{mId}/versions/syzeOrder")]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MaterialVersionResultDto>>>  GetVersionsOrdergniBySyze(Guid mId)
         {
@@ -98,7 +97,7 @@ namespace Task3.API.Controllers
 
         [Route("/api/version/upload/")]
         [HttpPost]
-        public async Task<ActionResult> UploadNewVersionOfMaterial([FromForm] UploadMaterialVersionDTO materialVersionform, IFormFile file)
+        public async Task<ActionResult> UploadNewVersionOfMaterial([FromForm] UploadMaterialVersionDto materialVersionform, IFormFile file)
         {
             using (var fileStream = new FileStream(
                 Path.Combine(_dir,
@@ -109,7 +108,6 @@ namespace Task3.API.Controllers
                 file.CopyTo(fileStream);
             }
             
-            //var versionOfMaterial = await _materialService.UploadNewMaterialVersion(materialVersionform);
             var versionOfMaterial = await _materialService.UploadNewMaterialVersion($"{materialVersionform.Name}{Path.GetExtension(file.FileName)}",
                 materialVersionform.MaterialId,
                 file.Length);

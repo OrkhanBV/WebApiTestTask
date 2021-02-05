@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj",
+    "projectUniqueName": "/home/orhan/Desktop/LLL2/Task3.Core/Task3.Core.csproj",
     "projectName": "Task3.Core",
-    "projectPath": "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj",
-    "outputPath": "/home/orhan/Desktop/LLL/Task3.Core/obj/",
+    "projectPath": "/home/orhan/Desktop/LLL2/Task3.Core/Task3.Core.csproj",
+    "outputPath": "/home/orhan/Desktop/LLL2/Task3.Core/obj/",
     "projectStyle": "PackageReference",
     "originalTargetFrameworks": [
       "netstandard2.0"

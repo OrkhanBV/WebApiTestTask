@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "/home/orhan/Desktop/LLL/Task3.BLL/Task3.BLL.csproj",
+    "projectUniqueName": "/home/orhan/Desktop/LLL2/Task3.BLL/Task3.BLL.csproj",
     "projectName": "Task3.BLL",
-    "projectPath": "/home/orhan/Desktop/LLL/Task3.BLL/Task3.BLL.csproj",
-    "outputPath": "/home/orhan/Desktop/LLL/Task3.BLL/obj/",
+    "projectPath": "/home/orhan/Desktop/LLL2/Task3.BLL/Task3.BLL.csproj",
+    "outputPath": "/home/orhan/Desktop/LLL2/Task3.BLL/obj/",
     "projectStyle": "PackageReference",
     "originalTargetFrameworks": [
       "netstandard2.0"
@@ -15,11 +15,11 @@
     "frameworks": {
       "netstandard2.0": {
         "projectReferences": {
-          "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj": {
-            "projectPath": "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj"
+          "/home/orhan/Desktop/LLL2/Task3.Core/Task3.Core.csproj": {
+            "projectPath": "/home/orhan/Desktop/LLL2/Task3.Core/Task3.Core.csproj"
           },
-          "/home/orhan/Desktop/LLL/Task3.DAL/Task3.DAL.csproj": {
-            "projectPath": "/home/orhan/Desktop/LLL/Task3.DAL/Task3.DAL.csproj"
+          "/home/orhan/Desktop/LLL2/Task3.DAL/Task3.DAL.csproj": {
+            "projectPath": "/home/orhan/Desktop/LLL2/Task3.DAL/Task3.DAL.csproj"
           }
         }
       }

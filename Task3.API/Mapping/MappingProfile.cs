@@ -1,5 +1,5 @@
 using AutoMapper;
-using Task3.API.Resources;
+using Task3.API.DtoRes;
 using Task3.Core.Models;
 
 namespace Task3.API.Mapping
@@ -8,11 +8,11 @@ namespace Task3.API.Mapping
     {
         public MappingProfile()
         {
-            CreateMap<MaterialVersion, MaterialVersionResources>();
-            CreateMap<Material, MaterialResources>();
+            CreateMap<MaterialVersion, MaterialVersionResultDto>();
+            CreateMap<Material, MaterialResultDto>();
 
-            CreateMap<MaterialVersionResources, MaterialVersion>();
-            CreateMap<MaterialResources, Material>();
+            CreateMap<MaterialVersionResultDto, MaterialVersion>();
+            CreateMap<MaterialResultDto, Material>();
         }
     }
 }

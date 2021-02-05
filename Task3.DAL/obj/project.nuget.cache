@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JuI9H/C6pgkYqgb1Sr+mNKKyqAlxn0ZuLJIN2xwehZMPbuY/6fPh9ysapty6mTBOi6PlWodu35HqT1xjCE9n8A==",
+  "dgSpecHash": "YdzpC1x/OsNd6Xa8KFTnavkfwmzgE7OnLn3IK8pTvzsLHHYcuSXgtG3L2hH4Mf736tVPZDRApObJTNH93P3LGA==",
   "success": true,
-  "projectFilePath": "/home/orhan/Desktop/LLL/Task3.DAL/Task3.DAL.csproj",
+  "projectFilePath": "/home/orhan/Desktop/LLL2/Task3.DAL/Task3.DAL.csproj",
   "expectedPackageFiles": [
     "/home/orhan/.nuget/packages/microsoft.aspnetcore.antiforgery/2.2.0/microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "/home/orhan/.nuget/packages/microsoft.aspnetcore.authentication.abstractions/2.2.0/microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

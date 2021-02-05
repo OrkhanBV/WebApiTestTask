@@ -5,7 +5,7 @@
     "version": "v1"
   },
   "paths": {
-    "/api/Material": {
+    "/API/materials/filter/date": {
       "get": {
         "tags": [
           "Material"
@@ -18,7 +18,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Material"
+                    "$ref": "#/components/schemas/MaterialResultDto"
                   }
                 }
               },
@@ -26,7 +26,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Material"
+                    "$ref": "#/components/schemas/MaterialResultDto"
                   }
                 }
               },
@@ -34,14 +34,16 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Material"
+                    "$ref": "#/components/schemas/MaterialResultDto"
                   }
                 }
               }
             }
           }
         }
-      },
+      }
+    },
+    "/API/upload/material": {
       "post": {
         "tags": [
           "Material"
@@ -81,12 +83,29 @@
         },
         "responses": {
           "200": {
-            "description": "Success"
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaterialResultDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaterialResultDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MaterialResultDto"
+                }
+              }
+            }
           }
         }
       }
     },
-    "/api/Material/GetMat": {
+    "/API/download/material/actual/{mId}": {
       "post": {
         "tags": [
           "Material"
@@ -94,7 +113,8 @@
         "parameters": [
           {
             "name": "mId",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "string",
               "format": "uuid"
@@ -108,15 +128,16 @@
         }
       }
     },
-    "/api/MaterialVersion/GetVersionsByDate": {
+    "/API/versions/filter/date/{mId}": {
       "get": {
         "tags": [
-          "MaterialVersion"
+          "Material"
         ],
         "parameters": [
           {
             "name": "mId",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "string",
               "format": "uuid"
@@ -131,7 +152,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/MaterialVersion"
+                    "$ref": "#/components/schemas/MaterialVersionResultDto"
                   }
                 }
               },
@@ -139,7 +160,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/MaterialVersion"
+                    "$ref": "#/components/schemas/MaterialVersionResultDto"
                   }
                 }
               },
@@ -147,7 +168,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/MaterialVersion"
+                    "$ref": "#/components/schemas/MaterialVersionResultDto"
                   }
                 }
               }
@@ -156,15 +177,16 @@
         }
       }
     },
-    "/api/MaterialVersion/GetVersionsBySyze": {
+    "/API/versions/Syze/{mId}": {
       "get": {
         "tags": [
-          "MaterialVersion"
+          "Material"
         ],
         "parameters": [
           {
             "name": "mId",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "string",
               "format": "uuid"
@@ -179,7 +201,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/MaterialVersion"
+                    "$ref": "#/components/schemas/MaterialVersionResultDto"
                   }
                 }
               },
@@ -187,7 +209,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/MaterialVersion"
+                    "$ref": "#/components/schemas/MaterialVersionResultDto"
                   }
                 }
               },
@@ -195,7 +217,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/MaterialVersion"
+                    "$ref": "#/components/schemas/MaterialVersionResultDto"
                   }
                 }
               }
@@ -204,10 +226,10 @@
         }
       }
     },
-    "/api/MaterialVersion/UploadVersion": {
+    "/API/upload/version": {
       "post": {
         "tags": [
-          "MaterialVersion"
+          "Material"
         ],
         "requestBody": {
           "content": {
@@ -249,15 +271,16 @@
         }
       }
     },
-    "/api/MaterialVersion/DownloadVersion": {
+    "/API/download/version/{vId}": {
       "post": {
         "tags": [
-          "MaterialVersion"
+          "Material"
         ],
         "parameters": [
           {
             "name": "vId",
-            "in": "query",
+            "in": "path",
+            "required": true,
             "schema": {
               "type": "string",
               "format": "uuid"
@@ -274,7 +297,25 @@
   },
   "components": {
     "schemas": {
-      "MaterialVersion": {
+      "MaterialResultDto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "materialName": {
+            "type": "string",
+            "nullable": true
+          },
+          "matCategoryId": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "MaterialVersionResultDto": {
         "type": "object",
         "properties": {
           "id": {
@@ -289,45 +330,9 @@
             "type": "integer",
             "format": "int64"
           },
-          "pathOfFile": {
-            "type": "string",
-            "nullable": true
-          },
           "fileDate": {
             "type": "string",
             "format": "date-time"
-          },
-          "material": {
-            "$ref": "#/components/schemas/Material"
-          }
-        },
-        "additionalProperties": false
-      },
-      "Material": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "materialName": {
-            "type": "string",
-            "nullable": true
-          },
-          "materialDate": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "matCategoryId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "materialVersions": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MaterialVersion"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false

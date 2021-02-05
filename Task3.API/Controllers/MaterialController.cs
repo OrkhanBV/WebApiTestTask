@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using FluentValidation.Internal;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Task3.API.Resources;
+using Newtonsoft.Json.Serialization;
+using Task3.API.DtoRes;
 using Task3.API.Validations;
 using Task3.Core.DTO;
 using Task3.Core.Models;
@@ -25,33 +27,70 @@ namespace Task3.API.Controllers
             this._materialService = materialService;
         }
 
-        [HttpGet("")]
-        public async Task<ActionResult<IEnumerable<Material>>> GetMaterialsByDate()
+        [HttpGet("/api/materials/dateOrder")]
+        public async Task<ActionResult<IEnumerable<MaterialResultDto>>> GetMaterialsByDate()
         {
             var materials = await _materialService.GetFilterMaterialsByDate();
-            var materialResources = _mapper.
-                Map<IEnumerable<Material>, IEnumerable<MaterialResources>>(materials);
-            return Ok(materials);
+            var materialResultDto = _mapper.
+                Map<IEnumerable<Material>, IEnumerable<MaterialResultDto>>(materials);
+            return Ok(materialResultDto);
         }
 
-        [HttpPost("")]
-        public async Task<ActionResult> UploadedMaterial([FromForm] UploadMaterialDTO uploadMaterialForm)
+        [HttpPost("/api/material/upload")]
+        public async Task<ActionResult<MaterialResultDto>> UploadedMaterial([FromForm] UploadMaterialDTO uploadMaterialForm)
         {
             var validator = new SaveMaterialValidator();
             var validationResult = await validator.ValidateAsync(uploadMaterialForm);
             if (!validationResult.IsValid)
-                return BadRequest(validationResult.Errors);
+                return BadRequest("Not valid data");
             var material = await _materialService.UploadNewMaterial(uploadMaterialForm);
-            return Ok(material);
+            var materialResultDto = _mapper.
+                Map<Material, MaterialResultDto>(material);
+            return Ok(materialResultDto);
         }
 
-        [Route("GetMat")]
+        [Route("/api/material/{mId}/download")]
         [HttpPost]
-        public async Task<ActionResult> DownloadMaterialqqqq(Guid mId)
+        public async Task<ActionResult> DownloadMaterial(Guid mId)
         {
             var fileData = await _materialService.GetDtoForDownloadMaterialAsync(mId);
-            byte[] mas = System.IO.File.ReadAllBytes(fileData.filePath);
-            return File(mas, fileData.fileType, fileData.fileName); //PhysicalFile(fileForD.filePath, fileForD.fileType, fileForD.fileName);
+            return File(fileData.Mas, fileData.FileType, fileData.FileName);
+        }
+        
+        [Route("/api/{mId}/versions/dateOrder")]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<MaterialVersionResultDto>>>  GetVersionsOrdergniByDate(Guid mId)
+        {
+            var versions = await  _materialService.FilterVersionsByDate(mId);
+            var materialVersionResultDto = _mapper.
+                Map<IEnumerable<MaterialVersion>, IEnumerable<MaterialVersionResultDto>>(versions);
+            return Ok(materialVersionResultDto);
+        }
+        
+        [Route("/api/{mId}/versions/syzeOrder")]
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<MaterialVersionResultDto>>>  GetVersionsOrdergniBySyze(Guid mId)
+        {
+            var versions = await  _materialService.FilterVersionsBySize(mId);
+            var materialVersionResultDto = _mapper.
+                Map<IEnumerable<MaterialVersion>, IEnumerable<MaterialVersionResultDto>>(versions);
+            return Ok(materialVersionResultDto);
+        }
+
+        [Route("/api/version/upload/")]
+        [HttpPost]
+        public async Task<ActionResult> UploadNewVersionOfMaterial([FromForm] UploadMaterialVersionDTO materialVersionform)
+        {
+            var versionOfMaterial = await _materialService.UploadNewMaterialVersion(materialVersionform);
+            return Ok(versionOfMaterial);
+        }
+        
+        [Route("/api/version/{vId}/download")]
+        [HttpPost]
+        public async Task<ActionResult> DownloadVersionOfMaterial(Guid vId)
+        {
+            var fileData = await _materialService.GetMaterialVersionFile(vId);
+            return File(fileData.Mas, fileData.FileType, fileData.FileName);
         }
 
     }

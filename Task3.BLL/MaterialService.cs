@@ -45,10 +45,10 @@ namespace Task3.BLL
                 .ToList()
                 .OrderByDescending(m =>m.FileDate);
             MaterialVersion ActualVersion = ActualList().Select(m=> m).FirstOrDefault();
-            file.fileName = ActualVersion.FileName;
-            file.filePath = ActualVersion.PathOfFile + "/" + file.fileName;
-            file.fileType = "application/octet-stream";
-            file.mas = System.IO.File.ReadAllBytes(file.filePath);
+            file.FileName = ActualVersion.FileName;
+            file.FilePath = ActualVersion.PathOfFile + "/" + file.FileName;
+            file.FileType = "application/octet-stream";
+            file.Mas = System.IO.File.ReadAllBytes(file.FilePath);
             
             return file;
         }
@@ -128,10 +128,10 @@ namespace Task3.BLL
             MaterialVersion GetOfMaterialVersion() =>
                 _unitOfWork.MaterialVersions.Find(m => m.Id == vId).SingleOrDefault();
             
-            file.fileName = GetOfMaterialVersion().FileName;
-            file.filePath = (GetOfMaterialVersion().PathOfFile + "/" + file.fileName);
-            file.fileType = "application/octet-stream";
-            file.mas = System.IO.File.ReadAllBytes(file.filePath);
+            file.FileName = GetOfMaterialVersion().FileName;
+            file.FilePath = (GetOfMaterialVersion().PathOfFile + "/" + file.FileName);
+            file.FileType = "application/octet-stream";
+            file.Mas = System.IO.File.ReadAllBytes(file.FilePath);
             return(file);
         }
     }

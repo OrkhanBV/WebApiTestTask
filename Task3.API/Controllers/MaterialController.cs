@@ -6,7 +6,7 @@ using FluentValidation.Internal;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Serialization;
-using Task3.API.Resources;
+using Task3.API.DtoRes;
 using Task3.API.Validations;
 using Task3.Core.DTO;
 using Task3.Core.Models;

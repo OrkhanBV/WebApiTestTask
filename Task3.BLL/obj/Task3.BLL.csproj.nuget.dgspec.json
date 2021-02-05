@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/orhan/Desktop/LLL/Task3.BLL/Task3.BLL.csproj": {}
+    "/home/orhan/Desktop/LLL2/Task3.BLL/Task3.BLL.csproj": {}
   },
   "projects": {
-    "/home/orhan/Desktop/LLL/Task3.BLL/Task3.BLL.csproj": {
+    "/home/orhan/Desktop/LLL2/Task3.BLL/Task3.BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/orhan/Desktop/LLL/Task3.BLL/Task3.BLL.csproj",
+        "projectUniqueName": "/home/orhan/Desktop/LLL2/Task3.BLL/Task3.BLL.csproj",
         "projectName": "Task3.BLL",
-        "projectPath": "/home/orhan/Desktop/LLL/Task3.BLL/Task3.BLL.csproj",
+        "projectPath": "/home/orhan/Desktop/LLL2/Task3.BLL/Task3.BLL.csproj",
         "packagesPath": "/home/orhan/.nuget/packages/",
-        "outputPath": "/home/orhan/Desktop/LLL/Task3.BLL/obj/",
+        "outputPath": "/home/orhan/Desktop/LLL2/Task3.BLL/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/orhan/.nuget/NuGet/NuGet.Config"
@@ -25,11 +25,11 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj": {
-                "projectPath": "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj"
+              "/home/orhan/Desktop/LLL2/Task3.Core/Task3.Core.csproj": {
+                "projectPath": "/home/orhan/Desktop/LLL2/Task3.Core/Task3.Core.csproj"
               },
-              "/home/orhan/Desktop/LLL/Task3.DAL/Task3.DAL.csproj": {
-                "projectPath": "/home/orhan/Desktop/LLL/Task3.DAL/Task3.DAL.csproj"
+              "/home/orhan/Desktop/LLL2/Task3.DAL/Task3.DAL.csproj": {
+                "projectPath": "/home/orhan/Desktop/LLL2/Task3.DAL/Task3.DAL.csproj"
               }
             }
           }
@@ -72,14 +72,14 @@
         }
       }
     },
-    "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj": {
+    "/home/orhan/Desktop/LLL2/Task3.Core/Task3.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj",
+        "projectUniqueName": "/home/orhan/Desktop/LLL2/Task3.Core/Task3.Core.csproj",
         "projectName": "Task3.Core",
-        "projectPath": "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj",
+        "projectPath": "/home/orhan/Desktop/LLL2/Task3.Core/Task3.Core.csproj",
         "packagesPath": "/home/orhan/.nuget/packages/",
-        "outputPath": "/home/orhan/Desktop/LLL/Task3.Core/obj/",
+        "outputPath": "/home/orhan/Desktop/LLL2/Task3.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/orhan/.nuget/NuGet/NuGet.Config"
@@ -141,14 +141,14 @@
         }
       }
     },
-    "/home/orhan/Desktop/LLL/Task3.DAL/Task3.DAL.csproj": {
+    "/home/orhan/Desktop/LLL2/Task3.DAL/Task3.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/orhan/Desktop/LLL/Task3.DAL/Task3.DAL.csproj",
+        "projectUniqueName": "/home/orhan/Desktop/LLL2/Task3.DAL/Task3.DAL.csproj",
         "projectName": "Task3.DAL",
-        "projectPath": "/home/orhan/Desktop/LLL/Task3.DAL/Task3.DAL.csproj",
+        "projectPath": "/home/orhan/Desktop/LLL2/Task3.DAL/Task3.DAL.csproj",
         "packagesPath": "/home/orhan/.nuget/packages/",
-        "outputPath": "/home/orhan/Desktop/LLL/Task3.DAL/obj/",
+        "outputPath": "/home/orhan/Desktop/LLL2/Task3.DAL/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/orhan/.nuget/NuGet/NuGet.Config"
@@ -162,8 +162,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj": {
-                "projectPath": "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj"
+              "/home/orhan/Desktop/LLL2/Task3.Core/Task3.Core.csproj": {
+                "projectPath": "/home/orhan/Desktop/LLL2/Task3.Core/Task3.Core.csproj"
               }
             }
           }

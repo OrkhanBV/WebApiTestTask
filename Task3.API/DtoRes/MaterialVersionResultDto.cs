@@ -1,7 +1,6 @@
 using System;
-using Task3.Core.Models;
 
-namespace Task3.API.Resources
+namespace Task3.API.DtoRes
 {
     public class MaterialVersionResultDto
     {

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AarYlfljiEwxnxqsi/SsuwCx1hgG7lJHngTHJ3kQ695IgHRxMHVrl9dyj2Tjb10uXtszbWQ5k7mmYGkzudiUxQ==",
+  "dgSpecHash": "FheE6j5j4W33KSSVVzEFOBzM7bzP7CFhP+Eljtrtze6NzYS84oUG/KumACz/4N1BmgY24Etb2yMZmYoU99yTiQ==",
   "success": true,
-  "projectFilePath": "/home/orhan/Desktop/LLL/Task3.API/Task3.API.csproj",
+  "projectFilePath": "/home/orhan/Desktop/LLL2/Task3.API/Task3.API.csproj",
   "expectedPackageFiles": [
     "/home/orhan/.nuget/packages/automapper/10.1.1/automapper.10.1.1.nupkg.sha512",
     "/home/orhan/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/8.1.0/automapper.extensions.microsoft.dependencyinjection.8.1.0.nupkg.sha512",

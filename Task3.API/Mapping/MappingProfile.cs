@@ -1,5 +1,5 @@
 using AutoMapper;
-using Task3.API.Resources;
+using Task3.API.DtoRes;
 using Task3.Core.Models;
 
 namespace Task3.API.Mapping

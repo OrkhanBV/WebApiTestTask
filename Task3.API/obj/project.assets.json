@@ -7866,11 +7866,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/orhan/Desktop/LLL/Task3.API/Task3.API.csproj",
+      "projectUniqueName": "/home/orhan/Desktop/LLL2/Task3.API/Task3.API.csproj",
       "projectName": "Task3.API",
-      "projectPath": "/home/orhan/Desktop/LLL/Task3.API/Task3.API.csproj",
+      "projectPath": "/home/orhan/Desktop/LLL2/Task3.API/Task3.API.csproj",
       "packagesPath": "/home/orhan/.nuget/packages/",
-      "outputPath": "/home/orhan/Desktop/LLL/Task3.API/obj/",
+      "outputPath": "/home/orhan/Desktop/LLL2/Task3.API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/orhan/.nuget/NuGet/NuGet.Config"
@@ -7884,14 +7884,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "/home/orhan/Desktop/LLL/Task3.BLL/Task3.BLL.csproj": {
-              "projectPath": "/home/orhan/Desktop/LLL/Task3.BLL/Task3.BLL.csproj"
+            "/home/orhan/Desktop/LLL2/Task3.BLL/Task3.BLL.csproj": {
+              "projectPath": "/home/orhan/Desktop/LLL2/Task3.BLL/Task3.BLL.csproj"
             },
-            "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj": {
-              "projectPath": "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj"
+            "/home/orhan/Desktop/LLL2/Task3.Core/Task3.Core.csproj": {
+              "projectPath": "/home/orhan/Desktop/LLL2/Task3.Core/Task3.Core.csproj"
             },
-            "/home/orhan/Desktop/LLL/Task3.DAL/Task3.DAL.csproj": {
-              "projectPath": "/home/orhan/Desktop/LLL/Task3.DAL/Task3.DAL.csproj"
+            "/home/orhan/Desktop/LLL2/Task3.DAL/Task3.DAL.csproj": {
+              "projectPath": "/home/orhan/Desktop/LLL2/Task3.DAL/Task3.DAL.csproj"
             }
           }
         }

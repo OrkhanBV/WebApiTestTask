@@ -1,6 +1,6 @@
 using System;
 
-namespace Task3.API.Resources
+namespace Task3.API.DtoRes
 {
     public class MaterialResultDto
     {

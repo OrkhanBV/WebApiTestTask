@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj": {}
+    "/home/orhan/Desktop/LLL2/Task3.Core/Task3.Core.csproj": {}
   },
   "projects": {
-    "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj": {
+    "/home/orhan/Desktop/LLL2/Task3.Core/Task3.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj",
+        "projectUniqueName": "/home/orhan/Desktop/LLL2/Task3.Core/Task3.Core.csproj",
         "projectName": "Task3.Core",
-        "projectPath": "/home/orhan/Desktop/LLL/Task3.Core/Task3.Core.csproj",
+        "projectPath": "/home/orhan/Desktop/LLL2/Task3.Core/Task3.Core.csproj",
         "packagesPath": "/home/orhan/.nuget/packages/",
-        "outputPath": "/home/orhan/Desktop/LLL/Task3.Core/obj/",
+        "outputPath": "/home/orhan/Desktop/LLL2/Task3.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/orhan/.nuget/NuGet/NuGet.Config"

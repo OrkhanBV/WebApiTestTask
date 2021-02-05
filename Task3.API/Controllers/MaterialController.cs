@@ -60,7 +60,7 @@ namespace Task3.API.Controllers
             }
             
             //var material = await _materialService.UploadNewMaterial(uploadMaterialForm);
-            var material = await _materialService.UploadNewMaterial((uploadMaterialForm.Name + uploadMaterialForm.File.Name), 
+            var material = await _materialService.UploadNewMaterial($"{uploadMaterialForm.Name}{Path.GetExtension(uploadMaterialForm.File.FileName)}", 
                 uploadMaterialForm.CategoryNameId, 
                 uploadMaterialForm.File.Length);
             var materialResultDto = _mapper.

@@ -25,11 +25,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="693c176a-5eba-4370-a384-0adedb283ba7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Task3.API/Controllers/MaterialController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.API/Controllers/MaterialController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.BLL/MaterialService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.BLL/MaterialService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task3.Core/Services/IMaterialServices.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Task3.Core/Services/IMaterialServices.cs" afterDir="false" />
-    </list>
+    <list default="true" id="693c176a-5eba-4370-a384-0adedb283ba7" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -271,25 +267,25 @@
     </state>
     <state x="466" y="126" width="424" height="483" key="FileChooserDialogImpl/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1612445596866" />
     <state x="1803" y="175" width="424" height="483" key="FileChooserDialogImpl/0.0.1366.737/1366.0.1280.1024@1366.0.1280.1024" timestamp="1612194436255" />
-    <state width="1324" height="81" key="GridCell.Tab.0.bottom" timestamp="1612476016987">
+    <state width="1324" height="81" key="GridCell.Tab.0.bottom" timestamp="1612522377521">
       <screen x="0" y="0" width="1366" height="737" />
     </state>
-    <state width="1324" height="81" key="GridCell.Tab.0.bottom/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1612476016987" />
+    <state width="1324" height="81" key="GridCell.Tab.0.bottom/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1612522377521" />
     <state width="1238" height="434" key="GridCell.Tab.0.bottom/0.0.1366.737/1366.0.1280.1024@1366.0.1280.1024" timestamp="1612194894056" />
-    <state width="1324" height="81" key="GridCell.Tab.0.center" timestamp="1612476016987">
+    <state width="1324" height="81" key="GridCell.Tab.0.center" timestamp="1612522377520">
       <screen x="0" y="0" width="1366" height="737" />
     </state>
-    <state width="1324" height="81" key="GridCell.Tab.0.center/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1612476016987" />
+    <state width="1324" height="81" key="GridCell.Tab.0.center/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1612522377520" />
     <state width="1238" height="434" key="GridCell.Tab.0.center/0.0.1366.737/1366.0.1280.1024@1366.0.1280.1024" timestamp="1612194894056" />
-    <state width="1324" height="81" key="GridCell.Tab.0.left" timestamp="1612476016986">
+    <state width="1324" height="81" key="GridCell.Tab.0.left" timestamp="1612522377520">
       <screen x="0" y="0" width="1366" height="737" />
     </state>
-    <state width="1324" height="81" key="GridCell.Tab.0.left/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1612476016986" />
+    <state width="1324" height="81" key="GridCell.Tab.0.left/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1612522377520" />
     <state width="1238" height="434" key="GridCell.Tab.0.left/0.0.1366.737/1366.0.1280.1024@1366.0.1280.1024" timestamp="1612194894055" />
-    <state width="1324" height="81" key="GridCell.Tab.0.right" timestamp="1612476016987">
+    <state width="1324" height="81" key="GridCell.Tab.0.right" timestamp="1612522377521">
       <screen x="0" y="0" width="1366" height="737" />
     </state>
-    <state width="1324" height="81" key="GridCell.Tab.0.right/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1612476016987" />
+    <state width="1324" height="81" key="GridCell.Tab.0.right/0.0.1366.737/1366.0.1280.1024@0.0.1366.737" timestamp="1612522377521" />
     <state width="1238" height="434" key="GridCell.Tab.0.right/0.0.1366.737/1366.0.1280.1024@1366.0.1280.1024" timestamp="1612194894056" />
     <state x="366" y="66" width="656" height="604" key="RiderGenerateDialog" timestamp="1612445993922">
       <screen x="0" y="0" width="1366" height="737" />
